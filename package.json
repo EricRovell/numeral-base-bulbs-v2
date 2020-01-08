@@ -1,0 +1,25 @@
+{
+  "name": "numeral-base-bulbs-v2",
+  "version": "2.0.0",
+  "description": "Understand and learn to count in different bases.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [
+    "binary",
+    "radix",
+    "bulbs",
+    "cs50",
+    "numbers"
+  ],
+  "author": "Eric Rovell",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.1.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
