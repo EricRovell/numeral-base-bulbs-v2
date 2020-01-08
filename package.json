@@ -2,6 +2,10 @@
   "name": "numeral-base-bulbs-v2",
   "version": "2.0.0",
   "description": "Understand and learn to count in different bases.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EricRovell/numeral-base-bulbs-v2.git"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "next",
