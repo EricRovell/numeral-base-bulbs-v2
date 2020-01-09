@@ -1,6 +1,13 @@
 const path = require("path");
+const withCSS = require("@zeit/next-css");
 
-module.exports = {
+module.exports = withCSS({
+  cssModules: true,
+  cssLoaderOptions: {
+    importLoaders: 1,
+    localIdentName: "[local]___[hash:base64:5]",
+  },
+
   webpack: (config, options) => {
     config.resolve.alias["components"] = path.join(__dirname, "src/components");
     config.resolve.alias["styles"] = path.join(__dirname, "src/styles");
@@ -8,4 +15,4 @@ module.exports = {
 
     return config;
   },
-};
+});
