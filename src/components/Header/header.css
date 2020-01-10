@@ -7,12 +7,14 @@
 
   padding: 0 1em;
   border-bottom: 1px solid rgba(192, 192, 192, 0.25);
+
+  font-family: var(--font-main);
 }
 
 /* Title */
 
 .header h1 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--font-color-1);
 }
 
@@ -35,7 +37,7 @@
 .section-active {
   position: relative;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 
   display: grid;
   grid-template: 1fr / 1fr;
