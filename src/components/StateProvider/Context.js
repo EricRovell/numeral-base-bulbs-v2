@@ -8,7 +8,7 @@ export const StateProvider = ({ reducer, initialState, children }) => (
   </Context.Provider>
 );
 
-export const useStateValue = () => useContext(Context);
+export const useStateContext = () => useContext(Context);
 
-export { default as initialState } from "./state.js";
+export { default as initialState } from "./initialState.js";
 export { default as reducer } from "./reducer.js";
