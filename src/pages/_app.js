@@ -1,3 +1,5 @@
+import { StateProvider, initialState, reducer } from "components/StateProvider/Context";
+
 import Header from "components/Header/Header";
 import "style/global.css";
 
@@ -5,10 +7,12 @@ import style from "style/pages/app.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <div className={style.app}>
-      <Header />
-      <Component {...pageProps} />
-    </div>
+    <StateProvider {...{ initialState, reducer }}>
+      <div className={style.app}>
+        <Header />
+        <Component {...pageProps} />
+      </div>
+    </StateProvider>
   )
 };
 
