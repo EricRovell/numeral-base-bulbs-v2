@@ -7,28 +7,28 @@ export default [
     },
   },
   {
-    path: "/",
+    path: "/?tab=game",
     name: {
       "EN": "Game",
       "RU": "Игра",
     },
   },
   {
-    path: "/",
+    path: "/?tab=tutorial",
     name: {
-      "EN": "Inctructions",
+      "EN": "Tutorial",
       "RU": "Инструкции",
     },
   },
   {
-    path: "/",
+    path: "/?tab=settings",
     name: {
       "EN": "Settings",
       "RU": "Настройки",
     },
   },
   {
-    path: "/",
+    path: "/?tab=about",
     name: {
       "EN": "About",
       "RU": "О приложении",
