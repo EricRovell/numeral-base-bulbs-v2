@@ -1,9 +1,11 @@
+import LayoutMain from "components/Layout/Main/LayoutMain";
+
 const HomePage = () => {
   
   return (
-    <main>
+    <LayoutMain>
       <div>Welcome to Next.js!</div>
-    </main>
+    </LayoutMain>
   );
 };
 
