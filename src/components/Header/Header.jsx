@@ -1,5 +1,25 @@
+import style from "./header.css";
+
+import Link from "./Link.js";
+import routes from "./routes.js";
+
+const Routes = ({ routes }) => (
+  <nav className={style.navigation}>
+    {routes.map(route => (
+      <Link href={route.path} key={route.name["EN"]} activeClassName={style.active}>
+        <a title={route.name["EN"]}>
+          {route.name["EN"]}
+        </a>
+      </Link>
+    ))}
+  </nav>
+);
+
 const Header = () => (
-  <h1>Numeral Base Bulbs 2</h1>
+  <header className={style.header}>
+    <h1>Numeral Base Bulbs 2</h1>
+    <Routes routes={routes} />
+  </header>
 );
 
 export default Header;
