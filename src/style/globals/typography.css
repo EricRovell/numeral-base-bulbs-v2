@@ -1,3 +1,30 @@
+@font-face {
+  font-family: "Jersey M54";
+  src: url("/fonts/jersey-m54.woff2") format("woff2");
+}
+
+/* variation font */
+@font-face {
+  font-family: "Montserrat-VF";
+  src: url("/fonts/Montserrat-VF.woff2") format("woff2-variations");
+}
+
+/* fallback, regular */
+@font-face {
+  font-family: "Montserrat-Medium-Regular";
+  src: url("/fonts/Montserrat-Medium-Regular.woff2") format("woff2");
+}
+
 :root {
   font-size: calc(10px + 1vmax);
+
+  --font-digits: "Jersey M54";
+  --font-main: "Montserrat-Medium-Regular", sans-serif;
+}
+
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-main: "Montserrat-VF", sans-serif; 
+  }
 }
