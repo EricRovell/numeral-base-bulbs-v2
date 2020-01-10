@@ -1,0 +1,6 @@
+.layout-main {
+  display: grid;
+  grid-template: 3fr 2fr 1.5fr / 1fr;
+  row-gap: 50px;
+  place-items: center;
+}
