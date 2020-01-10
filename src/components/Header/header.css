@@ -1,0 +1,23 @@
+/* Header */
+
+.header {
+  display: grid;
+  grid-template: 1fr / max-content 1fr max-content;
+}
+
+/* Nav */
+
+.navigation {
+  grid-column: 3;
+
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  column-gap: 1.25em;
+}
+
+/* Active Link */
+
+.active {
+  color: red;
+}
