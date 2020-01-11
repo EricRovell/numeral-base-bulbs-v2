@@ -25,15 +25,14 @@
 /* Labels */
 
 .digit span {
-  font-size: 0.65rem;
-  width: 100%;
-  height: 100%;
+  font-size: 0.65rem;  
 
-  display: grid;
-  place-content: center;
+  width: 65%;
   user-select: none;
+  place-self: center;
+  text-align: center;
 
-  word-wrap: none;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
