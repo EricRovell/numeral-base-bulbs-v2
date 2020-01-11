@@ -1,7 +1,7 @@
 .digits {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(50px, 100px);
+  grid-auto-columns: minmax(75px, 100px);
   grid-auto-rows: 1fr;
   column-gap: 20px;
 
