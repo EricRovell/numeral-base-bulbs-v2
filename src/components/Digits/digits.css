@@ -2,8 +2,47 @@
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(75px, 100px);
-  grid-auto-rows: 1fr;
+  grid-auto-rows: minmax(100px, 250px);
+  place-self: center;
+  place-content: center;
   column-gap: 20px;
 
   height: 100%;
+  max-width: 100%;
+
+  padding: 0.5em 1em;
+  position: relative;
+  overflow-x: auto;
+}
+
+/* .digits::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to left, transparent 75%, var(--bg));
+}
+
+.digits::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to right, transparent 75%, var(--bg));
+} */
+
+.digits::-webkit-scrollbar {
+  height: 5px;
+}
+
+.digits::-webkit-scrollbar-track {
+  background: var(--color-3);
+}
+
+.digits::-webkit-scrollbar-thumb {
+  background: var(--color-2);
 }
