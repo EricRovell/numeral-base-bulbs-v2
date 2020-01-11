@@ -10,6 +10,7 @@ const Switcher = ({ increment, title }) => {
     // prevent adding more digits than allowed
     if (increment === 1) {
       if (digits.length >= digitsMax) {
+        alert("Sorry, the limit has been reached for the number of digits.");
         return;
       }
     }
@@ -17,6 +18,7 @@ const Switcher = ({ increment, title }) => {
     // prevent removing more digits than allowed
     if (increment === -1) {
       if (digits.length <= digitsMin) {
+        alert("Sorry, there are no digits to be removed");
         return;
       }
     }
