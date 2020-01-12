@@ -5,6 +5,8 @@ import Number from "components/Number/Number";
 
 import Switcher from "components/Digits/Switcher/Switcher";
 
+import BaseSelector from "components/Settings/Base/BaseSelector";
+
 const HomePage = () => {
   
   return (
@@ -14,7 +16,11 @@ const HomePage = () => {
         <Digits />
         <Switcher increment={-1} title={"Remove a digit"} />
       </section>      
-      <Number />
+      <section>
+        <BaseSelector text={"in"} base={"baseIn"} />
+        <Number />
+        <BaseSelector text={"out"} base={"baseOut"} />
+      </section>
     </LayoutMain>
   );
 };
