@@ -1,0 +1,48 @@
+.symbolic {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(75px, 100px);
+  grid-auto-rows: minmax(100px, 250px);
+  place-self: center;
+  place-content: center;
+  column-gap: 20px;
+
+  height: 100%;
+  max-width: 100%;
+
+  padding: 0.5em 1em;
+  position: relative;
+  overflow-x: auto;
+}
+
+/* .symbolic::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to left, transparent 75%, var(--bg));
+}
+
+.symbolic::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to right, transparent 75%, var(--bg));
+} */
+
+.symbolic::-webkit-scrollbar {
+  height: 5px;
+}
+
+.symbolic::-webkit-scrollbar-track {
+  background: var(--color-3);
+}
+
+.symbolic::-webkit-scrollbar-thumb {
+  background: var(--color-2);
+}
