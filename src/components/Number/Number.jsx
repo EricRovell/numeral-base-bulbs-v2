@@ -1,26 +1,15 @@
 import style from "./number.css";
 
-import { useState } from "react";
+import NumberInput from "./NumberInput";
 
 const Number = () => {
-
-  const [ inputValue, setInputValue ] = useState(0);
-  const regex = /^[A-Z\d]+$/;
-
-  const handleInput = ({ target: { value }}) => {
-    if (value === "") setInputValue(0);
-
-    if (regex.test(value)) {
-      setInputValue(value);
-    }    
-  };
 
   return (
     <div className={style.number}>
       <div></div>
       <button></button>
       <button></button>
-      <input type="text" onInput={handleInput} value={inputValue} />
+      <NumberInput />
       {/* <span data-base={12}>{inputValue}</span> */}
     </div>
   );
