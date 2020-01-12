@@ -1,6 +1,8 @@
 export default (state, action) => {
   switch (action.type) {
 
+    // User Preferences
+
     case "setLanguage":
       return {
         ...state,
@@ -12,6 +14,9 @@ export default (state, action) => {
         ...state,
         theme: action.theme,
       };
+
+
+    // Digits
       
     case "addDigit":
       return {
@@ -19,7 +24,23 @@ export default (state, action) => {
         digits: (action.value === 1)
           ? [ 0, ...state.digits]
           : state.digits.slice(0, -1)
-      }
+      };
+
+    case "mutateDigit":
+      return {
+        ...state,
+        digits: state.digits.map((val, i) =>
+          (i === action.index) ? action.value : val)
+      };
+
+    // base
+
+    case "setBase":
+      return {
+        ...state,
+        [action.base]: action.value
+      };
+
 
     default:
       return state;
