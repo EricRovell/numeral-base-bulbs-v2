@@ -5,10 +5,15 @@ import { useState } from "react";
 const Number = () => {
 
   const [ inputValue, setInputValue ] = useState(0);
+  const regex = /^[A-Z\d]+$/;
 
-  const handleInput = event => {
-    setInputValue(event.target.value);
-  }
+  const handleInput = ({ target: { value }}) => {
+    if (value === "") setInputValue(0);
+
+    if (regex.test(value)) {
+      setInputValue(value);
+    }    
+  };
 
   return (
     <div className={style.number}>

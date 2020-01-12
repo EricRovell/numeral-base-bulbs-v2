@@ -1,7 +1,6 @@
 .number {
   width: 100%;
   height: 100%;
-  max-width: 50vw;
 
   display: grid;
   grid-template: 1fr / 1fr 1fr 8fr 1fr 1fr;
