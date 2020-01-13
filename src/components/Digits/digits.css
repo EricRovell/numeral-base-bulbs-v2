@@ -1,0 +1,41 @@
+.digits {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  overflow-x: auto;
+}
+
+.digits::-webkit-scrollbar {
+  height: 5px;
+}
+
+.digits::-webkit-scrollbar-track {
+  background: var(--color-3);
+}
+
+.digits::-webkit-scrollbar-thumb {
+  background: var(--color-2);
+}
+
+/* .digits::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to left, transparent 75%, var(--bg));
+}
+
+.digits::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to right, transparent 75%, var(--bg));
+} */
