@@ -33,6 +33,12 @@ export default (state, action) => {
           (i === action.index) ? action.value : val)
       };
 
+    case "setDigits":
+      return {
+        ...state,
+        digits: action.digits
+      };
+
     // base
 
     case "setBase":
