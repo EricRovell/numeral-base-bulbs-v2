@@ -10,7 +10,6 @@ const Number = () => {
       <button></button>
       <button></button>
       <NumberInput />
-      {/* <span data-base={12}>{inputValue}</span> */}
     </div>
   );
 };
