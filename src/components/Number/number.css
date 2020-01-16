@@ -67,6 +67,8 @@
 
   background: var(--color-3);
   box-shadow: var(--shadow-3);
+
+  transition: background 410ms linear;
 }
 
 .number input[type=text]::selection {
