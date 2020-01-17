@@ -18,7 +18,7 @@ const Digit = ({ value, index }) => {
       <Label index={index} type={"down"} />
       <Incrementor {...{ actionType: 1, index, value }} />
       <Incrementor {...{ actionType: -1, index, value }} />
-      <InputDigit {...{ value, representation }} />
+      <InputDigit value={value} index={index} />
     </div>
   );
 };
