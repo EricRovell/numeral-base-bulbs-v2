@@ -29,6 +29,7 @@ const InputDigit = ({ base, value }) => {
   return (
     <input
       type="text"
+      inputMode={"numeric"}
       className={(isValidInput) ? null : style["number-input"]}
       onChange={handleChange}
       value={value}
