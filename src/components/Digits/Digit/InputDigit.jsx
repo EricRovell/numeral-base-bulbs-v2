@@ -9,16 +9,12 @@ import style from "components/Number/number-input.css";
 const InputDigit = ({ index, value }) => {
 
   const [ { representation, baseIn }, dispatch ] = useStateContext();
-  //const [ isValid, setInputValue ] = useValidInput(baseIn);
 
   const [ wrongInput, setWrongInput ] = useState(false);
   const regex = baseRegExp(baseIn);
   
   const handleChange = event => {
     const userInput = event.target.value;
-    /* setInputValue(userInput);    
-
-    if (!isValid) return;  */
 
     if (!regex.test(userInput)) {
       setWrongInput(true);
