@@ -20,28 +20,31 @@
   transform: rotate(0.5turn);
 }
 
+/* BaseOut Number && base input-selector */
+
 .layout-main > section:nth-of-type(2) {
   display: grid;
-  grid-template: 0.75fr 1.25fr 0.75fr / 1fr 8fr 1fr;  
+  grid-template-rows: 25px minmax(auto, 15vh) 25px;
+  grid-template-columns: auto minmax(50px, 85px) minmax(auto, 40vw) minmax(75px, 85px) auto;  
   place-items: stretch;
-  column-gap: 3em; 
+  column-gap: 1.5em; 
 
   width: 100%;
   height: 100%;
-  padding: 0 10em;
+  padding: 0 2em;
 }
 
 .layout-main > section:nth-of-type(2) > div:nth-child(1) {
   grid-row: 1 / span 3;
-  grid-column: 1;
+  grid-column: 2;
 }
 
 .layout-main > section:nth-of-type(2) > div:nth-child(2) {
   grid-row: 2;
-  grid-column: 2;
+  grid-column: 3;
 }
 
 .layout-main > section:nth-of-type(2) > div:nth-child(3) {
   grid-row: 1 / span 3;
-  grid-column: 3;
+  grid-column: 4;
 }
