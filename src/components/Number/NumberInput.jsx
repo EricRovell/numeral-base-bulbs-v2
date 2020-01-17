@@ -2,7 +2,7 @@ import { useStateContext } from "components/StateProvider/Context";
 import { useState, useEffect } from "react";
 
 import { baseConvert } from "utility/baseConvert";
-import { baseRegExp } from "./NumberInput/validateInput";
+import { baseRegExp } from "utility/validateInput";
 
 import style from "./number-input.css";
 
@@ -44,21 +44,19 @@ const NumberInput = () => {
         setWrongInput(false);
       }, 820);
       return;
-    }
+    }    
     
-    //if (regex.test(inputValue)) {
-      setValue(inputValue);
+    setValue(inputValue);
 
-      dispatch({
-        type: "setDigits",
-        digits: baseConvert({
-          digits: inputValue,
-          baseIn: baseOut,
-          baseOut: baseIn,
-          representation: "symbol",
-        })
-      });
-    //}  
+    dispatch({
+      type: "setDigits",
+      digits: baseConvert({
+        digits: inputValue,
+        baseIn: baseOut,
+        baseOut: baseIn,
+        representation: "symbol",
+      })
+    }); 
   };
 
   return (
