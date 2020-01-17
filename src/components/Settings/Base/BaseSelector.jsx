@@ -31,7 +31,7 @@ const BaseSelector = ({ base, text }) => {
         base,
         value: bases[base] 
       }} />
-      <InputDigit value={bases[base]} />
+      <InputDigit value={bases[base]} base={base} />
     </div>
   );
 };
