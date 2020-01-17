@@ -2,7 +2,7 @@ export default {
   lang: "EN",
   theme: "dark",
 
-  digits: [0, 1, 0, 0, 0, 0, 0, 0],
+  digits: [0, 0, 0, 0, 0, 0, 0, 0],
   representation: "symbol",  // bulb | bulb-realistic | numeral | char
 
   digitsMin: 0,
