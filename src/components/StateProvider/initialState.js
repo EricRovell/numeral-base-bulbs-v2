@@ -14,6 +14,7 @@ export default {
   baseMin: 1,
   baseMax: 16,
 
-  labelsUp: "index",    // index | value | power | hidden
-  labelsDown: "value",
+  labelsMutate: true,
+  labelsUp: "value",    // index | value | power | none
+  labelsDown: "index",
 };
