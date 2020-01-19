@@ -1,7 +1,9 @@
-import style from "./header.css";
+import ExpressSettings from "components/Settings/ExpressSettings/ExpressSettings";
 
 import Link from "./Link.js";
 import routes from "./routes.js";
+
+import style from "./header.css";
 
 const Routes = ({ routes }) => (
   <nav className={style.navigation}>
@@ -23,6 +25,7 @@ const Header = () => (
   <header className={style.header}>
     <h1>Numeral Base Bulbs 2</h1>
     <Routes routes={routes} />
+    <ExpressSettings />
   </header>
 );
 
