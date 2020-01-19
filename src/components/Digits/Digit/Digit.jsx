@@ -14,8 +14,8 @@ const Digit = ({ value, index }) => {
   return (
     <div className={style.digit}>
       <div></div>
-      <Label index={index} type={"up"} />
-      <Label index={index} type={"down"} />
+      <Label index={index} type={"labelsUp"} />
+      <Label index={index} type={"labelsDown"} />
       <Incrementor {...{ actionType: 1, index, value }} />
       <Incrementor {...{ actionType: -1, index, value }} />
       <InputDigit value={value} index={index} />
