@@ -47,6 +47,13 @@ export default (state, action) => {
         [action.base]: action.value
       };
 
+    // labels
+
+    case "setLabel":
+      return {
+        ...state,
+        [action.label]: action.value
+      };
 
     default:
       return state;
