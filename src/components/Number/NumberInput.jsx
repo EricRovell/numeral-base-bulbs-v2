@@ -54,7 +54,7 @@ const NumberInput = () => {
         digits: inputValue,
         baseIn: baseOut,
         baseOut: baseIn,
-        representation: "symbol",
+        representation: "numeral",
       })
     }); 
   };
