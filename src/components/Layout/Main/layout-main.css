@@ -27,6 +27,7 @@
   grid-template-rows: 25px minmax(auto, 15vh) 25px;
   grid-template-columns: auto minmax(50px, 85px) minmax(auto, 40vw) minmax(75px, 85px) auto;  
   place-items: stretch;
+  place-content: center;
   column-gap: 1.5em; 
 
   width: 100%;
