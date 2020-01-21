@@ -12,14 +12,14 @@ const HomePage = () => {
   return (
     <LayoutMain>
       <section>
-        <Switcher increment={1} title={"Add a digit"} />
+        <Switcher increment={1} />
         <Digits />
-        <Switcher increment={-1} title={"Remove a digit"} />
+        <Switcher increment={-1} />
       </section>      
       <section>
-        <BaseSelector text={"in"} base={"baseIn"} />
+        <BaseSelector base={"baseIn"} />
         <Number />
-        <BaseSelector text={"out"} base={"baseOut"} />
+        <BaseSelector base={"baseOut"} />
       </section>
     </LayoutMain>
   );
