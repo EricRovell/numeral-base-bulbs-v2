@@ -1,6 +1,4 @@
-import { useStateContext } from "components/StateProvider/Context"; 
-
-import Label from "./Label";
+import Label from "./Label/Label";
 import Incrementor from "./Incrementor";
 import InputDigit from "./InputDigit";
 
@@ -9,11 +7,9 @@ import style from "./digit.css";
 
 const Digit = ({ value, index }) => {
 
-  const [ { digits, labelsUp, labelsDown, representation }, dispatch ] = useStateContext(); 
-
   return (
     <div className={style.digit}>
-      <div></div>
+      <div/>
       <Label index={index} type={"labelsUp"} />
       <Label index={index} type={"labelsDown"} />
       <Incrementor {...{ actionType: 1, index, value }} />
