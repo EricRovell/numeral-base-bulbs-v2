@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.switcher:hover {
+  background: rgb(26, 31, 43);
+}
+
 .switcher div {
   position: relative; 
   width: var(--size);
