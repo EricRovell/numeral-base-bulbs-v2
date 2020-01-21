@@ -24,7 +24,7 @@
 
 .layout-main > section:nth-of-type(2) {
   display: grid;
-  grid-template-rows: 25px minmax(auto, 15vh) 25px;
+  grid-template-rows: 45px minmax(auto, 15vh) 45px;
   grid-template-columns: auto minmax(50px, 85px) minmax(auto, 40vw) minmax(75px, 85px) auto;  
   place-items: stretch;
   place-content: center;
