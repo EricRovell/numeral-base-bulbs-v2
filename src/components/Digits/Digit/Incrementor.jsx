@@ -1,8 +1,19 @@
-import { useStateContext } from "components/StateProvider/Context"; 
+import { useStateContext } from "components/StateProvider/Context";
+
+const translation = {
+  "1": {
+    "EN": "Increment a digit",
+    "RU": "Увеличить число на один разряд"
+  },
+  "-1": {
+    "EN": "Decrement a digit",
+    "RU": "Уменьшить число на один разряд"
+  }
+};
 
 const Incrementor = ({ actionType, index, value }) => {
 
-  const [ { baseIn }, dispatch ] = useStateContext();
+  const [ { lang, baseIn }, dispatch ] = useStateContext();
 
   const increment = () => {
 
@@ -32,7 +43,7 @@ const Incrementor = ({ actionType, index, value }) => {
   };
 
   return (
-    <button onClick={increment}>
+    <button onClick={increment} title={translation[actionType][lang]}>
       <svg viewBox="0 0 320 191.9">
         <path d="M2.9,24.7l1.8,2.1l136,156.5c4.6,5.3,11.5,8.6,19.2,8.6s14.6-3.4,19.2-8.6L315,27.1l2.3-2.6C319,22,320,19,320,15.8
           C320,7.1,312.6,0,303.4,0l0,0H16.6l0,0C7.4,0,0,7.1,0,15.8C0,19.1,1.1,22.2,2.9,24.7z"/>
