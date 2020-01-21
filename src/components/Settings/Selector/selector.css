@@ -1,4 +1,6 @@
 .selector {
+  --radius: 7.5px;
+
   display: grid;
   grid-template: repeat(2, min-content) / min-content;
   row-gap: 3.5px;
@@ -23,16 +25,16 @@
 .selector label {
   color: var(--font-color-1);
   font-size: 0.6rem;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 0.15em 0.45em;
   cursor: pointer;
   transition: background 0.1s linear;
 }
 
 .selector > div {
-  padding: 0.15em 0.2em;
+  padding: 0;
   border: 1px solid var(--color-2);
-  border-radius: 7.5px;
+  border-radius: var(--radius);
 
   display: grid;
   grid-auto-flow: column;
