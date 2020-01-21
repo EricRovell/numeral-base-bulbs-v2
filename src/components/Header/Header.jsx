@@ -1,3 +1,5 @@
+import { useStateContext } from "components/StateProvider/Context"; 
+
 import ExpressSettings from "components/Settings/ExpressSettings/ExpressSettings";
 
 import Link from "./Link.js";
@@ -5,21 +7,26 @@ import routes from "./routes.js";
 
 import style from "./header.css";
 
-const Routes = ({ routes }) => (
-  <nav className={style.navigation}>
-    {routes.map(route => (
-      <Link
-        href={route.path}
-        key={route.name["EN"]}
-        className={style.section}
-        activeClassName={style["section-active"]}>
-          <a title={route.name["EN"]}>
-            {route.name["EN"]}
-          </a>
-      </Link>
-    ))}
-  </nav>
-);
+const Routes = ({ routes }) => {
+
+  const [ { lang }, dispatch ] = useStateContext(); 
+
+  return (
+    <nav className={style.navigation}>
+      {routes.map(route => (
+        <Link
+          href={route.path}
+          key={route.name["EN"]}
+          className={style.section}
+          activeClassName={style["section-active"]}>
+            <a title={route.name[lang]}>
+              {route.name[lang]}
+            </a>
+        </Link>
+      ))}
+    </nav>
+  ); 
+};
 
 const Header = () => (
   <header className={style.header}>
