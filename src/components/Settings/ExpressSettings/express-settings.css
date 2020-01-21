@@ -8,7 +8,7 @@
   font-size: 0.75rem;
 }
 
-.express-settings input {
+.express-settings > input {
   display: none;
 }
 
@@ -22,11 +22,15 @@
   width: 50%;
   height: 50%;
   fill: var(--color-2);
+  transition: transform 0.15s ease-in;
 }
 
 .express-settings > input[type=checkbox]:checked ~ div {
   transform: scaleX(1);
-  pointer-events: initial;
+}
+
+.express-settings > input[type=checkbox]:checked ~ label svg {
+  transform: rotate(60deg);
 }
 
 /* Express Panel */
@@ -37,13 +41,29 @@
   top: 100%;
   right: 0%;
 
+  display: grid;
+  grid-template: min-content / 1fr;
+  grid-auto-rows: min-content;
+  grid-auto-columns: 1fr;
+  row-gap: 7.5px;
+
+  font-family: var(--font-main);
+
   width: 300px;
   height: 250px;
   border-radius: 5px;
-  background: var(--color-1);
+  background: var(--bg);
+  box-shadow: var(--shadow-3);
+  padding: 0.75em;
 
   transform: scaleX(0);
-  pointer-events: none;
   transform-origin: 100% 50%;
   transition: transform 0.25s ease-in-out;
+}
+
+.express-panel > h3 {
+  font-size: 0.65rem;
+  place-self: center;
+  color: var(--font-color-1-bright);
+  font-variant-position: "wght" 500;
 }
