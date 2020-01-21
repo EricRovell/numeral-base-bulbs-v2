@@ -7,7 +7,7 @@ import InputDigit from "./InputDigit";
 import style from "./base-selector.css";
 
 
-const BaseSelector = ({ base, text }) => {
+const BaseSelector = ({ base }) => {
 
   const [ { baseIn, baseOut }, dispatch ] = useStateContext();
   
@@ -20,7 +20,7 @@ const BaseSelector = ({ base, text }) => {
     <div className={style["base-selector"]}>
       <div>{/* I am a wrapper... */}</div>
       <Label text={"Base"} />
-      <Label text={text} />
+      <Label text={(base = "baseIn") ? "in" : "out"} />
       <Incrementor {...{
           actionType: 1,
           base,
