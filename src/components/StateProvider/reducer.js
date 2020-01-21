@@ -1,6 +1,14 @@
 export default (state, action) => {
   switch (action.type) {
 
+    // universal (careful)
+
+    case "setStateProperty": 
+      return {
+        ...state,
+        [action.property]: action.value
+      };
+
     // User Preferences
 
     case "setLanguage":
