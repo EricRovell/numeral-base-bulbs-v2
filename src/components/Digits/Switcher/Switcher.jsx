@@ -1,16 +1,35 @@
 import style from "./switcher.css";
 
-import { useStateContext } from "components/StateProvider/Context"; 
+import { useStateContext } from "components/StateProvider/Context";
 
-const Switcher = ({ increment, title }) => {
+const translation = {
+  maxDigitsAlert: {
+    "EN": "Sorry, the limit has been reached for the number of digits.",
+    "RU": "К сожалению, исчерпан лимит количества символов."
+  },
+  minDigitsAlert: {
+    "EN": "Sorry, there are no digits to be removed.",
+    "RU": "К сожалению, больше нет цифр."
+  },
+  addDigit: {
+    "EN": "Add a digit!",
+    "RU": "Добавить цифру!"
+  },
+  removeDigit: {
+    "EN": "Remove a digit!",
+    "RU": "Убрать цифру!"
+  }
+}
 
-  const [ { digits, digitsMin, digitsMax }, dispatch ] = useStateContext();
+const Switcher = ({ increment }) => {
+
+  const [ { lang, digits, digitsMin, digitsMax }, dispatch ] = useStateContext();
 
   const addDigits = () => {
     // prevent adding more digits than allowed
     if (increment === 1) {
       if (digits.length >= digitsMax) {
-        alert("Sorry, the limit has been reached for the number of digits.");
+        alert(translation.maxDigitsAlert[lang]);
         return;
       }
     }
@@ -18,7 +37,7 @@ const Switcher = ({ increment, title }) => {
     // prevent removing more digits than allowed
     if (increment === -1) {
       if (digits.length <= digitsMin) {
-        alert("Sorry, there are no digits to be removed");
+        alert(translation.minDigitsAlert[lang]);
         return;
       }
     }
@@ -30,7 +49,12 @@ const Switcher = ({ increment, title }) => {
   };
   
   return (
-    <div className={style.switcher} onClick={addDigits} title={title}>
+    <div
+      className={style.switcher}
+      onClick={addDigits}
+      title={(increment == 1)
+        ? translation.addDigit[lang]
+        : translation.removeDigit[lang]}>
       <div>
         <span></span>
       </div>      
