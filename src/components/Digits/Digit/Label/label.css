@@ -1,8 +1,20 @@
-.label > span {
+.label-container {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.label {
+  font-family: var(--font-digits);
+  color: var(--font-color-1);
+
   position: relative;
   font-size: 0.65rem;  
 
-  width: 65%;
+  width: calc(65%);
   user-select: none;
   place-self: center;
   text-align: center;
@@ -12,14 +24,37 @@
   text-overflow: ellipsis;
 }
 
-.label > span:empty {
-  /* for title to be displayed */
-  width: 100%;
-  height: 100%;
-}
-
 .label i {
   position: absolute;
   font-size: 0.45rem;
   top: -5%
+}
+
+/* "none" label */
+
+.label-none {
+  color: rgba(0, 0, 0, 0);
+  font-family: var(--font-main);
+  background: rgba(26, 31, 43, 0.25);
+  font-size: 0.55rem;
+}
+
+.label-none:hover {
+  opacity: 1;
+  color: var(--font-color-1);
+  background: rgb(26, 31, 43);
+  padding: 0 0.25em;
+  width: 65%;
+  /* height: 100%; */
+
+  /* display: grid;
+  align-items: center; */
+}
+
+.label-none-transparent {
+  background: transparent;
+}
+
+.label-none-transparent:hover {
+  background: transparent;
 }

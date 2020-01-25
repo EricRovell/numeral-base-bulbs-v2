@@ -22,7 +22,7 @@ const Label = ({ index, type }) => {
   };
 
   return (
-    <div className={style.label} onClick={handleClick}>
+    <div className={style["label-container"]} onClick={handleClick}>
       <LabelType {...{ mode, trueIndex }} />
     </div>
   );

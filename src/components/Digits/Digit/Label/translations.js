@@ -12,7 +12,7 @@ export default {
     "RU": "Индекс"
   },
   none: {
-    "EN": "Click me to set the label.",
-    "RU": "Кликни на меня, чтобы сменить надпись."
+    "EN": "Set label",
+    "RU": "Cменить надпись"
   },
 };
