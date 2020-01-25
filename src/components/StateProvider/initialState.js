@@ -3,7 +3,8 @@ export default {
   theme: "dark",
 
   digits: [0, 0, 0, 0, 0, 0, 0, 0],
-  representation: "symbol",  // bulb | bulb-realistic | numeral | char
+  representation: "symbol",  
+  mode: "symbol", // bulb | bulb-realistic | numeral | char
 
   digitsMin: 0,
   digitsMax: 16,
