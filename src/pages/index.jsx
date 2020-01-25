@@ -1,3 +1,5 @@
+import { useStateContext } from "components/StateProvider/Context";
+
 import LayoutMain from "components/Layout/Main/LayoutMain";
 
 import Digits from "components/Digits/Digits";
@@ -8,12 +10,14 @@ import Switcher from "components/Digits/Switcher/Switcher";
 import BaseSelector from "components/Settings/Base/BaseSelector";
 
 const HomePage = () => {
+
+  const [ { digits }, dispatch ] = useStateContext();
   
   return (
     <LayoutMain>
       <section>
         <Switcher increment={1} />
-        <Digits />
+        <Digits digits={digits} />
         <Switcher increment={-1} />
       </section>      
       <section>
