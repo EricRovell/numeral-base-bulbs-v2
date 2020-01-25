@@ -19,7 +19,6 @@ const NumberInput = () => {
       digits: digits,
       baseIn,
       baseOut,
-      representation: "numeral"
     }).join("");
 
     setValue(convertedValue);
