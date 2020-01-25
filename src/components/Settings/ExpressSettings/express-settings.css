@@ -38,7 +38,7 @@
 .express-panel {
   z-index: 10;
   position: absolute;
-  top: 100%;
+  top: 110%;
   right: 0%;
 
   display: grid;
