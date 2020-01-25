@@ -21,6 +21,8 @@ body {
 /* switch bulb styles */
 
 .switch {
+  /* transform: rotate(90deg); */
+
   --time: 0.7s;
 
   --height: 110px;
