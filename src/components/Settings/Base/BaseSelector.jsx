@@ -20,7 +20,7 @@ const BaseSelector = ({ base }) => {
     <div className={style["base-selector"]}>
       <div>{/* I am a wrapper... */}</div>
       <Label text={"Base"} />
-      <Label text={(base = "baseIn") ? "in" : "out"} />
+      <Label text={(base === "baseIn") ? "in" : "out"} />
       <Incrementor {...{
           actionType: 1,
           base,
