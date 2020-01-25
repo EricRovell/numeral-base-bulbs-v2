@@ -31,7 +31,7 @@ export default (state, action) => {
         ...state,
         digits: (action.value === 1)
           ? [ 0, ...state.digits]
-          : state.digits.slice(0, -1)
+          : state.digits.slice(1)
       };
 
     case "mutateDigit":
