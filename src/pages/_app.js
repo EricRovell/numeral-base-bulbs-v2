@@ -1,18 +1,30 @@
 import { StateProvider, initialState, reducer } from "components/StateProvider/Context";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Header from "components/Header/Header";
 import "style/global.css";
 
 import style from "style/pages/app.css";
 
+const Head = () => (
+  <Helmet>
+    <html lang="EN" theme="dark" />
+    <title>Numeral Base Bulbs 2</title>
+  </Helmet>
+);
+
 const MyApp = ({ Component, pageProps }) => {
+
   return (
-    <StateProvider {...{ initialState, reducer }}>
-      <div className={style.app}>
-        <Header />
-        <Component {...pageProps} />
-      </div>
-    </StateProvider>
+    <HelmetProvider>
+      <StateProvider {...{ initialState, reducer }}>
+        <div className={style.app}>
+          <Head />
+          <Header />
+          <Component {...pageProps} />
+        </div>
+      </StateProvider>
+    </HelmetProvider>
   )
 };
 
