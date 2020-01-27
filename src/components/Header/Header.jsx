@@ -1,5 +1,6 @@
 import { useStateContext } from "components/StateProvider/Context"; 
 
+import BulbLogo from "./BulbLogo/BulbLogo";
 import ExpressSettings from "components/Settings/ExpressSettings/ExpressSettings";
 
 import Link from "./Link.js";
@@ -30,6 +31,7 @@ const Routes = ({ routes }) => {
 
 const Header = () => (
   <header className={style.header}>
+    <BulbLogo />
     <h1>Numeral Base Bulbs 2</h1>
     <Routes routes={routes} />
     <ExpressSettings />
