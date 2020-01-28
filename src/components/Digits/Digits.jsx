@@ -1,24 +1,19 @@
 import { useStateContext } from "components/StateProvider/Context"; 
 
-import Symbolic from "./Symbolic/Symbolic";
-import BulbsSimple from "./Bulb/Simple/BulbsSimple";
-import BulbsModern from "./Bulb/Modern/BulbsModern";
+import Bulbs from "./Bulb/Bulbs";
+import Symbols from "./Symbol/Symbols";
 import EmptyState from "./EmptyState/EmptyState";
 
 import style from "./digits.css"
 
-const RenderDigits = ({ mode, digits, dispatch }) => {
-  if (!digits.length) {
-    return <EmptyState />;
-  }
+const RenderDigits = ({ mode, skin, digits, dispatch }) => {
+  if (!digits.length) return <EmptyState />;
 
   switch (mode) {
-    case "bulb-simple":
-      return <BulbsSimple digits={digits} dispatch={dispatch} />;
-    case "bulb-modern":
-      return <BulbsModern digits={digits} dispatch={dispatch} />
+    case "bulb":
+      return <Bulbs digits={digits} dispatch={dispatch} skin={skin} />
     case "symbol":
-      return <Symbolic digits={digits} />;
+      return <Symbols digits={digits} skin={skin} />;
     default:
       return <EmptyState />;
   }
@@ -26,11 +21,11 @@ const RenderDigits = ({ mode, digits, dispatch }) => {
 
 const Digits = ({ digits }) => {
 
-  const [ { mode }, dispatch ] = useStateContext();
+  const [ { mode, skin }, dispatch ] = useStateContext();
 
   return (
-    <div className={style.digits}>
-      <RenderDigits {...{ mode, digits, dispatch }} />
+    <div className={style.wrapper}>
+      <RenderDigits {...{ mode, digits, dispatch, skin }} />
     </div>    
   );
 };
