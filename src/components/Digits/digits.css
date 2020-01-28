@@ -1,4 +1,5 @@
-.digits {
+/* wrapps container to provide overflow effect */
+.wrapper {
   width: 100%;
   height: 100%;
   display: grid;
@@ -8,16 +9,31 @@
   overflow-y: visible;
 }
 
-.digits::-webkit-scrollbar {
+.wrapper::-webkit-scrollbar {
   height: 5px;
 }
 
-.digits::-webkit-scrollbar-track {
+.wrapper::-webkit-scrollbar-track {
   background: var(--color-3);
 }
 
-.digits::-webkit-scrollbar-thumb {
+.wrapper::-webkit-scrollbar-thumb {
   background: var(--color-2);
+}
+
+/* main grid container for digits */
+
+.container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(90px, 100px);
+  grid-auto-rows: minmax(100px, 250px);
+  place-self: center;
+  place-content: center;
+  column-gap: 20px;
+
+  height: 100%;
+  padding: 0 1.5em;
 }
 
 /* .digits::before {
