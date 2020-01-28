@@ -4,7 +4,8 @@ export default {
 
   digits: [0, 0, 0, 0, 0, 0, 0, 0],
   representation: "symbol",  
-  mode: "symbol", // bulb | bulb-realistic | numeral | char
+  mode: "symbol", // symbol
+  skin: "default",
 
   digitsMin: 0,
   digitsMax: 16,
