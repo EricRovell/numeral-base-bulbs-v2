@@ -1,4 +1,6 @@
-import { useStateContext } from "components/StateProvider/Context"; 
+import { useStateContext } from "components/StateProvider/Context";
+
+import Representation from "../Representation/Representation";
 
 import Selector from "../Selector/Selector";
 
@@ -14,7 +16,7 @@ const translation = {
 
 const ExpressSettings = () => {
 
-  const [ { lang, theme }, dispatch ] = useStateContext(); 
+  const [ { lang, theme, mode, skin }, dispatch ] = useStateContext(); 
 
   return (
     <div className={style["express-settings"]}>
@@ -30,7 +32,9 @@ const ExpressSettings = () => {
         <h3>{translation[lang]}</h3>
         <Selector {...{...langOptions, stateValue: lang, dispatch, lang }} />
         <Selector {...{...themeOptions, stateValue: theme, dispatch, lang }} />
+        <Representation {...{ mode, skin, dispatch }} />
       </div>
+      
     </div>
   );
 };
