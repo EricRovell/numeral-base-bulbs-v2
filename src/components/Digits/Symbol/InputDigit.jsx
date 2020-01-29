@@ -8,7 +8,7 @@ import style from "components/Number/number-input.css";
 
 const InputDigit = ({ index, value }) => {
 
-  const [ { representation, baseIn }, dispatch ] = useStateContext();
+  const [ { baseIn }, dispatch ] = useStateContext();
 
   const [ wrongInput, setWrongInput ] = useState(false);
   const regex = baseRegExp(baseIn);
@@ -31,15 +31,11 @@ const InputDigit = ({ index, value }) => {
     });
   };
 
-  const digit2char = () => {
-    if (representation !== "symbol") {
-      return value;
-    }
-
-    return (value > 9 && value <= 36)
+  const digit2char = () => (
+    (value > 9 && value <= 36)
       ? String.fromCharCode(value + 55)
       : value
-  };
+  );
 
   return (
     <input
