@@ -1,4 +1,5 @@
 import style from "./selector.css";
+import { Fragment } from "react";
 
 const Selector = ({ title, property, options, stateValue, dispatch, lang }) => {
 
@@ -15,7 +16,7 @@ const Selector = ({ title, property, options, stateValue, dispatch, lang }) => {
 
   const Options = ({ title, options, stateValue, setProperty }) => (
     options.map(option => (
-      <>
+      <Fragment key={option.label["EN"]}>
         <input
           type="radio"
           name={title["EN"]}
@@ -26,7 +27,7 @@ const Selector = ({ title, property, options, stateValue, dispatch, lang }) => {
         <label htmlFor={`radio-${option.label["EN"]}`}>
           {option.label[lang]}
         </label>
-      </>    
+      </Fragment>    
     ))
   );
 
