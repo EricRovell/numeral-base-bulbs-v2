@@ -3,7 +3,7 @@ export default {
   theme: "dark",
 
   digits: [0, 0, 0, 0, 0, 0, 0, 0],
-  representation: "symbol",  
+  //representation: "symbol",  
   mode: "symbol", // symbol
   skin: "default",
 
