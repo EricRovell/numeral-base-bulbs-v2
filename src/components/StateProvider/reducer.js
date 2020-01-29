@@ -63,6 +63,22 @@ export default (state, action) => {
         [action.label]: action.value
       };
 
+    // mode / skin
+    case "setMode": {
+      return {
+        ...state,
+        skin: "default",
+        mode: action.mode || "symbol"
+      }
+    }
+
+    case "setSkin": {
+      return {
+        ...state,
+        skin: action.skin || "default",
+      }
+    }
+
     default:
       return state;
   }
