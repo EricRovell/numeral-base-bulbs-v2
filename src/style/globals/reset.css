@@ -3,3 +3,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+}
+
+main::-webkit-scrollbar {
+  width: 7.5px;
+}
+
+main::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+main::-webkit-scrollbar-thumb {
+  background: var(--color-2);
+}
