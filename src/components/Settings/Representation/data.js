@@ -4,6 +4,7 @@ export const data = [
     skins: [
       "default",
       "modern",
+      "lamp",
     ],
   },
   {
