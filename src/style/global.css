@@ -5,3 +5,7 @@
 body {
   background: rgb(18, 21, 29);
 }
+
+:root {
+  scroll-behavior: smooth;
+}
