@@ -1,11 +1,13 @@
 import { useStateContext } from "components/StateProvider/Context";
+import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
 import translations from "./translations";
 
 import style from "./label.css";
 
 const LabelType = ({ mode, trueIndex }) => {
 
-  const [ { lang, baseIn, mode: representation }, dispatch ] = useStateContext();
+  const [ { lang }, _ ] = useStateContext();
+  const [ { baseIn, mode: representation }, dispatch ] = useStateSandbox();
   const title = translations[mode][lang];
 
   switch (mode) {

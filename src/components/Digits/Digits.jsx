@@ -1,4 +1,4 @@
-import { useStateContext } from "components/StateProvider/Context"; 
+import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
 
 import Bulbs from "./Bulb/Bulbs";
 import Symbols from "./Symbol/Symbols";
@@ -11,7 +11,7 @@ const RenderDigits = ({ mode, skin, digits, dispatch }) => {
 
   switch (mode) {
     case "bulb":
-      return <Bulbs digits={digits} dispatch={dispatch} skin={skin} />
+      return <Bulbs digits={digits} skin={skin} dispatch={dispatch} />
     case "symbol":
       return <Symbols digits={digits} skin={skin} />;
     default:
@@ -21,7 +21,7 @@ const RenderDigits = ({ mode, skin, digits, dispatch }) => {
 
 const Digits = ({ digits }) => {
 
-  const [ { mode, skin }, dispatch ] = useStateContext();
+  const [ { mode, skin }, dispatch ] = useStateSandbox();
 
   return (
     <div className={style.wrapper}>

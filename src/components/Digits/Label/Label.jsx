@@ -1,12 +1,14 @@
-import { useStateContext } from "components/StateProvider/Context";
+import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
+
 import LabelType from "./LabelType";
 import nextMode from "./nextMode";
 
 import style from "./label.css";
 
+
 const Label = ({ index, type }) => {
 
-  const [ { digits, labelsUp, labelsDown, baseIn }, dispatch ] = useStateContext();
+  const [ {digits, labelsUp, labelsDown }, dispatch ] = useStateSandbox();
   const trueIndex = digits.length - index - 1;
 
   const mode = (type === "labelsUp")

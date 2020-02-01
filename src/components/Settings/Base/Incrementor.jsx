@@ -1,8 +1,4 @@
-import { useStateContext } from "components/StateProvider/Context"; 
-
-const Incrementor = ({ actionType, base, value }) => {
-
-  const [ { baseMin, baseMax }, dispatch ] = useStateContext(); 
+const Incrementor = ({ actionType, base, value, baseMin, baseMax, dispatch }) => {
 
   const increment = () => {
 

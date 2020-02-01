@@ -1,4 +1,4 @@
-import { useStateContext } from "components/StateProvider/Context"; 
+import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
 import { useState, useEffect } from "react";
 
 import { baseConvert } from "utility/baseConvert";
@@ -8,7 +8,7 @@ import style from "./number-input.css";
 
 const NumberInput = () => {
 
-  const [ { digits, baseIn, baseOut }, dispatch ] = useStateContext();
+  const [ { digits, baseIn, baseOut }, dispatch ] = useStateSandbox();
 
   const [ value, setValue ] = useState(0);
   const [ wrongInput, setWrongInput ] = useState(false);

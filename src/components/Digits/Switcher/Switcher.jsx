@@ -1,6 +1,7 @@
 import style from "./switcher.css";
 
 import { useStateContext } from "components/StateProvider/Context";
+import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 
 const translation = {
   maxDigitsAlert: {
@@ -23,7 +24,8 @@ const translation = {
 
 const Switcher = ({ increment }) => {
 
-  const [ { lang, digits, digitsMin, digitsMax }, dispatch ] = useStateContext();
+  const [ { lang }, _ ] = useStateContext();
+  const [ { digits, digitsMin, digitsMax }, dispatch ] = useStateSandbox();
 
   const addDigits = () => {
     // prevent adding more digits than allowed

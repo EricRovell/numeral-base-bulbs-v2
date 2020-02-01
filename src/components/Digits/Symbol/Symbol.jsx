@@ -1,7 +1,5 @@
 import SymbolDefaultSkin from "./Skins/Default";
 
-/* import style from "./Simple/bulb-simple.css"; */
-
 const symbolSkin = props => ({
   "default": <SymbolDefaultSkin {...props} />
 });

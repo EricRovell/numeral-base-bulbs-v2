@@ -1,5 +1,3 @@
-import { useStateContext } from "components/StateProvider/Context"; 
-
 import Label from "./Label";
 import Incrementor from "./Incrementor";
 import InputDigit from "./InputDigit";
@@ -7,14 +5,7 @@ import InputDigit from "./InputDigit";
 import style from "./base-selector.css";
 
 
-const BaseSelector = ({ base }) => {
-
-  const [ { baseIn, baseOut }, dispatch ] = useStateContext();
-  
-  const bases = {
-    baseIn,
-    baseOut
-  };
+const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
 
   return (
     <div className={style["base-selector"]}>
@@ -24,12 +15,18 @@ const BaseSelector = ({ base }) => {
       <Incrementor {...{
           actionType: 1,
           base,
-          value: bases[base]        
+          value: bases[base]  ,
+          baseMin,
+          baseMax,
+          dispatch       
         }} />
       <Incrementor {...{
         actionType: -1,
         base,
-        value: bases[base] 
+        value: bases[base],
+        baseMin,
+        baseMax,
+        dispatch 
       }} />
       <InputDigit value={bases[base]} base={base} />
     </div>
