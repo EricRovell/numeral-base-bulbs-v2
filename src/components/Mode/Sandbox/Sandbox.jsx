@@ -1,3 +1,5 @@
+import { StateProvider, defaultState, reducer } from "./State/useStateSandbox";
+
 import LayoutMain from "components/Layout/Main/LayoutMain";
 import DigitsSection from "./Sections/DigitsSection";
 import NumberSection from "./Sections/NumberSection";
@@ -5,10 +7,12 @@ import NumberSection from "./Sections/NumberSection";
 const Sandbox = () => {
 
   return (
-    <LayoutMain>
-      <DigitsSection />
-      <NumberSection />
-    </LayoutMain>
+    <StateProvider {...{ defaultState, reducer }}>
+      <LayoutMain>        
+        <DigitsSection />
+        <NumberSection />        
+      </LayoutMain>
+    </StateProvider>
   );
 };
 
