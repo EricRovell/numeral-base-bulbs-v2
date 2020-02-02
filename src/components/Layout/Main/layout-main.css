@@ -4,4 +4,6 @@
   place-items: center;
   row-gap: 2em;
   padding: 2em;
+
+  position: relative;
 }
