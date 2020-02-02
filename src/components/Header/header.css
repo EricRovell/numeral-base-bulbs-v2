@@ -2,7 +2,7 @@
 
 .header {
   display: grid;
-  grid-template: 1fr / max-content 1fr max-content 50px;
+  grid-template: 1fr / max-content 1fr max-content;
   column-gap: 10px;
   place-items: center;
 

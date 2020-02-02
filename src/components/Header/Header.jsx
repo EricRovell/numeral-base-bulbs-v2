@@ -1,7 +1,5 @@
 import { useStateContext } from "components/StateProvider/Context"; 
 
-import ExpressSettings from "components/Settings/ExpressSettings/ExpressSettings";
-
 import Link from "./Link.js";
 import routes from "./routes.js";
 
@@ -32,7 +30,6 @@ const Header = () => (
   <header className={style.header}>
     <h1>Numeral Base Bulbs 2</h1>
     <Routes routes={routes} />
-    <ExpressSettings />
   </header>
 );
 
