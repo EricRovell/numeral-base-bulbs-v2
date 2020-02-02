@@ -1,0 +1,33 @@
+.basic {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+}
+
+.basic > input {
+  width: 50px;
+  height: 50px;
+  place-self: center;
+
+  text-align: center;
+  font-family: var(--font-digits);
+  font-size: 1.35rem;
+  color: var(--font-color-1);
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(142, 142, 142, 0.25);
+  transition: border 0.2s ease;
+}
+
+.basic > input:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(142, 142, 142, 0.75);
+}
+
+.basic > input::selection {
+  background: var(--color-3);
+  color: var(--color-3);
+}
