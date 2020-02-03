@@ -2,8 +2,9 @@
   --length: 65px;
   --bulb-size: 35px;
 
-  width: 100%;
-  height: 75%;
+  min-width: 80px;
+  max-width: 100px;
+  height: 85%;
 
   display: grid;
   place-items: start center;
