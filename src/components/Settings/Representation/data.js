@@ -11,6 +11,7 @@ export const data = [
     representation: "symbol",
     skins: [
       "default",
+      "basic",
     ],
   },
 ];
