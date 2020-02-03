@@ -6,6 +6,8 @@
   color: var(--font-color-1);
   background: var(--color-1);
   box-shadow: var(--shadow-1);
+  min-width: 80px;
+  max-width: 100px;
 
   font-family: var(--font-digits);
 }
@@ -84,9 +86,9 @@
   transform: rotate(0.5turn) scale(0.75);
 }
 
-/* Input/Digit */
-
-.digit input[type=text] {
+/* Input/Digit !non-binary */
+.digit input[type=text],
+.digit > div:nth-of-type(4) {
   grid-row: 3;
   grid-column: 1;  
 
@@ -101,6 +103,15 @@
 
   background: var(--color-3);
   box-shadow: var(--shadow-3);
+}
+
+/* binary switcher, looks the same */
+.digit > div:nth-of-type(4) {
+  display: grid;
+  place-items: center;
+  color: var(--font-color-digit);
+  user-select: none;
+  cursor: pointer;
 }
 
 /* border-radius */
