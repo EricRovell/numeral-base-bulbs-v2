@@ -6,13 +6,10 @@ const symbolSkin = props => ({
   "basic": <SymbolBasicSkin {...props} />
 });
 
-const Symbol = ({ skin, value, index }) => {
-
-  return (
-    < >
-      {symbolSkin({ value, index })[skin]}
-    </>
-  );
-};
+const Symbol = ({ skin, baseIn, value, index, dispatch }) => (
+  < >
+    {symbolSkin({ value, index, baseIn, dispatch })[skin]}
+  </>
+);
 
 export default Symbol;
