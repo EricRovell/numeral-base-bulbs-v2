@@ -3,8 +3,9 @@
 
   --time: 0.7s;
 
-  --height: 120px;
-  --width: calc(0.75 * var(--height));
+  --width: 90px;
+  --height: calc(4/3 * var(--width));
+  
 
   --bulb-size: calc(0.85 * var(--width));
   --bulb-center-size: calc(0.3 * var(--height));
