@@ -2,13 +2,11 @@ import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 import { useState } from "react"; 
 import { baseRegExp } from "utility/validateInput";
 
-
 import style from "components/Number/number-input.css";
 
 const InputDigit = ({ index, value }) => {
-
+  
   const [ { baseIn }, dispatch ] = useStateSandbox();
-
   const [ wrongInput, setWrongInput ] = useState(false);
   const regex = baseRegExp(baseIn);
   
