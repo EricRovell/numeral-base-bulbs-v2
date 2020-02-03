@@ -1,11 +1,13 @@
+import SwitchDigit from "../SwitchDigit";
 import InputDigit from "../InputDigit";
 
 import style from "./basic.css";
 
-export default ({ value, index }) => (
+export default (props) => (
   <div className={style.basic}>
-    <InputDigit
-      value={value}
-      index={index} />
+    {(props.baseIn === 2)
+      ? <SwitchDigit {...props} />
+      : <InputDigit {...props} />
+    }      
   </div>
 );
