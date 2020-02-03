@@ -1,10 +1,11 @@
 import Label from "../../Label/Label";
 import Incrementor from "../Incrementor/Incrementor";
+import SwitchDigit from "../SwitchDigit";
 import InputDigit from "../InputDigit";
 
 import style from "./default.css";
 
-export default ({ value, index }) => (
+export default ({ value, index, baseIn }) => (
   <div className={style.digit}>
     <div/>
     <Label
@@ -21,8 +22,13 @@ export default ({ value, index }) => (
       action: -1,
       index,
       value }} />
-    <InputDigit
-      value={value}
-      index={index} />
+    {(baseIn === 2)
+      ? <SwitchDigit
+          index={index}
+          value={value} />
+      : <InputDigit
+          baseIn={baseIn}
+          value={value}
+          index={index} />}
   </div>
 );
