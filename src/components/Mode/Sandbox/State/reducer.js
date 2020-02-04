@@ -47,6 +47,13 @@ export default (state, action) => {
         digits: action.digits
       };
 
+    case "normalizeDigits":
+      return {
+        ...state,
+        digits: state.digits.map(val =>
+          (val > state.baseIn - 1) ? state.baseIn - 1 : val)
+      };
+
     // base
 
     case "setBase":
