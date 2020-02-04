@@ -3,7 +3,7 @@ const Incrementor = ({ actionType, base, value, baseMin, baseMax, dispatch }) =>
   const increment = () => {
     // user increment max base value -> set the min value
     // user decrement min base value -> set the max value
-    // it allows cycling
+    // allows cycling
     // if the base value in allowed range -> compute next value    
     const nextValue = (actionType === 1 && value >= baseMax)
       ? baseMin
