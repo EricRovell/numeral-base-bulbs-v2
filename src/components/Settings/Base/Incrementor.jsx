@@ -1,30 +1,26 @@
 const Incrementor = ({ actionType, base, value, baseMin, baseMax, dispatch }) => {
 
   const increment = () => {
-
-    if (actionType === 1 && value >= baseMax) {
-      dispatch({
-        type: "setBase",
-        base,
-        value: baseMin
-      });
-      return;
-    }
-    
-    if (actionType === -1 && value <= baseMin) {
-      dispatch({
-        type: "setBase",
-        base,
-        value: baseMax
-      });
-      return;
-    }
-
+    // user increment max base value -> set the min value
+    // user decrement min base value -> set the max value
+    // it allows cycling
+    // if the base value in allowed range -> compute next value    
+    const nextValue = (actionType === 1 && value >= baseMax)
+      ? baseMin
+      : (actionType === -1 && value <= baseMin)
+      ? baseMax
+      : value + actionType;
+      
     dispatch({
       type: "setBase",
       base,
-      value: value + actionType,
+      value: nextValue
     });
+
+    // decrement digits' values if incompatible base selected
+    // example: user had digit "3" and changed to binary
+    //   -> shift to the max possible binary value
+    dispatch({ type: "normalizeDigits" });
   };
 
   return (
