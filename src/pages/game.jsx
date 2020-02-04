@@ -1,9 +1,9 @@
+import Sandbox from "components/Mode/Game/Game";
+
 const GamePage = () => {
-  
+
   return (
-    <main>
-      <div>Game Mode Page</div>
-    </main>
+    <Game />
   );
 };
 
