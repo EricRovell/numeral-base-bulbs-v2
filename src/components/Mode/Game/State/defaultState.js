@@ -1,11 +1,18 @@
 export default {
+  currentState: "settings",
+
+  attemps: 1,
+  won: 0,
+  lost: 0,
+
+  range: [0, 255],
+
   digits: [0, 0, 0, 0, 0, 0, 0, 0],
   mode: "symbol", // symbol
-  skin: "default",
+  skin: "basic",
 
   digitsMin: 0,
   digitsMax: 16,
-  digitsDefault: 8,
   
   baseIn: 2,
   baseOut: 10,
