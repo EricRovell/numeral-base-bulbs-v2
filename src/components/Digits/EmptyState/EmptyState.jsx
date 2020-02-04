@@ -1,10 +1,6 @@
 import style from "./empty-state.css";
 
-import { useStateContext } from "components/StateProvider/Context"; 
-
-const EmptyState = () => {
-
-  const [ { lang }, dispatch ] = useStateContext();
+const EmptyState = ({ dispatch }) => {
 
   const addDigit = () => {
     dispatch({
