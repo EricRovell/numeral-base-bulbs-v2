@@ -1,5 +1,6 @@
 import Digits from "components/Digits/Digits";
-import Switcher from "components/Digits/Switcher/Switcher";
+//import BaseSelector from "components/Settings/Base/BaseSelector";
+import BaseDigits from "components/Settings/BaseDigits/BaseDigits";
 
 import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 
@@ -7,13 +8,18 @@ import style from "./digits-section.css";
 
 const DigitsSection = () => {
 
-  const [ { digits } ] = useStateSandbox();
+  const [ { digits, baseIn, baseMin, baseMax }, dispatch ] = useStateSandbox();
 
   return (
     <section className={style["digits-section"]}>
-      <Switcher {...{ increment: 1 }} />
       <Digits digits={digits} />
-      <Switcher {...{ increment: -1 }} />
+      <BaseDigits {...{
+        base: "baseIn",
+        bases: { baseIn },
+        baseMin,
+        baseMax,
+        dispatch
+      }} />
     </section>
   );
 };
