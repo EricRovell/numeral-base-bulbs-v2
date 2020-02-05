@@ -28,6 +28,7 @@ const InputDigit = ({ base, value }) => {
 
   return (
     <input
+      title="Set the number's base"
       type="text"
       inputMode={"numeric"}
       className={(isValidInput) ? null : style["number-input"]}
