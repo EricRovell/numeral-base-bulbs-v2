@@ -11,13 +11,6 @@ const NumberSection = () => {
 
   return (
     <section className={style["number-section"]}>
-      <BaseSelector {...{
-        base: "baseIn",
-        bases: { baseIn, baseOut },
-        baseMin,
-        baseMax,
-        dispatch
-      }} />
       <Number />
       <BaseSelector {...{
         base: "baseOut",
