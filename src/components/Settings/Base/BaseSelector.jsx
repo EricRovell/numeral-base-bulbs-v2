@@ -1,6 +1,5 @@
-import Label from "./Label";
-import Incrementor from "./Incrementor";
-import InputDigit from "./InputDigit";
+import Incrementor from "../Base/Incrementor";
+import InputDigit from "../Base/InputDigit";
 
 import style from "./base-selector.css";
 
@@ -10,10 +9,8 @@ const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
   return (
     <div className={style["base-selector"]}>
       <div>{/* I am a wrapper... */}</div>
-      <Label text={"Base"} />
-      <Label text={(base === "baseIn") ? "in" : "out"} />
       <Incrementor {...{
-          actionType: 1,
+          actionType: -1,
           base,
           value: bases[base]  ,
           baseMin,
@@ -21,7 +18,7 @@ const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
           dispatch       
         }} />
       <Incrementor {...{
-        actionType: -1,
+        actionType: 1,
         base,
         value: bases[base],
         baseMin,
