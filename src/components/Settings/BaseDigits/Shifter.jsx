@@ -1,10 +1,10 @@
-import style from "./shifter.css";
-
 import { useStateContext } from "components/StateProvider/Context";
 import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
+
+import ShifterIcon from "./ShifterIcon";
 import translation from "./translation";
 
-const Switcher = ({ increment }) => {
+const Shifter = ({ increment }) => {
 
   const [ { lang }, _ ] = useStateContext();
   const [ { digits, digitsMin, digitsMax }, dispatch ] = useStateSandbox();
@@ -34,16 +34,13 @@ const Switcher = ({ increment }) => {
   
   return (
     <div
-      className={style.switcher}
       onClick={addDigits}
       title={(increment == 1)
         ? translation.addDigit[lang]
         : translation.removeDigit[lang]}>
-      <span>
-        {(increment === 1) ? "+1" : "-1"}
-      </span>    
+      <ShifterIcon />  
     </div>
   );
 };
 
-export default Switcher;
+export default Shifter;
