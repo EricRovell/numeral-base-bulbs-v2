@@ -2,6 +2,7 @@ import { useStateContext } from "components/StateProvider/Context";
 
 import Link from "./Link.js";
 import routes from "./routes.js";
+import HeaderLogo from "./HeaderLogo";
 
 import style from "./header.css";
 
@@ -28,7 +29,8 @@ const Routes = ({ routes }) => {
 
 const Header = () => (
   <header className={style.header}>
-    <h1>Numeral Base Bulbs 2</h1>
+    <HeaderLogo />
+    <h1>Numeral Base Bulbs 2</h1>    
     <Routes routes={routes} />
   </header>
 );
