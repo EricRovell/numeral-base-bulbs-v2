@@ -1,17 +1,24 @@
 import { StateProvider, initialState, reducer } from "components/StateProvider/Context";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
+import { useStateContext } from "components/StateProvider/Context";
+
 import Header from "components/Header/Header";
 import "style/global.css";
 
 import style from "style/pages/app.css";
 
-const Head = () => (
-  <Helmet>
-    <html lang="EN" theme="dark" />
-    <title>Numeral Base Bulbs 2</title>
-  </Helmet>
-);
+const Head = () => {
+
+  const [ { lang, theme } ] = useStateContext();
+  
+  return (
+    <Helmet>
+      <html lang={lang || "EN"} theme={theme || "dark"} />
+      <title>Numeral Base Bulbs 2</title>
+    </Helmet>
+  );
+};
 
 const MyApp = ({ Component, pageProps }) => {
 
