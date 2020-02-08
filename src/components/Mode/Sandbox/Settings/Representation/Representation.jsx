@@ -1,16 +1,17 @@
 import SettingsSection from "../Section";
 
 import { data } from "./data";
-import CheckboxSelect from "components/Settings/Controls/CheckboxSelect";
+import RadioWithOptions from "components/Settings/Controls/RadioWithOptions";
 
 const RepresentationForm = () => {
 
   return (
     <SettingsSection name={"Representation"}>
       {data.map(mode => (
-        <CheckboxSelect 
+        <RadioWithOptions 
           key={mode.representation}
-          data={mode}  
+          data={mode}
+          name={"representation-sandbox"}  
         />
       ))} 
     </SettingsSection>

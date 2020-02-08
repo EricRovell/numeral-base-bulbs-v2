@@ -1,11 +1,8 @@
-import Checkbox from "./Checkbox";
-import Select from "./Select";
-
-const CheckBoxSelect = ({ data }) => {
+const RadioWithOptions = ({ data, name }) => {
 
   return (
     < >
-      <input type="checkbox" />
+      <input type="radio" name={name} />
       <label>
         {data.representation}
       </label>
@@ -20,4 +17,4 @@ const CheckBoxSelect = ({ data }) => {
   );
 };
 
-export default CheckBoxSelect;
+export default RadioWithOptions;
