@@ -5,7 +5,6 @@ export default {
 
   digitsMin: 0,
   digitsMax: 16,
-  digitsDefault: 8,
   
   baseIn: 2,
   baseOut: 10,
