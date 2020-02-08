@@ -5,6 +5,45 @@
   display: grid;
   overflow-x: auto;
   overflow-y: visible;
+  position: relative;
+}
+
+/* .wrapper::before,
+.wrapper::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  top: 0;
+  pointer-events: none;
+}
+
+.wrapper::before {
+  left: 0;
+  background: linear-gradient(to left, transparent 75%, var(--bg));
+}
+
+.wrapper::after {  
+  right: 0;  
+  background: linear-gradient(to right, transparent 75%, var(--bg));
+} */
+
+/* main grid container for digits */
+
+.container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  grid-auto-rows: minmax(100px, 250px);
+  place-self: center;
+  place-content: center;
+  column-gap: 20px;
+
+  /* overflow: auto;
+  width: 100%; */
+
+  height: auto;
+  padding: 0.75em 1.5em;
 }
 
 /* mobile */
@@ -25,37 +64,11 @@
 
 }
 
-/* main grid container for digits */
+@media screen and (max-width: 768px) {
 
-.container {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: auto;
-  grid-auto-rows: minmax(100px, 250px);
-  place-self: center;
-  place-content: center;
-  column-gap: 20px;
+  /* .container {
+    place-self: initial;
+    place-content: initial;
+  } */
 
-  height: auto;
-  padding: 0.75em 1.5em;
 }
-
-/* .digits::before {
-  content: "";
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: linear-gradient(to left, transparent 75%, var(--bg));
-}
-
-.digits::after {
-  content: "";
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: linear-gradient(to right, transparent 75%, var(--bg));
-} */
