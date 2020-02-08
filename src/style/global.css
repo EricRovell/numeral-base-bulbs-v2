@@ -2,10 +2,11 @@
 @import "./globals/typography.css";
 @import "./globals/themes.css";
 
-body {
-  background: rgb(18, 21, 29);
-}
-
 :root {
   scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  transition: background 0.15s ease-in;
 }
