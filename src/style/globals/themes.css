@@ -1,6 +1,7 @@
 :root,
 :root[theme="dark"] {
-  --bg: rgb(28, 28, 33);
+  /* --bg: rgb(28, 28, 33); */
+  --bg: rgb(18, 21, 29);
   --color-1: rgb(46, 46, 51);
   --color-2: rgb(128, 128, 128);
   --color-3: rgb(209, 209, 209);
@@ -19,15 +20,18 @@
 
 :root[theme="light"] {
   --bg: rgb(222, 222, 222);
-  --color-1: rgb(205, 205, 205);
-  --color-2: rgb(222, 222, 222);
-  --color-3: rgb(245, 245, 245);
+  /* Hasklig */
+  /* --color-1: rgb(128, 128, 128);
+  --color-2: rgb(170, 170, 170);
+  --color-3: rgb(245, 245, 245); */
+  --color-1: #363434;
+  --color-2: #5C5757;
+  --color-3: #F5F5F5;
 
-  --font-color-1: rgb(71, 71, 71);
+  --font-color-1: rgb(77, 71, 71);
   --font-color-digit: rgb(45, 45, 50); /* ? */
 
   --shadow-1: 5px 5px 20px rgba(0, 0, 0, 0.34);
   --shadow-2: 0px 0px 10px rgba(0, 0, 0, 0.17);
   --shadow-3: 0px 0px 10px rgba(0, 0, 0, 0.30);
-
 }
