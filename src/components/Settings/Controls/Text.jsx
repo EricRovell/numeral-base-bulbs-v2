@@ -1,15 +1,15 @@
-const TextInput = ({ data }) => {
-
-  return (
-    < >
-      <label>{data.label}</label>
-      <input        
-        type="text"
-        name={data.label}
-        minLength={data.minLength}
-        maxLength={data.maxLength} />
-    </>
-  );
-};
+const TextInput = ({ data, value, name, handleInputChange }) => (
+  < >
+    <label>{data.label}</label>
+    <input        
+      type="text"
+      name={name}
+      defaultValue={value}
+      value={value}
+      minLength={data.minLength}
+      maxLength={data.maxLength}
+      onChange={handleInputChange} />
+  </>
+);
 
 export default TextInput;
