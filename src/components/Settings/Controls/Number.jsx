@@ -8,21 +8,20 @@ const DataList = ({ data, id }) => (
   </datalist>
 );
 
-const NumberSelect = ({ data, value, id }) => {
-
-  return (
-    < >
-      <label>{data.label}</label>
-      <input
-        list={id}
-        type="number"
-        defaultValue={value}
-        name={data.label}
-        min={data.min}
-        max={data.max} />
-      {(id) && <DataList data={data.datalist} id={id} />}
-    </>
-  );
-};
+const NumberSelect = ({ data, value, id, name, handleInputChange }) => (
+  < >
+    <label>{data.label}</label>
+    <input
+      list={id}
+      type="number"
+      name={name}
+      defaultValue={value}
+      value={value}
+      onChange={handleInputChange}
+      min={data.min}
+      max={data.max} />
+    {(id) && <DataList data={data.datalist} id={id} />}
+  </>
+);
 
 export default NumberSelect;
