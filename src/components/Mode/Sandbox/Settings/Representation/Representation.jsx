@@ -3,15 +3,19 @@ import SettingsSection from "../Section";
 import { data } from "./data";
 import RadioWithOptions from "components/Settings/Controls/RadioWithOptions";
 
-const RepresentationForm = () => {
+const RepresentationForm = ({ skin, mode, handleInputChange }) => {
 
   return (
     <SettingsSection name={"Representation"}>
-      {data.map(mode => (
+      {data.map(modeRepr => (
         <RadioWithOptions 
-          key={mode.representation}
-          data={mode}
-          name={"representation-sandbox"}  
+          key={modeRepr.representation}
+          data={modeRepr}
+          nameRadio={"mode"}
+          nameSelect={"skin"}
+          valueRadio={mode}
+          valueSelect={skin}
+          handleInputChange={handleInputChange}  
         />
       ))} 
     </SettingsSection>
