@@ -1,16 +1,28 @@
 import SettingsSection from "../Section";
 
-import { digits, minDigits, maxDigits } from "./data";
+import { defDigits, defMaxDigits, defMinDigits } from "./data";
 import TextInput from "components/Settings/Controls/Text";
 import NumberSelect from "components/Settings/Controls/Number";
 
-const DigitsForm = () => {
+const DigitsForm = ({ digits, digitsMin, digitsMax, handleInputChange }) => {
 
   return (
     <SettingsSection name={"Digits"}>
-      <NumberSelect data={minDigits} />
-      <NumberSelect data={maxDigits} />
-      <TextInput data={digits} /> 
+      <NumberSelect
+        name={"digitsMin"}
+        data={defMinDigits}
+        value={digitsMin}
+        handleInputChange={handleInputChange} />
+      <NumberSelect
+        name={"digitsMax"}
+        data={defMaxDigits}
+        value={digitsMax}
+        handleInputChange={handleInputChange} />
+      <TextInput
+        name={"digits"}
+        data={defDigits}
+        value={digits}
+        handleInputChange={handleInputChange} /> 
     </SettingsSection>
   );
 };
