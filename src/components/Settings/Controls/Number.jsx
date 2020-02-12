@@ -15,7 +15,6 @@ const NumberSelect = ({ data, value, id, name, handleInputChange }) => (
       list={id}
       type="number"
       name={name}
-      defaultValue={value}
       value={value}
       onChange={handleInputChange}
       min={data.min}
