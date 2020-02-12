@@ -4,7 +4,6 @@ const TextInput = ({ data, value, name, handleInputChange }) => (
     <input        
       type="text"
       name={name}
-      defaultValue={value}
       value={value}
       minLength={data.minLength}
       maxLength={data.maxLength}
