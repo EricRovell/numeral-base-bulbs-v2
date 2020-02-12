@@ -12,7 +12,6 @@ const RadioWithOptions = ({ data, nameRadio, nameSelect, valueRadio, valueSelect
     <select
       name={nameSelect}
       onChange={handleInputChange}
-      defaultValue={valueSelect}
       value={valueSelect}
       disabled={(data.representation !== valueRadio)}>
         {data.skins.map(option => (
