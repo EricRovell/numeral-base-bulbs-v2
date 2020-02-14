@@ -37,8 +37,9 @@ export default (state, action) => {
         ...state,
         [action.name]: validate(action.name, action.value, state)
       };
-
     
+    case "reset":
+      return action.state;  
 
     default:
       return state;
