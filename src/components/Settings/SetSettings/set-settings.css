@@ -1,0 +1,15 @@
+.set-settings {
+  display: grid;
+  grid-template: 1fr / repeat(2, max-content);
+  column-gap: 15px;
+  place-items: center;
+  place-content: center;
+
+  height: min-content;
+  width: max-content;
+  padding: 0 1em 1.25em 1em;
+}
+
+.set-settings button {
+  place-self: center;
+}

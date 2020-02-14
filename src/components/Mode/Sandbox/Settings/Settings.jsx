@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-import SetSettings from "./SetSettings/SetSettings";
+import SetSettings from "components/Settings/SetSettings/SetSettings";
 import Labels from "./Labels/Labels";
 import Base from "./Base/Base";
 import Digits from "./Digits/Digits";
@@ -17,35 +17,19 @@ const SettingsSandbox = () => {
   const [ state, dispatch ] = useReducer(validationReducer, defaultState);
 
   const handleInputChange = ({ target }) => {
-    console.log(target.name, target.value);
-
     dispatch({
       name: target.name,
       value: target.value 
     });
   };
 
-  const saveUserSettings = event => {
-    //event.preventDefault();
-    localStorage.setItem(
-      "SettingsSandbox",
-      JSON.stringify(state)
-    );
-  };
-
-  const resetSettings = event => {
-    //event.preventDefault();
-    localStorage.setItem(
-      "SettingsSandbox",
-      JSON.stringify(defaultState)
-    );
-  };
-
   return (    
     <form className={style.settings}>
       <SetSettings
-        resetSettings={resetSettings}
-        saveUserSettings={saveUserSettings} />
+        state={state}
+        defaultState={defaultState}
+        storageKey={"SettingsSandbox"}
+        dispatch={dispatch} />
       <Digits
         digits={state.digits}
         digitsMin={state.digitsMin}
