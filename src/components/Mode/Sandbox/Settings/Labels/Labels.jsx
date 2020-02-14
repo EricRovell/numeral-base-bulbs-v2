@@ -1,4 +1,4 @@
-import SettingsSection from "../Section";
+import SettingsSection from "components/Settings/Section";
 
 import { labelsUp, labelsDown } from "./data";
 import Select from "components/Settings/Controls/Select";
