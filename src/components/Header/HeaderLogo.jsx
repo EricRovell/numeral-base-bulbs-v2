@@ -6,8 +6,8 @@ const HeaderLogo = () => {
 
   const handleSwitch = () => {
     dispatch({
-      type: "setTheme",
-      theme: (theme === "dark")
+      name: "theme",
+      value: (theme === "dark")
         ? "light"
         : "dark"
     });
