@@ -1,83 +1,15 @@
 export default (state, action) => {
-  switch (action.type) {
+  switch (action.name) {
 
-    // universal (careful)
-
-    case "setStateProperty": 
+    case "lang":
+    case "theme": 
       return {
         ...state,
-        [action.property]: action.value
+        [action.name]: action.value
       };
 
-    // User Preferences
-
-    case "setLanguage":
-      return {
-        ...state,
-        [action.option]: action.language,
-      };  
-
-    case "setTheme":
-      return {
-        ...state,
-        theme: action.theme,
-      };
-
-
-    // Digits
-      
-    case "addDigit":
-      return {
-        ...state,
-        digits: (action.value === 1)
-          ? [ 0, ...state.digits]
-          : state.digits.slice(1)
-      };
-
-    case "mutateDigit":
-      return {
-        ...state,
-        digits: state.digits.map((val, i) =>
-          (i === action.index) ? action.value : val)
-      };
-
-    case "setDigits":
-      return {
-        ...state,
-        digits: action.digits
-      };
-
-    // base
-
-    case "setBase":
-      return {
-        ...state,
-        [action.base]: action.value
-      };
-
-    // labels
-
-    case "setLabel":
-      return {
-        ...state,
-        [action.label]: action.value
-      };
-
-    // mode / skin
-    case "setMode": {
-      return {
-        ...state,
-        skin: "default",
-        mode: action.mode || "symbol"
-      }
-    }
-
-    case "setSkin": {
-      return {
-        ...state,
-        skin: action.skin || "default",
-      }
-    }
+    case "reset":
+      return action.state;
 
     default:
       return state;
