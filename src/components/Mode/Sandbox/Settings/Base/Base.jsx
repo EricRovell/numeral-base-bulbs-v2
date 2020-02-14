@@ -1,4 +1,4 @@
-import SettingsSection from "../Section";
+import SettingsSection from "components/Settings/Section";
 
 import { dataBaseIn, dataBaseOut } from "./data";
 import NumberSelect from "components/Settings/Controls/Number";
