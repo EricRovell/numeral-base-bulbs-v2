@@ -1,4 +1,4 @@
-import SettingsSection from "../Section";
+import SettingsSection from "components/Settings/Section";
 
 import { defDigits, defMaxDigits, defMinDigits } from "./data";
 import TextInput from "components/Settings/Controls/Text";
