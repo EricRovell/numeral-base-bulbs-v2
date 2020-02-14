@@ -21,7 +21,7 @@ export default [
     },
   },
   {
-    path: "/settings",
+    path: "/settings?tab=globals&lang=EN",
     name: {
       "EN": "Settings",
       "RU": "Настройки",
