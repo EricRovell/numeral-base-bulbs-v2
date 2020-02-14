@@ -1,6 +1,6 @@
 import { useStateContext } from "components/StateProvider/Context"; 
 
-import Link from "./Link.js";
+import Tabs from "components/UI/Tabs/Tabs";
 import routes from "./routes.js";
 import HeaderLogo from "./HeaderLogo";
 
@@ -8,21 +8,13 @@ import style from "./header.css";
 
 const Routes = ({ routes }) => {
 
-  const [ { lang }, dispatch ] = useStateContext(); 
+  const [ { lang } ] = useStateContext(); 
 
   return (
     <nav className={style.navigation}>
-      {routes.map(route => (
-        <Link
-          href={route.path}
-          key={route.name["EN"]}
-          className={style.section}
-          activeClassName={style["section-active"]}>
-            <a title={route.name[lang]}>
-              {route.name[lang]}
-            </a>
-        </Link>
-      ))}
+      <Tabs
+        routes={routes}
+        lang={lang} />
     </nav>
   ); 
 };
