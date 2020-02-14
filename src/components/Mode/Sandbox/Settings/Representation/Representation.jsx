@@ -1,4 +1,4 @@
-import SettingsSection from "../Section";
+import SettingsSection from "components/Settings/Section";
 
 import { data } from "./data";
 import RadioWithOptions from "components/Settings/Controls/RadioWithOptions";
