@@ -4,7 +4,7 @@ const RadioWithOptions = ({ data, nameRadio, nameSelect, valueRadio, valueSelect
       type="radio"
       name={nameRadio}
       value={data.representation}
-      defaultChecked={(data.representation === valueRadio)}
+      checked={(data.representation === valueRadio)}
       onChange={handleInputChange} />
     <label>
       {data.representation}
