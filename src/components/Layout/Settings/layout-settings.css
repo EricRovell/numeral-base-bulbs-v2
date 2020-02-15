@@ -5,7 +5,7 @@
     minmax(auto, 60ch)
     minmax(0.1rem, 1fr);
   grid-template-rows: min-content;
-  row-gap: 15px;
+  row-gap: 30px;
   max-width: 100%;
   width: 100%;
   height: 100%;
@@ -18,20 +18,62 @@
   overflow-y: auto;
 }
 
+/* side-columns are not for content */
 .layout-settings > * {
   grid-column: 2;
 }
 
-/* tabs */
-.layout-settings > div:first-child {
+.layout-settings > form {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  grid-template-rows: 60px;
-  place-items: center;
+  grid-auto-rows: min-content;
+  row-gap: 20px;
+  font-family: var(--font-main);
+}
 
+/* FORMS */
+
+.layout-settings > form input,
+.layout-settings > form select {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-variation-settings: "wght" 650;
+  font-family: inherit;
+}
+
+.layout-settings > form > label {
+  user-select: none;
+  font-size: 0.7rem;
+}
+
+/* .layout-settings > form span {
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid rgba(192, 192, 192, 0.25);
-  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s linear;
+} */
+
+.layout-settings > form input[type=radio] {
+  display: none;
+}
+
+.layout-settings > form input[type=radio]:checked ~ span {
+  background: var(--color-3);
+}
+
+/* number/text */
+
+.layout-settings > form input[type=number],
+.layout-settings > form input[type=text] {
+  padding: 0.35em 0.75em;
+}
+
+/* select */
+
+.layout-settings > form select:disabled {
+  opacity: 0.5;
+}
+
+.layout-settings > form select {
+  padding: 0.1em 0.2em;
 }
