@@ -1,15 +1,21 @@
 .set-settings {
   display: grid;
-  grid-template: 1fr / repeat(2, max-content);
+  grid-template: 1fr / 1fr 1fr;
   column-gap: 15px;
   place-items: center;
   place-content: center;
+  place-self: center;
 
   height: min-content;
   width: max-content;
-  padding: 0 1em 1.25em 1em;
+  padding-bottom: 10px;
+
+  font-size: 0.65rem;
 }
 
 .set-settings button {
   place-self: center;
+  border: none;
+  box-shadow: none; 
+  cursor: pointer;
 }
