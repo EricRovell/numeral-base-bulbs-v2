@@ -1,39 +1,8 @@
-.settings {
-  display: grid;
-  grid-auto-rows: min-content;
-  row-gap: 20px;
+/* representation should have 3 columns */ 
+
+.settings > div:nth-of-type(4) input[type=radio] {
+  display: block;
 }
-
-.settings > div {
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: max-content min-content;
-  grid-auto-rows: min-content;
-  place-items: center start;
-  row-gap: 7.5px;
-  column-gap: 12.5px;
-
-  border: 1px solid var(--color-1);
-  box-shadow: var(--shadow-3);
-  border-radius: 5px;  
-  padding: 0.75em 1.5em;
-  color: var(--font-color-1);
-}
-
-.settings > div header {
-  grid-column: span 2;
-  font-size: 0.8rem;
-  color: var(--font-color-1-bright);
-  font-variation-settings: "wght" 650;
-  user-select: none;
-}
-
-.settings label {
-  user-select: none;
-  font-size: 0.7rem;
-}
-
-/* checkbox-select */ 
 
 .settings > div:nth-of-type(4) {
   grid-template-columns: min-content max-content min-content;
@@ -42,33 +11,3 @@
 .settings > div:nth-of-type(4) header {
   grid-column: span 3;
 }
-
-/*  --- */
-
-.settings input {
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  font-family: var(--font-main);
-  font-variation-settings: "wght" 650;
-}
-
-.settings input[type=number],
-.settings input[type=text] {
-  padding: 0.35em 0.75em;
-}
-
-.settings select:disabled {
-  opacity: 0.5;
-}
-
-/* Buttons */
-
-.settings > div:first-child {
-  border: none;
-  box-shadow: none;  
-  grid-template: 1fr / 1fr 1fr;
-  place-self: center;
-  width: max-content;
-}
-
