@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import useUserSettingsReducer from "components/Settings/useUserSettings/useUserSettingsReducer";
 
 import initialState from "../initialState";
 import reducer from "../reducer";
@@ -14,7 +14,11 @@ import selectStyle from "./select-style.css";
 
 const SettingsGlobal = () => {
 
-  const [ state, dispatch ] = useReducer(reducer, initialState);
+  const [ state, dispatch, isLoading ] = useUserSettingsReducer({
+    defaultState: initialState,
+    reducer,
+    itemKey: "SettingsGlobal"
+  });
 
   const handleInputChange = ({ target }) => {
     dispatch({
@@ -23,7 +27,7 @@ const SettingsGlobal = () => {
     });
   };
 
-  return (    
+  return !isLoading && (    
     <form>
       <SetSettings
         state={state}
@@ -49,5 +53,15 @@ const SettingsGlobal = () => {
     </form>    
   );
 };
+
+/* SettingsGlobal.getInitialProps = async (context) => {
+  const userState = JSON.parse(
+    localStorage.getItem("SettingsGlobal")
+  );
+
+  return {
+    userState
+  };
+}; */
 
 export default SettingsGlobal;
