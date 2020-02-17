@@ -3,8 +3,6 @@ import style from "./set-settings.css";
 
 const SetSettings = ({ state, defaultState, storageKey, dispatch }) => {
 
-  console.log(storageKey);
-
   const saveUserSettings = () => {
     localStorage.setItem(
       storageKey,
