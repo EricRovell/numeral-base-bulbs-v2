@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 
-export default function useUserSettings(item) {
+export default function useUserSettings(state, item) {
   // item: localStorage item key, string
   const [ isLoading, setIsLoading ] = useState(true);
-  const [ userSettings, setUserSettings ] = useState(null);
+  const [ storageState, setStorageState ] = useState(null);
 
   useEffect(() => {
-    setUserSettings(JSON.parse(
+    setStorageState(JSON.parse(
       localStorage.getItem(item)
     ));
+
     setIsLoading(false);
   }, []);
 
-  return [ isLoading, userSettings ];
+  return [ { ...state, ...storageState }, isLoading ]
 }
