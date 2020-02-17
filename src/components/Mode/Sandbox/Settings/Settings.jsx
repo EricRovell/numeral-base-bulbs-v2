@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import useUserSettingsReducer from "components/Settings/useUserSettings/useUserSettingsReducer";
 
 import SetSettings from "components/Settings/SetSettings/SetSettings";
 import Labels from "./Labels/Labels";
@@ -14,7 +14,11 @@ import style from "./settings.css";
 
 const SettingsSandbox = () => {
 
-  const [ state, dispatch ] = useReducer(validationReducer, defaultState);
+  const [ state, dispatch, isLoading ] = useUserSettingsReducer({
+    defaultState,
+    reducer: validationReducer,
+    itemKey: "SettingsSandbox"
+  });
 
   const handleInputChange = ({ target }) => {
     dispatch({
@@ -23,7 +27,7 @@ const SettingsSandbox = () => {
     });
   };
 
-  return (    
+  return !isLoading && (    
     <form className={style.settings}>
       <SetSettings
         state={state}
