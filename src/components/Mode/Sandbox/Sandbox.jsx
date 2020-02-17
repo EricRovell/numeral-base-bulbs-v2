@@ -12,22 +12,23 @@ import ExpressSettings from "components/Settings/ExpressSettings/ExpressSettings
 
 const Sandbox = () => {
 
-  const [ isLoading, userSettings ] = useUserSettings("SettingsSandbox");
+  const [ state, isLoading ] = useUserSettings(defaultState, "SettingsSandbox");
 
   if (isLoading) {
     return <Loader />
   }
 
-  return !isLoading &&
+  return !isLoading && (
     <StateProvider
-    defaultState={{...defaultState, ...userSettings}}
-    reducer={reducer}>
-      <LayoutMain>        
-        <DigitsSection />
-        <NumberSection />
-        <ExpressSettings />        
-      </LayoutMain>
-    </StateProvider>  
+      defaultState={state}
+      reducer={reducer}>
+        <LayoutMain>        
+          <DigitsSection />
+          <NumberSection />
+          <ExpressSettings />        
+        </LayoutMain>
+    </StateProvider>
+  );
 };
 
 export default Sandbox;
