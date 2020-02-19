@@ -1,9 +1,12 @@
+import LayoutArticle from "components/Layout/Article/LayoutArticle";
+import Temp from "tutorial/welcome.mdx";
+
 const TutorialPage = () => {
-  
+
   return (
-    <main>
-      <div>Tutorial Page</div>
-    </main>
+    <LayoutArticle>
+      <Temp />
+    </LayoutArticle>
   );
 };
 
