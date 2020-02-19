@@ -23,14 +23,3 @@
 .layout-article > * {
   grid-column: 2;
 }
-
-/* Article */
-
-.layout-article ul {
-  text-decoration: none;
-  list-style: none;
-}
-
-.layout-article a {
-  color: var(--font-color-1-bright);
-}
