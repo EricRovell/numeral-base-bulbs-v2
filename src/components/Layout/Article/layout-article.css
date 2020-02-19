@@ -1,0 +1,36 @@
+.layout-article {
+  display: grid;
+  grid-template-columns: 
+    minmax(0.1rem, 1fr)
+    minmax(auto, 60ch)
+    minmax(0.1rem, 1fr);
+  grid-auto-rows: min-content;
+  row-gap: 1em;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 2.5em 2em;
+
+  font-family: var(--font-main);
+  font-size: 0.65rem;
+  color: var(--font-color-1);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* side-columns are not for content */
+.layout-article > * {
+  grid-column: 2;
+}
+
+/* Article */
+
+.layout-article ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+.layout-article a {
+  color: var(--font-color-1-bright);
+}
