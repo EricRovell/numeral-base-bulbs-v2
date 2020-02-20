@@ -4,7 +4,7 @@ import Tabs from "components/UI/Tabs/Tabs";
 import routes from "./routes.js";
 import HeaderLogo from "./HeaderLogo";
 
-import style from "./header.css";
+import style from "./header.module.css";
 
 const Routes = ({ routes }) => {
 

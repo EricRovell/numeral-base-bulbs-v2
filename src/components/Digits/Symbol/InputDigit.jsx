@@ -2,7 +2,7 @@ import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 import { useState } from "react"; 
 import { baseRegExp } from "utility/validateInput";
 
-import style from "components/Number/number-input.css";
+import style from "components/Number/number-input.module.css";
 
 const InputDigit = ({ index, value }) => {
   

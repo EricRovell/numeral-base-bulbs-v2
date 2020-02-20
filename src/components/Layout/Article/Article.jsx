@@ -1,4 +1,4 @@
-import style from "./article.css";
+import style from "./article.module.css";
 
 const Article = ({ children }) => (
   <article className={style.article}>

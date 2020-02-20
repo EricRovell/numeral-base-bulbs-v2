@@ -1,5 +1,5 @@
 import Bulb from "./Bulb";
-import style from "../digits.css";
+import style from "../digits.module.css";
 
 const Bulbs = ({ digits, skin, dispatch }) => (
   <div className={style.container}>

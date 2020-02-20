@@ -4,7 +4,7 @@ import BaseDigits from "components/Settings/BaseDigits/BaseDigits";
 
 import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 
-import style from "./digits-section.css";
+import style from "./digits-section.module.css";
 
 const DigitsSection = () => {
 

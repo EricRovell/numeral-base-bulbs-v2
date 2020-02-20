@@ -4,7 +4,7 @@ import Bulbs from "./Bulb/Bulbs";
 import Symbols from "./Symbol/Symbols";
 import EmptyState from "./EmptyState/EmptyState";
 
-import style from "./digits.css"
+import style from "./digits.module.css"
 
 const renderDigits = (props) => ({
   "bulb": <Bulbs {...props} />,

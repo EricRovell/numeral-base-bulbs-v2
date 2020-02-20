@@ -1,5 +1,5 @@
 import Link from "./Link";
-import style from "./tabs.css";
+import style from "./tabs.module.css";
 
 const Tabs = ({ routes, lang }) => {
 

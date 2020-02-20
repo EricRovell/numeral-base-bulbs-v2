@@ -3,7 +3,7 @@ import Incrementor from "../Incrementor/Incrementor";
 import SwitchDigit from "../SwitchDigit";
 import InputDigit from "../InputDigit";
 
-import style from "./default.css";
+import style from "./default.module.css";
 
 export default ({ value, index, baseIn }) => (
   <div className={style.digit}>

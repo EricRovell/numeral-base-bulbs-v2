@@ -1,4 +1,4 @@
-import style from "./default.css";
+import style from "./default.module.css";
 
 export default ({ value, handleSwitch }) => (
   <label className={style.default}>

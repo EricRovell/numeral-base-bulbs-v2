@@ -3,7 +3,7 @@ import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 import LabelType from "./LabelType";
 import nextMode from "./nextMode";
 
-import style from "./label.css";
+import style from "./label.module.css";
 
 
 const Label = ({ index, type }) => {

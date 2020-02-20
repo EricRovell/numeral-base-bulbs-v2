@@ -1,5 +1,5 @@
 import Symbol from "./Symbol";
-import style from "../digits.css";
+import style from "../digits.module.css";
 
 const Symbols = ({ digits, skin, baseIn, dispatch }) => (
   <div className={style.container}>

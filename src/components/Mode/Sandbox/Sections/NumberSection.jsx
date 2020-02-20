@@ -3,7 +3,7 @@ import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 import Number from "components/Number/Number";
 import BaseSelector from "components/Settings/Base/BaseSelector";
 
-import style from "./number-section.css";
+import style from "./number-section.module.css";
 
 const NumberSection = () => {
 

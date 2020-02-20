@@ -2,7 +2,7 @@ import { useStateContext } from "components/StateProvider/Context";
 import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
 import translations from "./translations";
 
-import style from "./label.css";
+import style from "./label.module.css";
 
 const LabelType = ({ mode, trueIndex }) => {
 

@@ -9,7 +9,7 @@ import Representation from "./Representation/Representation";
 import defaultState from "../State/defaultState";
 import validationReducer from "./reducerValidate";
 
-import style from "./settings.css";
+import style from "./settings.module.css";
 
 
 const SettingsSandbox = () => {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from "./button-with-message.css";
+import style from "./button-with-message.module.css";
 
 const Button = ({ title, action, handleClick }) => {
 

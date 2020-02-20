@@ -6,8 +6,8 @@ import LayoutSettings from "components/Layout/Settings/LayoutSettings";
 import SettingsGlobal from "components/StateProvider/SettingsGlobal/SettingsGlobal";
 import SettingsSandbox from "components/Mode/Sandbox/Settings/Settings";
 
-import style from "style/pages/settings.css";
-import styleTabs from "components/Tabs/tabs-settings.css";
+import style from "style/pages/settings.module.css";
+import styleTabs from "components/Tabs/tabs-settings.module.css";
 
 const routes = {
   name: "settings-tabs",

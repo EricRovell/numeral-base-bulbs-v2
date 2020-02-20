@@ -1,4 +1,4 @@
-import style from "./selector.css";
+import style from "./selector.module.css";
 import { Fragment } from "react";
 
 const Selector = ({ title, property, options, stateValue, dispatch, lang }) => {

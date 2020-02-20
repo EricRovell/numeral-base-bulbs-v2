@@ -1,4 +1,4 @@
-import style from "./lamp.css";
+import style from "./lamp.module.css";
 
 export default ({ value, index, handleSwitch }) => (
   <div className={style.lamp}>

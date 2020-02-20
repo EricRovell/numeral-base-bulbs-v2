@@ -1,4 +1,4 @@
-import style from "./number.css";
+import style from "./number.module.css";
 
 import NumberInput from "./NumberInput";
 

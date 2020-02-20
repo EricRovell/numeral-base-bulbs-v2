@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { baseConvert } from "utility/baseConvert";
 import { baseRegExp } from "utility/validateInput";
 
-import style from "./number-input.css";
+import style from "./number-input.module.css";
 
 const NumberInput = () => {
 

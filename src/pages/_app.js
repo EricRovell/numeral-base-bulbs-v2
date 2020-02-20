@@ -6,7 +6,7 @@ import { useStateContext } from "components/StateProvider/Context";
 import Header from "components/Header/Header";
 import "style/global.css";
 
-import style from "style/pages/app.css";
+import style from "style/pages/app.module.css";
 
 const Head = () => {
 

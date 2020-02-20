@@ -1,5 +1,5 @@
 import ButtonWithMessage from "components/Settings/Controls/ButtonWithMessage/ButtonWithMessage";
-import style from "./set-settings.css";
+import style from "./set-settings.module.css";
 
 const SetSettings = ({ state, defaultState, storageKey, dispatch }) => {
 

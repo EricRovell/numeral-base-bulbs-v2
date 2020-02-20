@@ -8,7 +8,7 @@ import Selector from "../Selector/Selector";
 import langOptions from "../Parameters/Language/data";
 import themeOptions from "../Parameters/Theme/data";
 
-import style from "./express-settings.css";
+import style from "./express-settings.module.css";
 
 const translation = {
   "EN": "Express Settings",

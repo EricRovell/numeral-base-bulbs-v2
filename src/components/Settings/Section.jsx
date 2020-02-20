@@ -1,4 +1,4 @@
-import style from "./section.css";
+import style from "./section.module.css";
 
 const SettingsSection = ({ children, name }) => (
   <div className={style.section}>

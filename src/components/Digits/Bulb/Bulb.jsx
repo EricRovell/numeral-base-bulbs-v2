@@ -4,7 +4,7 @@ import BulbDefaultSkin from "./Skins/Default";
 import BulbModernSkin from "./Skins/Modern";
 import BulbLampSkin from "./Skins/Lamp";
 
-import style from "./bulb.css";
+import style from "./bulb.module.css";
 
 const bulbSkin = props => ({
   "default": <BulbDefaultSkin {...props} />,

@@ -2,7 +2,7 @@ import SelectSkin from "./SelectSkin";
 
 import { data } from "./data";
 
-import style from "./representation.css";
+import style from "./representation.module.css";
 
 const RepresentationSelect = ({ mode, skin, dispatch }) => {
 

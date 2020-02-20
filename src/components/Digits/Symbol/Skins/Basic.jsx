@@ -1,7 +1,7 @@
 import SwitchDigit from "../SwitchDigit";
 import InputDigit from "../InputDigit";
 
-import style from "./basic.css";
+import style from "./basic.module.css";
 
 export default (props) => (
   <div className={style.basic}>

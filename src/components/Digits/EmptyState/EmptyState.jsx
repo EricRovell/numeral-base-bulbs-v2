@@ -1,4 +1,4 @@
-import style from "./empty-state.css";
+import style from "./empty-state.module.css";
 
 const EmptyState = ({ dispatch }) => {
 

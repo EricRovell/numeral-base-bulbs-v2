@@ -9,7 +9,7 @@ import SettingsSection from "components/Settings/Section";
 
 import { lang, theme } from "./data";
 
-import selectStyle from "./select-style.css";
+import selectStyle from "./select-style.module.css";
 
 
 const SettingsGlobal = () => {

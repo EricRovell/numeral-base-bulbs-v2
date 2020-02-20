@@ -1,4 +1,4 @@
-import style from "./layout-main.css";
+import style from "./layout-main.module.css";
 
 const LayoutMain = ({ children }) => (
   <main className={style["layout-main"]}>

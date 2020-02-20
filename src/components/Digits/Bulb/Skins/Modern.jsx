@@ -1,4 +1,4 @@
-import style from "./modern.css";
+import style from "./modern.module.css";
 
 export default ({ value, index, handleSwitch }) => (
   <div className={style.switch} title={"modern-bulb"}>

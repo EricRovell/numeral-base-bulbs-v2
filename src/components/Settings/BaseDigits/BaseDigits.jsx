@@ -2,7 +2,7 @@ import Incrementor from "../Base/Incrementor";
 import InputDigit from "../Base/InputDigit";
 import Shifter from "./Shifter";
 
-import style from "./base-digits.css";
+import style from "./base-digits.module.css";
 
 const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
 

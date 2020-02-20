@@ -1,7 +1,7 @@
 import Incrementor from "../Base/Incrementor";
 import InputDigit from "../Base/InputDigit";
 
-import style from "./base-selector.css";
+import style from "./base-selector.module.css";
 
 
 const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
