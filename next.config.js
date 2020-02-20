@@ -1,15 +1,9 @@
 const path = require("path");
-const withCSS = require("@zeit/next-css");
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/
 });
 
-module.exports = withMDX(withCSS({
-  cssModules: true,
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: "[local]___[hash:base64:5]",
-  },
+module.exports = withMDX({
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
 
   webpack: (config, options) => {
@@ -21,4 +15,4 @@ module.exports = withMDX(withCSS({
 
     return config;
   },
-}));
+});
