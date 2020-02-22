@@ -1,18 +1,25 @@
-export default {
-  "/": {
-    title: "Welcome to Numeral Base Bulbs!",
-    mdx: "./welcome.mdx",
+// Landing
+import TutorialLanding from "./welcome.mdx";
+// Bases
+import NumeralBases from "./numeral-bases.mdx";
+import NonPositionalBases from "./non-positional.mdx";
+
+export default () => ({
+  // tutorial's landing page
+  "ru": {
+    title: "Welcome to the Numeral Base Bulbs!",
+    mdx: <TutorialLanding />,
   },
   // bases section
-  "/bases": {
+  "ru/bases": {
     title: "Let's talk about bases and their types",
-    mdx: "./bases/numeral-bases.mdx",
+    mdx: <NumeralBases />,
   },
-  "/bases/non-positional": {
+  "ru/bases/non-positional": {
     title: "Non-positional numeral bases",
-    path: "./bases/non-positional.mdx",
+    mdx: <NonPositionalBases />,
   },
-  "/bases/positional": {
+  /* "/bases/positional": {
     title: "Positional numeral bases",
     mdx: "./bases/positional.mdx",
   },
@@ -28,5 +35,5 @@ export default {
   // How to use this App
   "/app/sandbox": "Sandbox Tutorial",
   "/app/game": "Game Mode Tutorial",
-  "/app/settings": "User Preferences Tutorial",
-};
+  "/app/settings": "User Preferences Tutorial", */
+});
