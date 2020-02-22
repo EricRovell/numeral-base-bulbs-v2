@@ -1,16 +1,49 @@
 .article {
   display: grid;
   grid-auto-rows: min-content;
-  row-gap: 0.5em;
+  row-gap: 0.6em;
 
   font-family: var(--font-main);
   font-size: 0.7rem;
   line-height: 1.15;
 }
 
+.article h1 {
+  position: relative;
+  width: max-content;
+  place-self: center;
+  margin-bottom: 0.5em;
+  color: var(--font-color-1-bright);
+}
+
+.article h1::before {
+  content: "§";
+  position: absolute;
+  left: -0.75em;
+}
+
+.article h2,
+.article h3 {
+  margin-top: 1em;
+  position: relative;
+}
+
+.article h2::before,
+.article h3::before {
+  content: "#";
+  position: absolute;
+  left: -1em;
+}
+
 .article ul {
   text-decoration: none;
-  list-style: none;
+  list-style: square;
+  padding-left: 1em;
+}
+
+.article ul li ~ li,
+.article ol li ~ li {
+  margin-top: 0.5em;
 }
 
 .article a {
