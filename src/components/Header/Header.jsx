@@ -3,6 +3,7 @@ import { useStateContext } from "components/StateProvider/Context";
 import Tabs from "components/UI/Tabs/Tabs";
 import routes from "./routes.js";
 import HeaderLogo from "./HeaderLogo";
+import HeaderTitle from "./HeaderTitle";
 
 import style from "./header.module.css";
 
@@ -22,7 +23,7 @@ const Routes = ({ routes }) => {
 const Header = () => (
   <header className={style.header}>
     <HeaderLogo />
-    <h1>Numeral Base Bulbs 2</h1>    
+    <HeaderTitle />  
     <Routes routes={routes} />
   </header>
 );
