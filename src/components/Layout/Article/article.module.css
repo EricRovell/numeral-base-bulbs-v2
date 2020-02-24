@@ -9,17 +9,10 @@
 }
 
 .article h1 {
-  position: relative;
   width: max-content;
   place-self: center;
   margin-bottom: 0.5em;
   color: var(--font-color-1-bright);
-}
-
-.article h1::before {
-  content: "§";
-  position: absolute;
-  left: -0.75em;
 }
 
 .article h2,
