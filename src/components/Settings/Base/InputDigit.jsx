@@ -1,11 +1,9 @@
-import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 import { useState } from "react";
 
 import style from "components/Number/number-input.module.css";
 
-const InputDigit = ({ base, value }) => {
+const InputDigit = ({ value, base, baseMin, baseMax, dispatch }) => {
 
-  const [ { baseMin, baseMax }, dispatch ] = useStateSandbox();
   const [ isValidInput, setIsValidInput ] = useState(true);
 
   const handleChange = event => {
