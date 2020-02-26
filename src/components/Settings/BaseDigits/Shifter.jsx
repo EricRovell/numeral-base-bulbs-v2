@@ -1,13 +1,11 @@
 import { useStateContext } from "components/StateProvider/Context";
-import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 
 import ShifterIcon from "./ShifterIcon";
 import translation from "./translation";
 
-const Shifter = ({ increment }) => {
+const Shifter = ({ increment, digits, digitsMin, digitsMax, dispatch }) => {
 
-  const [ { lang }, _ ] = useStateContext();
-  const [ { digits, digitsMin, digitsMax }, dispatch ] = useStateSandbox();
+  const [ { lang } ] = useStateContext();
 
   const addDigits = () => {
     // prevent adding more digits than allowed
