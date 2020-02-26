@@ -1,8 +1,4 @@
-import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
-
-const SwitchDigit = ({ index, value }) => {
-
-  const [ {}, dispatch ] = useStateSandbox();
+const SwitchDigit = ({ index, value, dispatch }) => {
 
   const handleSwitch = () => {
     dispatch({
