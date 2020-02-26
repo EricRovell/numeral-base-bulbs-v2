@@ -1,9 +1,12 @@
+import LayoutArticle from "components/Layout/Article/LayoutArticle";
+import AboutRU from "tutorial/about.mdx";
+
 const AboutPage = () => {
   
   return (
-    <main>
-      <div>Welcome to Next.js!</div>
-    </main>
+    <LayoutArticle>
+      <AboutRU />
+    </LayoutArticle>
   );
 };
 
