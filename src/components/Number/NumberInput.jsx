@@ -1,4 +1,3 @@
-import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
 import { useState, useEffect } from "react";
 
 import { baseConvert } from "utility/baseConvert";
@@ -6,9 +5,7 @@ import { baseRegExp } from "utility/validateInput";
 
 import style from "./number-input.module.css";
 
-const NumberInput = () => {
-
-  const [ { digits, baseIn, baseOut }, dispatch ] = useStateSandbox();
+const NumberInput = ({ digits, baseIn, baseOut, dispatch }) => {  
 
   const [ value, setValue ] = useState(0);
   const [ wrongInput, setWrongInput ] = useState(false);
