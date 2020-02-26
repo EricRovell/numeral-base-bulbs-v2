@@ -6,9 +6,9 @@ const symbolSkin = props => ({
   "basic": <SymbolBasicSkin {...props} />
 });
 
-const Symbol = ({ skin, baseIn, value, index, dispatch }) => (
+const Symbol = (props) => (
   < >
-    {symbolSkin({ value, index, baseIn, dispatch })[skin]}
+    {symbolSkin({ ...props })[props.skin]}
   </>
 );
 
