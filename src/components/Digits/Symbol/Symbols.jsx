@@ -1,16 +1,14 @@
 import Symbol from "./Symbol";
 import style from "../digits.module.css";
 
-const Symbols = ({ digits, skin, baseIn, dispatch }) => (
+const Symbols = (props) => (
   <div className={style.container}>
-    {digits.map((digit, index) => (
+    {props.digits.map((digit, index) => (
       <Symbol
         value={digit}
         index={index}
-        skin={skin}
-        baseIn={baseIn}
-        dispatch={dispatch}
-        key={index} />
+        key={index}
+        {...props} />
     ))}
   </div>
 );
