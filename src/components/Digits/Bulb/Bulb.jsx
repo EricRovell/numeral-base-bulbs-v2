@@ -12,7 +12,7 @@ const bulbSkin = props => ({
   "lamp": <BulbLampSkin {...props} />
 });
 
-const Bulb = ({ skin, value, index, dispatch }) => {
+const Bulb = ({ skin, value, index, baseIn, representation, dispatch }) => {
 
   const handleSwitch = () => {
     dispatch({
@@ -24,13 +24,25 @@ const Bulb = ({ skin, value, index, dispatch }) => {
 
   return (
     <div className={style.bulb}>
-      <Label
-        index={index}
-        type={"labelsUp"} />
+      <Label {...{
+        type: "labelsUp",
+        labelsUp,
+        labelsDown,
+        digits,
+        index,
+        baseIn,
+        representation
+      }} />
       {bulbSkin({ value, index, handleSwitch })[skin]}
-      <Label
-        index={index}
-        type={"labelsDown"} />
+      <Label {...{
+        type: "labelsDown",
+        labelsUp,
+        labelsDown,
+        digits,
+        index,
+        baseIn,
+        representation }}
+      />
     </div> 
   ); 
 };
