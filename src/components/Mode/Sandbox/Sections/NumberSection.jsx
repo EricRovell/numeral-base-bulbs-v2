@@ -1,17 +1,22 @@
-import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
-
 import Number from "components/Number/Number";
 import BaseSelector from "components/Settings/Base/BaseSelector";
 
 import style from "./number-section.module.css";
 
-const NumberSection = () => {
+const NumberSection = ({ state, dispatch }) => {
 
-  const [ { baseIn, baseOut, baseMin, baseMax }, dispatch ] = useStateSandbox();
+  const { digits, baseIn, baseOut, baseMin, baseMax } = state;
 
   return (
     <section className={style["number-section"]}>
-      <Number />
+      <Number {...{
+        digits,
+        baseIn,
+        baseOut,
+        baseMin,
+        baseMax,
+        dispatch
+      }} />
       <BaseSelector {...{
         base: "baseOut",
         bases: { baseIn, baseOut },
