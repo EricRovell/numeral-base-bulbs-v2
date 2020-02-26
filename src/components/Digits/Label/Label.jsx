@@ -1,17 +1,14 @@
-import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
-
 import LabelType from "./LabelType";
 import nextMode from "./nextMode";
 
 import style from "./label.module.css";
 
 
-const Label = ({ index, type }) => {
+const Label = ({ index, type, labelsUp, labelsDown, digits, baseIn, mode, dispatch }) => {
 
-  const [ {digits, labelsUp, labelsDown }, dispatch ] = useStateSandbox();
   const trueIndex = digits.length - index - 1;
 
-  const mode = (type === "labelsUp")
+  const typeValue = (type === "labelsUp")
     ? labelsUp
     : labelsDown;
 
@@ -19,13 +16,13 @@ const Label = ({ index, type }) => {
     dispatch({
       type: "setLabel",
       label: type,
-      value: nextMode(mode)
+      value: nextMode(typeValue)
     });
   };
 
   return (
     <div className={style["label-container"]} onClick={handleClick}>
-      <LabelType {...{ mode, trueIndex }} />
+      <LabelType {...{ typeValue, trueIndex, baseIn, mode }} />
     </div>
   );
 };
