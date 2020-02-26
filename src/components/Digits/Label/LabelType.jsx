@@ -1,16 +1,14 @@
 import { useStateContext } from "components/StateProvider/Context";
-import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox"; 
 import translations from "./translations";
 
 import style from "./label.module.css";
 
-const LabelType = ({ mode, trueIndex }) => {
+const LabelType = ({ typeValue, trueIndex, baseIn, mode }) => {
 
-  const [ { lang }, _ ] = useStateContext();
-  const [ { baseIn, mode: representation }, dispatch ] = useStateSandbox();
-  const title = translations[mode][lang];
+  const [ { lang } ] = useStateContext();
+  const title = translations[typeValue][lang];
 
-  switch (mode) {
+  switch (typeValue) {
     case "value":
       return (
         <span
@@ -35,8 +33,8 @@ const LabelType = ({ mode, trueIndex }) => {
           className={`
             ${style["label"]}
             ${style["label-none"]}
-            ${(representation === "symbol") ? style["label-none-transparent"] : null}`}>
-          {translations[mode][lang]}
+            ${(mode === "symbol") ? style["label-none-transparent"] : null}`}>
+          {translations[typeValue][lang]}
         </span>
       );    
     case "index":    
