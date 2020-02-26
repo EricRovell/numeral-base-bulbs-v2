@@ -8,6 +8,8 @@
   line-height: 1.15;
 }
 
+/* headers */
+
 .article h1 {
   width: max-content;
   place-self: center;
@@ -28,6 +30,8 @@
   left: -1em;
 }
 
+/* lists */
+
 .article ul {
   text-decoration: none;
   list-style: square;
@@ -39,6 +43,27 @@
   margin-top: 0.5em;
 }
 
+/* anchors */
+
 .article a {
   color: var(--font-color-1-bright);
+}
+
+/* blockquotes */
+
+.article > blockquote {
+  position: relative;
+  background: var(--color-1-25);
+  padding: 1em 1em 1em 1.5em; 
+  color: var(--font-color-2);
+}
+
+.article > blockquote::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0.5em;
+  background: var(--color-2);
 }
