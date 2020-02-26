@@ -3,9 +3,11 @@ import TutorialLanding from "./welcome.mdx";
 // Bases
 import NumeralBases from "./numeral-bases.mdx";
 import NonPositionalBases from "./non-positional.mdx";
-import Positional from "./positional.mdx";
+import PositionalBases from "./positional.mdx";
 // Sandbox
-import Sandbox from "./sandbox.mdx";
+import SandboxAbout from "./sandbox/about.mdx";
+import SandboxSymbols from "./sandbox/symbols.mdx";
+import SandboxNumber from "./sandbox/number.mdx";
 
 export default () => ({
 
@@ -26,13 +28,21 @@ export default () => ({
   },
   "ru/bases/positional": {
     title: "Positional numeral bases",
-    mdx: <Positional />,
+    mdx: <PositionalBases />,
   },
 
   // sandbox
   "ru/sandbox": {
     title: "Sandbox Mode Tutorial",
-    mdx: <Sandbox />,
+    mdx: <SandboxAbout />,
+  },
+  "ru/sandbox/symbols": {
+    title: "Sandbox, what is Symbols?",
+    mdx: <SandboxSymbols />,
+  },
+  "ru/sandbox/number": {
+    title: "Sandbox, what is Number?",
+    mdx: <SandboxNumber />,
   },
 
 
