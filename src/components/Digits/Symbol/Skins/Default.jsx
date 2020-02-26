@@ -5,30 +5,50 @@ import InputDigit from "../InputDigit";
 
 import style from "./default.module.css";
 
-export default ({ value, index, baseIn }) => (
+export default ({ value, index, digits, baseIn, labelsUp, labelsDown, mode, dispatch }) => (
   <div className={style.digit}>
     <div/>
-    <Label
-      index={index}
-      type="labelsUp" />
-    <Label 
-      index={index}
-      type="labelsDown" />
+    <Label {...{
+      type: "labelsUp",
+      labelsUp,
+      labelsDown,
+      digits,
+      index,
+      baseIn,
+      mode,
+      dispatch
+    }} />
+    <Label {...{
+      type: "labelsDown",
+      labelsUp,
+      labelsDown,
+      digits,
+      index,
+      baseIn,
+      mode,
+      dispatch
+    }} />
     <Incrementor {...{
       action: 1,
       index,
-      value }} />
+      value,
+      baseIn,
+      dispatch }} />
     <Incrementor {...{
       action: -1,
       index,
-      value }} />
+      value,
+      baseIn,
+      dispatch }} />
     {(baseIn === 2)
       ? <SwitchDigit
           index={index}
-          value={value} />
+          value={value}
+          dispatch={dispatch} />
       : <InputDigit
           baseIn={baseIn}
           value={value}
-          index={index} />}
+          index={index}
+          dispatch={dispatch} />}
   </div>
 );
