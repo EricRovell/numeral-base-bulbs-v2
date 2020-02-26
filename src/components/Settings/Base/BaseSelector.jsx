@@ -25,7 +25,14 @@ const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
         baseMax,
         dispatch 
       }} />
-      <InputDigit value={bases[base]} base={base} />
+      <InputDigit
+        {...{
+          value: bases[base],
+          base,
+          baseMin,
+          baseMax,
+          dispatch
+        }} />
     </div>
   );
 };
