@@ -1,16 +1,18 @@
 import LayoutArticle from "components/Layout/Article/LayoutArticle";
 import TutorialWelcome from "tutorial/welcome.mdx";
 
-import { useStateContext } from "components/StateProvider/Context"; 
+//import { useStateContext } from "components/StateProvider/Context"; 
 
 const TutorialPage = () => {
   
-  const [ { lang } ] = useStateContext(); 
+  //const [ { lang } ] = useStateContext();
 
   return (
-    <LayoutArticle>
-      <TutorialWelcome />
-    </LayoutArticle>
+    < >
+      <LayoutArticle>
+        <TutorialWelcome />
+      </LayoutArticle>
+    </>
   );
 };
 
