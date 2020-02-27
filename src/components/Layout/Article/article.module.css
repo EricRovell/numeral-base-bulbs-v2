@@ -11,7 +11,7 @@
 /* headers */
 
 .article h1 {
-  width: max-content;
+  text-align: center;
   place-self: center;
   margin-bottom: 0.5em;
   color: var(--font-color-1-bright);
