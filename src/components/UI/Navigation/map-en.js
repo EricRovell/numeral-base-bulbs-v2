@@ -8,15 +8,15 @@ export default [
         nodes: [
           {
             label: "Whats is numeral base?",
-            href: "/tutorial/ru/bases",
+            href: "en/bases/numeral-bases",
           },
           {
             label: "Non-positional numeral bases",
-            href: "/tutorial/ru/bases/non-positional",
+            href: "en/bases/non-positional",
           },
           {
             label: "Positional numeral bases",
-            href: "/tutorial/ru/bases/positional",
+            href: "en/bases/positional",
           },
         ]
       },
@@ -27,17 +27,17 @@ export default [
           
           {
             label: "Sandbox Mode, what is it?",
-            href: "/tutorial/ru/sandbox",
+            href: "en/sandbox/about",
           },
 
           {
             label: "Symbols",
-            href: "/tutorial/ru/sandbox/symbols",
+            href: "en/sandbox/symbols",
           },
 
           {
             label: "Number",
-            href: "/tutorial/ru/sandbox/number",
+            href: "en/sandbox/number",
           },
 
         ]
