@@ -26,7 +26,8 @@ const SubMenu = ({ items }) => {
 
   return (    
     <ActiveLink
-      href={items.href}
+      href="/tutorial/[...route]"
+      as={`/tutorial/${items.href}`}
       className={style["navigation-link"]}
       activeClassName={style["navigation-link-active"]}>
         <a title={items.label}>
