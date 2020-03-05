@@ -1,10 +1,6 @@
-import Sandbox from "components/Mode/Game/Game";
-
 const GamePage = () => {
 
-  return (
-    <Game />
-  );
+  return null;
 };
 
 export default GamePage;
