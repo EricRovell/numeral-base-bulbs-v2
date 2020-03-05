@@ -8,15 +8,15 @@ export default [
         nodes: [
           {
             label: "Что же такое система счисления?",
-            href: "/tutorial/ru/bases",
+            href: "ru/bases/numeral-bases",
           },
           {
             label: "Непозитионные системы счисления",
-            href: "/tutorial/ru/bases/non-positional",
+            href: "ru/bases/non-positional",
           },
           {
             label: "Позиционные системы счисления",
-            href: "/tutorial/ru/bases/positional",
+            href: "ru/bases/positional",
           },
         ]
       },
@@ -27,17 +27,17 @@ export default [
           
           {
             label: "Режим песочницы, что же это?",
-            href: "/tutorial/ru/sandbox",
+            href: "ru/sandbox/about",
           },
 
           {
             label: "Символы",
-            href: "/tutorial/ru/sandbox/symbols",
+            href: "ru/sandbox/symbols",
           },
 
           {
             label: "Число",
-            href: "/tutorial/ru/sandbox/number",
+            href: "ru/sandbox/number",
           },
 
         ]
