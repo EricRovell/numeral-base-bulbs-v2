@@ -1,19 +1,14 @@
-import LayoutArticle from "components/Layout/Article/LayoutArticle";
-import TutorialWelcome from "tutorial/welcome.mdx";
+import { useEffect } from "react";
+import Router from "next/router";
 
-//import { useStateContext } from "components/StateProvider/Context"; 
+export default () => {
 
-const TutorialPage = () => {
-  
-  //const [ { lang } ] = useStateContext();
+  useEffect(() => {
+    const { pathname } = Router;
+    if (pathname === "/tutorial") {
+      Router.push("/tutorial/ru/welcome");
+    }
+  }, []);
 
-  return (
-    < >
-      <LayoutArticle>
-        <TutorialWelcome />
-      </LayoutArticle>
-    </>
-  );
+  return null;
 };
-
-export default TutorialPage;
