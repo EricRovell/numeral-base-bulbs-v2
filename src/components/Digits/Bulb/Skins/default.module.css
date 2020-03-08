@@ -33,6 +33,6 @@
 
 .default input[type=checkbox]:checked + svg {
   filter:
-    drop-shadow(0px 0px 20px hsla(51, 100%, 60%, 0.85));
+    drop-shadow(0px 0px 17px hsla(51, 100%, 60%, 0.85));
   transform: scale(1.1);
 }
