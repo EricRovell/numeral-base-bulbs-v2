@@ -23,23 +23,37 @@ export default [
 
       {
         label: "Режим песочницы",
-        nodes: [
-          
+        nodes: [          
           {
             label: "Режим песочницы, что же это?",
             href: "ru/sandbox/about",
           },
-
+          {
+            label: "Символ",
+            href: "ru/sandbox/symbol",
+          },
           {
             label: "Символы",
             href: "ru/sandbox/symbols",
           },
-
           {
             label: "Число",
             href: "ru/sandbox/number",
           },
+          {
+            label: "Складывая всё воедино",
+            href: "ru/sandbox/whole-picture",
+          },
+        ]
+      },
 
+      {
+        label: "Режим игры",
+        nodes: [
+          {
+            label: "Нас ждут испытания",
+            href: "ru/game/about",
+          },
         ]
       },
 
