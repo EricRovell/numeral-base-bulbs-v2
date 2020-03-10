@@ -57,6 +57,20 @@ export default [
         ]
       },
 
+      {
+        label: "Пользовательские настройки",
+        nodes: [
+          {
+            label: "О предпочтениях",
+            href: "ru/settings/about",
+          },
+          {
+            label: "Как использовать собственные предпочтения",
+            href: "ru/settings/how-to-use",
+          },
+        ]
+      },
+
     ],
   },
 ];
