@@ -14,7 +14,7 @@ const Routes = ({ routes }) => {
   return (
     <nav className={style.navigation}>
       <Tabs
-        routes={routes}
+        routes={routes(lang.toLowerCase())}
         lang={lang} />
     </nav>
   ); 
