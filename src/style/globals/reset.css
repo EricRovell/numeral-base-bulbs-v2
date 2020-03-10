@@ -9,18 +9,19 @@ a {
   text-decoration: none;
 }
 
-/* mobile */
+
+/* non-mobile scrollbar */
 @media screen and (min-width: 768px) {
 
-  main::-webkit-scrollbar {
+  :root::-webkit-scrollbar {
     width: 7.5px;
   }
   
-  main::-webkit-scrollbar-track {
+  :root::-webkit-scrollbar-track {
     background: var(--color-bg);
   }
   
-  main::-webkit-scrollbar-thumb {
+  :root::-webkit-scrollbar-thumb {
     background: var(--color-2);
   }
 
