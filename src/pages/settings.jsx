@@ -5,6 +5,7 @@ import LayoutSettings from "components/Layout/Settings/LayoutSettings";
 
 import SettingsGlobal from "components/StateProvider/SettingsGlobal/SettingsGlobal";
 import SettingsSandbox from "components/Mode/Sandbox/Settings/Settings";
+import Loading from "components/Loader/Loading/Loading";
 
 import style from "style/pages/settings.module.css";
 import styleTabs from "components/Tabs/tabs-settings.module.css";
@@ -29,7 +30,8 @@ const routes = {
 
 const settingsTab = () => ({
   "sandbox": <SettingsSandbox />,
-  "globals": <SettingsGlobal />
+  "globals": <SettingsGlobal />,
+  "game": <Loading lang="EN" />
 });
 
 const SettingsPage = () => {
