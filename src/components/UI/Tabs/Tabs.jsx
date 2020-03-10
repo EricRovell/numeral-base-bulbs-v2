@@ -8,6 +8,7 @@ const Tabs = ({ routes, lang }) => {
       {routes.map(route => (
         <Link
           href={route.path}
+          as={route.as}
           key={route.name["EN"]}
           className={style.section}
           activeClassName={style["section-active"]}>
