@@ -1,6 +1,7 @@
-export default [
+export default (lang) => ([
   {
-    path: "/",
+    path: `/`,
+    as: `/${lang}`,
     name: {
       "EN": "Sandbox",
       "RU": "Песочница",
@@ -8,13 +9,15 @@ export default [
   },
   {
     path: "/game",
+    as: `/game/${lang}`,
     name: {
       "EN": "Game",
       "RU": "Игра",
     },
   },
   {
-    path: "/tutorial",
+    path: "/tutorial/[...route]",
+    as: `/tutorial/${lang}/welcome`,
     name: {
       "EN": "Tutorial",
       "RU": "Инструкции",
@@ -22,6 +25,7 @@ export default [
   },
   {
     path: "/settings",
+    as: `/settings/${lang}`,
     name: {
       "EN": "Settings",
       "RU": "Настройки",
@@ -29,9 +33,10 @@ export default [
   },
   {
     path: "/about",
+    as: `/about/${lang}`,
     name: {
       "EN": "About",
       "RU": "О приложении",
     },
   }, 
-];
+]);
