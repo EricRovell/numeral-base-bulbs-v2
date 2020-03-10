@@ -1,0 +1,22 @@
+.sandbox-lite {
+  display: grid;
+  grid-template: min-content min-content / 1fr;
+  place-items: center;
+  row-gap: 1rem;
+  padding: 1em 0.5em;
+  place-self: center;
+}
+
+.sandbox-lite > div:nth-child(2) {
+  width: 65%;
+  height: 100%;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+  .sandbox-lite > div:nth-child(2) {
+    width: 95%;
+  }
+
+}
