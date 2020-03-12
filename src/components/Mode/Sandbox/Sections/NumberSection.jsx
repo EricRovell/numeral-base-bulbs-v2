@@ -5,7 +5,7 @@ import style from "./number-section.module.css";
 
 const NumberSection = ({ state, dispatch }) => {
 
-  const { digits, baseIn, baseOut, baseMin, baseMax } = state;
+  const { digits, digitsMax, baseIn, baseOut, baseMin, baseMax } = state;
 
   return (
     <section className={style["number-section"]}>
@@ -13,8 +13,7 @@ const NumberSection = ({ state, dispatch }) => {
         digits,
         baseIn,
         baseOut,
-        baseMin,
-        baseMax,
+        digitsMax,
         dispatch
       }} />
       <BaseSelector {...{
