@@ -1,65 +1,60 @@
 import { useState, useEffect } from "react";
+import useValidInput from "./useValidInput";
 
 import { baseConvert } from "utility/baseConvert";
-import { baseRegExp } from "utility/validateInput";
+import digits2char from "utility/digits2char";
 
 import style from "./number-input.module.css";
 
-const NumberInput = ({ digits, baseIn, baseOut, dispatch }) => {  
+const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch }) => {  
+  // storing number's state as array of digits (integers)
+  // initial state is converted from digits to baseOut
+  const [ number, setNumber ] = useState(
+    baseConvert({ digits, baseIn, baseOut })
+  );
 
-  const [ value, setValue ] = useState(0);
-  const [ wrongInput, setWrongInput ] = useState(false);
+  const [ wrongInput, validate ] = useValidInput({
+    base: baseOut,
+    baseIn,
+    digitsMax
+  });
 
+  // two-way data binding
+  // changing the number, we mutate the digits
+  // mutating digits change the number by side-effect
   useEffect(() => {
-
-    const convertedValue = baseConvert({
-      digits: digits,
-      baseIn,
-      baseOut,
-    }).join("");
-
-    setValue(convertedValue);
+    setNumber(
+      baseConvert({ digits, baseIn, baseOut })
+    );
   }, [ digits, baseIn, baseOut ]);
 
-  const regex = baseRegExp(baseOut);
+  const handleChange = (event) => {
 
-  const handleChange = event => {
-    
-    const inputValue = event.target.value;
-
-    if (inputValue === "") {
-      dispatch({
-        type: "setDigits",
-        digits: []
-      });
-    };
-
-    if (!regex.test(inputValue)) {
-      setWrongInput(true);
-      setTimeout(() => {
-        setWrongInput(false);
-      }, 820);
+    if (!validate({ number: event.target.value })) {
       return;
-    }    
-    
-    setValue(inputValue);
+    }
 
     dispatch({
       type: "setDigits",
       digits: baseConvert({
-        digits: inputValue,
+        digits: event.target.value,
         baseIn: baseOut,
         baseOut: baseIn,
-        representation: "numeral",
+        representation: "numeral"
       })
-    }); 
+    });
+  }
+
+  const handleKeyDown = event => {
+    validate({ key: event.key });
   };
 
   return (
     <input
       type="text"
       onChange={handleChange}
-      value={value}
+      onKeyPress={handleKeyDown}
+      value={digits2char([ ...number ]).join("")}
       className={(wrongInput) ? style["number-input"] : ""} />
   );
 };
