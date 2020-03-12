@@ -47,7 +47,9 @@ export default function({ base, baseIn, digitsMax }) {
 
     // validating number by maxValue
     else if (typeof number !== "undefined") {
-      if (parseInt(number, base) > parseInt(maxValue, 10)) {
+      const convBase = (baseIn > 10) ? baseIn : 10;
+
+      if (parseInt(number, base) > parseInt(maxValue, convBase)) {
         invalidate();
         return false;
       }
