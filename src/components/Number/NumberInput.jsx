@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import useValidInput from "./useValidInput";
 
-import { baseConvert } from "utility/baseConvert";
-import digits2char from "utility/digits2char";
+import { baseConvert, digits2chars } from "utility/baseConvert";
 
 import style from "./number-input.module.css";
 
@@ -54,7 +53,7 @@ const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch }) => {
       type="text"
       onChange={handleChange}
       onKeyPress={handleKeyDown}
-      value={digits2char([ ...number ]).join("")}
+      value={digits2chars([ ...number ]).join("")}
       className={(wrongInput) ? style["number-input"] : ""} />
   );
 };
