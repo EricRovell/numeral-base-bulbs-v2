@@ -23,7 +23,7 @@ const fromDigits = (digits, base) => {
   return number;
 };
 
-const digit2char = digits => (
+export const digits2chars = digits => (
   // convert digits from 10 up to 36 into char representation
   digits.map(digit =>
     (digit > 9 && digit <= 36)
@@ -32,7 +32,7 @@ const digit2char = digits => (
   )
 );
 
-const char2Digit = chars => (
+export const chars2Digits = chars => (
   // convert digits from 10 up to 36 into char representation
   chars.split("").map(char => (
     (isNaN(char))
@@ -54,7 +54,7 @@ export const baseConvert = ({ digits, baseIn, baseOut, representation }) => {
   }
   
   if (typeof digits === "string") {
-    digits = char2Digit(digits);
+    digits = chars2Digits(digits);
   }
 
   const converted = toDigits(fromDigits(digits, baseIn), baseOut);
@@ -64,7 +64,7 @@ export const baseConvert = ({ digits, baseIn, baseOut, representation }) => {
       return converted;
     case "symbol":
     default:
-      return digit2char(converted);    
+      return digits2chars(converted);    
   }
 };
 
