@@ -91,3 +91,8 @@
 .article strong {
   color: var(--color-2);
 }
+
+/* p */
+.article p {
+  text-indent: 1em;
+}
