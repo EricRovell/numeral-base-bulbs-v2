@@ -20,6 +20,7 @@
   font-size: inherit;
 }
 
+.section:hover::after,
 .section-active::after {
   content: "";
   position: absolute;
@@ -29,6 +30,10 @@
   height: 4px;
   border-radius: 7.5px 7.5px 0 0;
   background: var(--font-color-1-bright);  
+}
+
+.section:hover::after {
+  background: var(--font-color-1-bright-1);
 }
 
 
