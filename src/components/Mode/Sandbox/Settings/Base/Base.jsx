@@ -1,12 +1,10 @@
-import SettingsSection from "components/Settings/Section";
-
 import { dataBaseIn, dataBaseOut } from "./data";
 import NumberSelect from "components/Settings/Controls/Number";
 
 const BaseForm = ({ baseIn, baseOut, handleInputChange }) => {
 
   return (
-    <SettingsSection name={"Base"}>
+    <>
       <NumberSelect
         data={dataBaseIn}
         value={baseIn}
@@ -19,7 +17,7 @@ const BaseForm = ({ baseIn, baseOut, handleInputChange }) => {
         name={"baseOut"}
         id={"settings-sandbox-baseOut"}
         handleInputChange={handleInputChange} />
-    </SettingsSection>
+    </>
   );
 };
 
