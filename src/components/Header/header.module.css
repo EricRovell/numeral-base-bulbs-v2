@@ -53,41 +53,6 @@
   font-size: 0.7rem;
 }
 
-/* anchor elements */
-
-/* .section,
-.section-active {
-  position: relative;
-  text-decoration: none;
-  font-size: 0.6rem;
-
-  display: grid;
-  grid-template: 1fr / 1fr;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.section { 
-  color: var(--font-color-1);
-}
-
-.section-active {
-  color: var(--font-color-1-bright);
-}
-
-.section-active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  border-radius: 7.5px 7.5px 0 0;
-  background: var(--font-color-1-bright);  
-} */
-
-
 /* mobile */
 @media screen and (max-width: 768px) {
 
@@ -107,10 +72,5 @@
     column-gap: 0.9em;
     overflow-x: auto;
   }
-
-  /* .section,
-  .section-active {
-    font-size: 0.85rem;
-  } */
 
 }
