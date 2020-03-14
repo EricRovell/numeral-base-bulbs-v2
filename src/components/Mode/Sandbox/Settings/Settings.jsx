@@ -6,11 +6,12 @@ import Base from "./Base/Base";
 import Digits from "./Digits/Digits";
 import Representation from "./Representation/Representation";
 
+import SettingsSection from "components/Settings/Section";
+
 import defaultState from "../State/defaultState";
 import validationReducer from "./reducerValidate";
 
 import style from "./settings.module.css";
-
 
 const SettingsSandbox = () => {
 
@@ -34,23 +35,31 @@ const SettingsSandbox = () => {
         defaultState={defaultState}
         storageKey={"SettingsSandbox"}
         dispatch={dispatch} />
-      <Digits
-        digits={state.digits}
-        digitsMin={state.digitsMin}
-        digitsMax={state.digitsMax}
-        handleInputChange={handleInputChange} />        
-      <Base
-        baseIn={state.baseIn}
-        baseOut={state.baseOut}
-        handleInputChange={handleInputChange} />
-      <Representation
-        mode={state.mode}
-        skin={state.skin}
-        handleInputChange={handleInputChange} />
-      <Labels
-        valueUp={state.labelsUp}
-        valueDown={state.labelsDown}
-        handleInputChange={handleInputChange} />    
+      <SettingsSection name={"Digits"}>
+        <Digits
+         digits={state.digits}
+         digitsMin={state.digitsMin}
+         digitsMax={state.digitsMax}
+         handleInputChange={handleInputChange} />
+      </SettingsSection>
+      <SettingsSection name={"Base"}>
+        <Base
+          baseIn={state.baseIn}
+          baseOut={state.baseOut}
+          handleInputChange={handleInputChange} />
+      </SettingsSection>       
+      <SettingsSection name={"Representation"}>
+        <Representation
+          mode={state.mode}
+          skin={state.skin}
+          handleInputChange={handleInputChange} />
+      </SettingsSection>
+      <SettingsSection name={"Labels"}>
+        <Labels
+          valueUp={state.labelsUp}
+          valueDown={state.labelsDown}
+          handleInputChange={handleInputChange} />  
+      </SettingsSection>      
     </form>    
   );
 };
