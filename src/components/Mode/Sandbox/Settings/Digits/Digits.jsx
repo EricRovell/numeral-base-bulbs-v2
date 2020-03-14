@@ -1,5 +1,3 @@
-import SettingsSection from "components/Settings/Section";
-
 import { defDigits, defMaxDigits, defMinDigits } from "./data";
 import TextInput from "components/Settings/Controls/Text";
 import NumberSelect from "components/Settings/Controls/Number";
@@ -7,7 +5,7 @@ import NumberSelect from "components/Settings/Controls/Number";
 const DigitsForm = ({ digits, digitsMin, digitsMax, handleInputChange }) => {
 
   return (
-    <SettingsSection name={"Digits"}>
+    <>
       <NumberSelect
         name={"digitsMin"}
         data={defMinDigits}
@@ -23,7 +21,7 @@ const DigitsForm = ({ digits, digitsMin, digitsMax, handleInputChange }) => {
         data={defDigits}
         value={digits}
         handleInputChange={handleInputChange} /> 
-    </SettingsSection>
+    </>
   );
 };
 
