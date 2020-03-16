@@ -1,7 +1,7 @@
 export const defDigits = {
   label: "Digits",
   minLength: 0,
-  maxLength: 16,
+  maxLength: 32, //with delimeters
 };
 
 export const defMinDigits = {
