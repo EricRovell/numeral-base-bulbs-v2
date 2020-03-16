@@ -9,7 +9,7 @@ import Representation from "./Representation/Representation";
 import SettingsSection from "components/Settings/Section";
 
 import defaultState from "../State/defaultState";
-import validationReducer from "./reducerValidate";
+import validate from ".//validation/validation";
 
 import style from "./settings.module.css";
 
@@ -17,7 +17,6 @@ const SettingsSandbox = () => {
 
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState,
-    reducer: validationReducer,
     itemKey: "SettingsSandbox"
   });
 
@@ -34,6 +33,7 @@ const SettingsSandbox = () => {
         state={state}
         defaultState={defaultState}
         storageKey={"SettingsSandbox"}
+        validate={validate}
         dispatch={dispatch} />
       <SettingsSection name={"Digits"}>
         <Digits
