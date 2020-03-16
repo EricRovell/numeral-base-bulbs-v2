@@ -54,14 +54,4 @@ const SettingsGlobal = () => {
   );
 };
 
-/* SettingsGlobal.getInitialProps = async (context) => {
-  const userState = JSON.parse(
-    localStorage.getItem("SettingsGlobal")
-  );
-
-  return {
-    userState
-  };
-}; */
-
 export default SettingsGlobal;
