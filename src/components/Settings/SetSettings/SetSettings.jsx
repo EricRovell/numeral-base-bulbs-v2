@@ -1,13 +1,23 @@
 import ButtonWithMessage from "components/Settings/Controls/ButtonWithMessage/ButtonWithMessage";
 import style from "./set-settings.module.css";
 
-const SetSettings = ({ state, defaultState, storageKey, dispatch }) => {
+const SetSettings = ({ state, defaultState, validate, storageKey, dispatch }) => {
 
   const saveUserSettings = () => {
+    // if a validation function not passed
+    const validState = (typeof validate !== "undefined")
+      ? validate(state)
+      : state;
+
     localStorage.setItem(
       storageKey,
-      JSON.stringify(state)
+      JSON.stringify(validState)
     );
+    
+    dispatch({ 
+      name: "reset",
+      state: validState
+    });
   };
 
   const resetSettings = () => {
