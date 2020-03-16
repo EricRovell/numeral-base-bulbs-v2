@@ -1,9 +1,11 @@
 import { StateProvider, initialState, reducer } from "components/StateProvider/Context";
+import ModuleProvider from "components/UI/Modal/context";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import { useStateContext } from "components/StateProvider/Context";
 
 import Header from "components/Header/Header";
+import Modal from "components/UI/Modal/Modal";
 import "style/global.css";
 
 import style from "style/pages/app.module.css";
@@ -25,11 +27,14 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <HelmetProvider>
       <StateProvider {...{ initialState, reducer }}>
-        <div className={style.app}>
-          <Head />
-          <Header />
-          <Component {...pageProps} />
-        </div>
+        <ModuleProvider>
+          <div className={style.app}>
+            <Head />
+            <Header />
+            <Component {...pageProps} />
+            <Modal />
+          </div>
+        </ModuleProvider>
       </StateProvider>
     </HelmetProvider>
   )
