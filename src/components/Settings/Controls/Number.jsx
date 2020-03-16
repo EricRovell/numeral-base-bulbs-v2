@@ -8,7 +8,7 @@ const DataList = ({ data, id }) => (
   </datalist>
 );
 
-const NumberSelect = ({ data, value, id, name, handleInputChange }) => (
+const NumberSelect = ({ data, value, id, name, handleInputChange, regexp }) => (
   < >
     <label>{data.label}</label>
     <input
@@ -18,7 +18,8 @@ const NumberSelect = ({ data, value, id, name, handleInputChange }) => (
       value={value}
       onChange={handleInputChange}
       min={data.min}
-      max={data.max} />
+      max={data.max}
+      pattern={regexp} />
     {(id) && <DataList data={data.datalist} id={id} />}
   </>
 );
