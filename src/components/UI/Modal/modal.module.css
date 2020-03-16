@@ -36,11 +36,12 @@
 }
 
 .modal > svg {
+  --size: 1.2rem;
   position: absolute;
-  right: -0.6rem;
-  top: -0.6rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  right: calc(-0.5 * var(--size));
+  top: calc(-0.5 * var(--size));
+  width: var(--size);
+  height: var(--size);
 
   transition: transform 0.25s ease-in-out;
   cursor: pointer;
@@ -58,4 +59,18 @@
 
 .modal > div p {
   font-size: 0.85rem;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+  .modal {
+    max-width: 90vw;
+    max-height: 85vh;
+  }
+  
+  .modal > svg {
+    --size: 2.25rem;
+  }
+
 }
