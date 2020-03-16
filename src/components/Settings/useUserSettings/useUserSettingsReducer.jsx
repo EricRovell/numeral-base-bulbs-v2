@@ -1,9 +1,20 @@
 import { useState, useEffect, useReducer } from "react";
 
-export default function useUserSettingsReducer({ defaultState, reducer, itemKey }) {
+export default function useUserSettingsReducer({ defaultState, itemKey }) {
   // item: localStorage item key, string
   const [ isLoading, setIsLoading ] = useState(true);
-  const [ state, dispatch ] = useReducer(reducer, defaultState);
+  const [ state, dispatch ] = useReducer((state, action) => {
+    switch (action.name) {
+      case "reset":
+        return action.state;
+    
+      default:
+        return {
+          ...state,
+          [action.name]: action.value
+        };
+    }
+  }, defaultState);
 
   useEffect(() => {
     const storageState = JSON.parse(
