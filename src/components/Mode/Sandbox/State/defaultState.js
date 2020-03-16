@@ -1,10 +1,10 @@
 export default {
-  digits: [0, 0, 0, 0, 0, 0, 0, 0],
+  digits: [0, 0, 0, 0],
   mode: "symbol", // symbol
   skin: "default",
 
   digitsMin: 0,
-  digitsMax: 16,
+  digitsMax: 4,
   DIGITS_MIN: 0,
   DIGITS_MAX: 16,
   
