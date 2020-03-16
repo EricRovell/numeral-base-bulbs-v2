@@ -1,0 +1,41 @@
+.express-form {
+  display: grid;
+}
+
+.express-form > div {
+  padding: 0.45rem 0;
+}
+
+/* controls */
+
+.express-form input,
+.express-form select {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0.1em 0.5em;
+}
+
+/* .express-form input:focus {
+  border: 1px solid var(--color-1);
+} */
+
+/* borders */
+
+.express-form div:not(:first-child):not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* special styles for representation controls grid */
+
+.express-form > div:nth-of-type(4) input[type=radio] {
+  display: block;
+}
+
+.express-form > div:nth-of-type(4) {
+  grid-template-columns: min-content max-content min-content;
+}
+
+.express-form > div:nth-of-type(4) header {
+  grid-column: span 3;
+}
