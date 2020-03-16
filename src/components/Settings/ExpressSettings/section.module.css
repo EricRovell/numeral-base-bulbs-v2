@@ -1,0 +1,20 @@
+.section {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: max-content min-content;
+  grid-auto-rows: min-content;
+  place-items: center start;
+  row-gap: 10px;
+  column-gap: 12.5px;
+  color: var(--font-color-digit);
+
+  font-size: 0.55rem;
+}
+
+.section > header {
+  grid-column: span 2;
+  font-size: 0.7rem;
+  color: var(--font-color-digit);
+  font-variation-settings: "wght" 650;
+  user-select: none;
+}
