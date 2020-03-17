@@ -1,3 +1,5 @@
+import defaultState from "./defaultState";
+
 export default (state, action) => {
   switch (action.type) {
 
@@ -8,6 +10,9 @@ export default (state, action) => {
         ...state,
         [action.property]: action.value
       };
+
+    case "reset":
+      return action.state || defaultState;
 
     // User Preferences
 
