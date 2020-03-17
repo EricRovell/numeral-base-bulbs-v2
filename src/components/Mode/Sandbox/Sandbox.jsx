@@ -18,7 +18,7 @@ const Sandbox = () => {
       <NumberSection
         state={state}
         dispatch={dispatch} />
-      <ExpressSettings />        
+      <ExpressSettings dispatchSB={dispatch} />        
     </LayoutMain>
   );
 };
