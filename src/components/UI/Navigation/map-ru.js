@@ -68,6 +68,10 @@ export default [
             label: "Как использовать собственные предпочтения",
             href: "ru/settings/how-to-use",
           },
+          {
+            label: "Настройки. Режим песочницы",
+            href: "ru/settings/sandbox",
+          },
         ]
       },
 
