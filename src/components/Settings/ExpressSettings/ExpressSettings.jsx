@@ -3,15 +3,15 @@ import ExpressModal from "./ExpressModal";
 
 import style from "./express-settings.module.css";
 
-const ExpressSettings = () => {
+const ExpressSettings = ({ dispatchSB }) => {
 
-  const [ { open }, dispatch ] = useModalContext();
+  const [ { open }, dispatchModal ] = useModalContext();
 
   const openModal = () => {
-    dispatch({
+    dispatchModal({
       type: "show",
       title: "Express Settings",
-      contents: <ExpressModal />
+      contents: <ExpressModal dispatchSB={dispatchSB} />
     });
   };
 
