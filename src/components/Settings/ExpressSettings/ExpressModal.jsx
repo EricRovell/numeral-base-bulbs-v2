@@ -16,7 +16,9 @@ import sectionStyle from "./section.module.css";
 const Section = ({ children, name }) => (
   <div className={sectionStyle.section}>
     <header>{name}</header>
-    {children}
+    <div>
+      {children}
+    </div>
   </div>
 );
 
