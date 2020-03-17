@@ -20,7 +20,7 @@ const Section = ({ children, name }) => (
   </div>
 );
 
-const ExpressModal = () => {
+const ExpressModal = ({ dispatchSB }) => {
 
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState,
@@ -34,6 +34,13 @@ const ExpressModal = () => {
     });
   };
 
+  const resetSandBoxState = state => {
+    dispatchSB({
+      type: "reset",
+      state
+    });
+  };
+
   return !isLoading && (    
     <form className={style["express-form"]}>
       <SetSettings
@@ -41,6 +48,7 @@ const ExpressModal = () => {
         defaultState={defaultState}
         storageKey={"SettingsSandbox"}
         validate={validate}
+        sideEffect={resetSandBoxState}
         dispatch={dispatch} />
       <Section name={"Digits"}>
         <Digits
