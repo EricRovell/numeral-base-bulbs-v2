@@ -1,11 +1,9 @@
 import { useState } from "react";
 
+import dynamic from "next/dynamic";
+
 import Tabs from "components/Tabs/Tabs";
 import LayoutSettings from "components/Layout/Settings/LayoutSettings";
-
-import SettingsGlobal from "components/StateProvider/SettingsGlobal/SettingsGlobal";
-import SettingsSandbox from "components/Mode/Sandbox/Settings/Settings";
-import Loading from "components/Loader/Loading/Loading";
 
 import style from "style/pages/settings.module.css";
 import styleTabs from "components/Tabs/tabs-settings.module.css";
@@ -28,25 +26,33 @@ const routes = {
   ]
 };
 
-const settingsTab = () => ({
-  "sandbox": <SettingsSandbox />,
-  "globals": <SettingsGlobal />,
-  "game": <Loading lang="EN" />
-});
+const SettingsSection = ({ section, lang }) => {
+  const sections = {
+    "sandbox": "Mode/Sandbox/Settings/Settings",
+    "globals": "StateProvider/SettingsGlobal/SettingsGlobal",
+    "game": "Loader/Loading/Loading"
+  };
+
+  const Section = dynamic(() => import(`components/${sections[section]}`))
+  
+  return (
+    <Section lang={lang} />
+  );
+};
 
 const SettingsPage = () => {
 
-  const [ tab, setTab ] = useState("globals");
+  const [ section, setSection ] = useState("sandbox");
   
   return (
     <LayoutSettings className={style.settings}>
       <Tabs
         data={routes}
-        value={tab}
-        setTab={setTab}
+        value={section}
+        setTab={setSection}
         style={styleTabs["tabs-settings"]}
         lang={"EN"} />
-      {settingsTab()[tab]}
+      <SettingsSection lang="EN" section={section} />
     </LayoutSettings>
   );
 };
