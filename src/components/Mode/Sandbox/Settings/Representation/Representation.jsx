@@ -1,10 +1,10 @@
 import { data } from "./data";
-import RadioWithOptions from "components/Settings/Controls/RadioWithOptions";
+import RadioSelect from "components/Settings/Controls/RadioSelect/RadioSelect";
 
 const RepresentationForm = ({ skin, mode, handleInputChange }) => (
   <>
     {data.map(modeRepr => (
-      <RadioWithOptions 
+      <RadioSelect 
         key={modeRepr.representation}
         data={modeRepr}
         nameRadio={"mode"}
