@@ -1,14 +1,10 @@
+import Radio from "./Radio";
+
 const RadioWithOptions = ({ data, nameRadio, nameSelect, valueRadio, valueSelect, handleInputChange }) => (
   < >
-    <input
-      type="radio"
-      name={nameRadio}
-      value={data.representation}
-      checked={(data.representation === valueRadio)}
-      onChange={handleInputChange} />
-    <label>
-      {data.representation}
-    </label>
+    <Radio {...{
+      data, nameRadio, valueRadio, handleInputChange
+    }} />
     <select
       name={nameSelect}
       onChange={handleInputChange}

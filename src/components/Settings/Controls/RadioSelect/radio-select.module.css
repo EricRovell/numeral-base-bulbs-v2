@@ -1,0 +1,43 @@
+.radio {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  column-gap: 0.75em;
+  cursor: pointer;
+}
+
+.radio input[type=radio] {
+  display: none;
+}
+
+.radio svg {
+  width: 1.15em;
+  height: 1.15em;
+  stroke: orange;
+}
+
+.radio svg ellipse {
+  fill: none;
+  stroke-width: 30;
+  stroke-miterlimit: 10;
+  opacity: 0.4;
+}
+
+.radio svg polyline {
+  fill: none;
+  stroke-width: 35;
+  stroke-miterlimit: 10;
+
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 0.15s linear;
+}
+
+.radio input[type=radio]:checked + svg ellipse {
+  opacity: 1;
+}
+
+.radio input[type=radio]:checked + svg polyline {
+  opacity: 1;
+  stroke-dashoffset: 0;
+}
