@@ -51,10 +51,6 @@
   display: none;
 }
 
-.layout-settings > form input[type=radio]:checked ~ span {
-  background: var(--color-3);
-}
-
 /* number/text */
 
 .layout-settings > form input[type=number],
