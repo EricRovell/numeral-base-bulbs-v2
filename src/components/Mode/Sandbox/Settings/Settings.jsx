@@ -11,8 +11,6 @@ import SettingsSection from "components/Settings/Section";
 import defaultState from "../State/defaultState";
 import validate from ".//validation/validation";
 
-import style from "./settings.module.css";
-
 const SettingsSandbox = () => {
 
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
@@ -28,7 +26,7 @@ const SettingsSandbox = () => {
   };
 
   return !isLoading && (    
-    <form className={style.settings}>
+    <form>
       <SetSettings
         state={state}
         defaultState={defaultState}
