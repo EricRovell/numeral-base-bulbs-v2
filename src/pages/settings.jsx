@@ -26,14 +26,12 @@ const routes = {
   ]
 };
 
-const SettingsSection = ({ section, lang }) => {
-  const sections = {
-    "sandbox": "Mode/Sandbox/Settings/Settings",
-    "globals": "StateProvider/SettingsGlobal/SettingsGlobal",
-    "game": "Loader/Loading/Loading"
-  };
-
-  const Section = dynamic(() => import(`components/${sections[section]}`))
+const SettingsSections = ({ section, lang }) => {
+  const Section = ({
+    "sandbox": dynamic(() => import("components/Mode/Sandbox/Settings/Settings")),
+    "globals": dynamic(() => import("components/StateProvider/SettingsGlobal/SettingsGlobal")),
+    "game": dynamic(() => import("components/Loader/Loading/Loading")),
+  }[section]);
   
   return (
     <Section lang={lang} />
@@ -52,7 +50,7 @@ const SettingsPage = () => {
         setTab={setSection}
         style={styleTabs["tabs-settings"]}
         lang={"EN"} />
-      <SettingsSection lang="EN" section={section} />
+      <SettingsSections lang="EN" section={section} />
     </LayoutSettings>
   );
 };
