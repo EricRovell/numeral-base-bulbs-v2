@@ -16,17 +16,3 @@
 /* .express-form input:focus {
   border: 1px solid var(--color-1);
 } */
-
-/* special styles for representation controls grid */
-
-.express-form > div:nth-of-type(4) > div input[type=radio] {
-  display: block;
-}
-
-.express-form > div:nth-of-type(4) > div {
-  grid-template-columns: min-content max-content min-content;
-}
-
-.express-form > div:nth-of-type(4) > div header {
-  grid-column: span 3;
-}
