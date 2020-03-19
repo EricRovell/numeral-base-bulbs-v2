@@ -1,25 +1,3 @@
-.express-settings {
-  top: 0;
-  right: 0;
-  position: absolute;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: grid;
-  place-items: stretch;
-  font-size: 0.75rem;
-
-  display: grid;
-  place-items: center;
-}
-
-.express-settings > svg {
-  width: 50%;
-  height: 50%;
-  fill: var(--color-2);
-  transition: transform 0.2s ease-in;
-  cursor: pointer;
-}
-
 .express-settings > svg:hover {
   transform: rotate(45deg);
 }
