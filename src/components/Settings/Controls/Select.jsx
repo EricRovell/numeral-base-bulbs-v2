@@ -1,13 +1,13 @@
-const Select = ({ data, value, name, handleInputChange }) => (
+const Select = ({ label, options, value, name, handleInputChange }) => (
   < >
-    <label>{data.label}</label>        
+    <label>{label}</label>        
       <select
         value={value}
         onChange={handleInputChange}
         name={name}>
-          {data.options.map((option, i) => (
+          {Object.keys(options).map(option => (
             <option value={option} key={option}>
-              {option}
+              {options[option]}
             </option>
           ))}
       </select>      
