@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 
 const modalState = {
-  open: true,
+  open: false,
   title: "Header",
   contents: (
     <div>
