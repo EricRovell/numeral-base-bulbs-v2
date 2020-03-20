@@ -1,8 +1,8 @@
 const DataList = ({ data, id }) => (
   <datalist id={id}>
-    {data.map(option => (
-      <option value={option.value} key={option.label}>
-        {option.label}
+    {Object.keys(data).map(option => (
+      <option value={option} key={data[option]}>
+        {data[option]}
       </option>
     ))}
   </datalist>
