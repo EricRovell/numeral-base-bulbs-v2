@@ -1,17 +1,18 @@
 import useUserSettingsReducer from "components/Settings/useUserSettings/useUserSettingsReducer";
 
-import SetSettings from "components/Settings/SetSettings/SetSettings";
-import Labels from "./Labels/Labels";
-import Base from "./Base/Base";
-import Digits from "./Digits/Digits";
-import Representation from "./Representation/Representation";
-
 import SettingsSection from "components/Settings/Section";
+import SetSettings from "components/Settings/SetSettings/SetSettings";
+
+import Labels from "./Sections/Labels";
+import Base from "./Sections/Base";
+import Digits from "./Sections/Digits";
+import Representation from "./Sections/Representation";
 
 import defaultState from "../State/defaultState";
-import validate from ".//validation/validation";
+import validate from "./validation/validation";
 
-const SettingsSandbox = () => {
+
+const SettingsSandbox = ({ langData }) => {
 
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState,
@@ -33,27 +34,31 @@ const SettingsSandbox = () => {
         storageKey={"SettingsSandbox"}
         validate={validate}
         dispatch={dispatch} />
-      <SettingsSection name={"Digits"}>
+      <SettingsSection name={langData.digits.name}>
         <Digits
-         digits={state.digits}
-         digitsMin={state.digitsMin}
-         digitsMax={state.digitsMax}
-         handleInputChange={handleInputChange} />
+          langData={langData.digits.options}
+          digits={state.digits}
+          digitsMin={state.digitsMin}
+          digitsMax={state.digitsMax}
+          handleInputChange={handleInputChange} />
       </SettingsSection>
-      <SettingsSection name={"Base"}>
+      <SettingsSection name={langData.base.name}>
         <Base
+          langData={langData.base.options}
           baseIn={state.baseIn}
           baseOut={state.baseOut}
           handleInputChange={handleInputChange} />
       </SettingsSection>       
-      <SettingsSection name={"Representation"}>
+      <SettingsSection name={langData.representation.name}>
         <Representation
+          langData={langData.representation.options}
           mode={state.mode}
           skin={state.skin}
           handleInputChange={handleInputChange} />
       </SettingsSection>
-      <SettingsSection name={"Labels"}>
+      <SettingsSection name={langData.labels.name}>
         <Labels
+          langData={langData.labels}
           valueUp={state.labelsUp}
           valueDown={state.labelsDown}
           handleInputChange={handleInputChange} />  
