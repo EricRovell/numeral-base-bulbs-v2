@@ -1,16 +1,17 @@
-import { labelsUp, labelsDown } from "./data";
 import Select from "components/Settings/Controls/Select";
 
-const LabelsForm = ({ valueUp, valueDown, handleInputChange }) => (
+const LabelsForm = ({ langData, valueUp, valueDown, handleInputChange }) => (
   <>  
     <Select
       name={"labelsUp"}
-      data={labelsUp}
+      label={langData.labelsUp}
+      options={langData.options}
       value={valueUp}
       handleInputChange={handleInputChange} />
     <Select
       name={"labelsDown"}
-      data={labelsDown}
+      label={langData.labelsUp}
+      options={langData.options}
       value={valueDown}
       handleInputChange={handleInputChange} />
   </>
