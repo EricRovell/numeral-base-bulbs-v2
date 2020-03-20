@@ -2,10 +2,10 @@ import useUserSettingsReducer from "components/Settings/useUserSettings/useUserS
 
 import SetSettings from "components/Settings/SetSettings/SetSettings";
 
-import Labels from "components/Mode/Sandbox/Settings/Labels/Labels";
-import Base from "components/Mode/Sandbox/Settings/Base/Base";
-import Digits from "components/Mode/Sandbox/Settings/Digits/Digits";
-import Representation from "components/Mode/Sandbox/Settings/Representation/Representation";
+import Labels from "components/Mode/Sandbox/Settings/Sections/Labels";
+import Base from "components/Mode/Sandbox/Settings/Sections/Base";
+import Digits from "components/Mode/Sandbox/Settings/Sections/Digits";
+import Representation from "components/Mode/Sandbox/Settings/Sections/Representation";
 
 import defaultState from "components/Mode/Sandbox/State/defaultState";
 import validate from "components/Mode/Sandbox/Settings/validation/validation";
