@@ -10,6 +10,6 @@ export default ({ data, nameRadio, valueRadio, handleInputChange  }) => (
       checked={(data.representation === valueRadio)}
       onChange={handleInputChange} />
     <RadioSVG />      
-    <span>{data.representation}</span>      
+    <span>{data.name}</span>      
   </label>
 );
