@@ -1,11 +1,13 @@
 import style from "./loader.module.css";
 
 const Loader = () => (
-  <div className={style.loader}>    
-    <span />
-    <span />
-    <span />          
-  </div>
+  <aside className={style["loader-wrapper"]}>
+    <div className={style.loader}>    
+      <span />
+      <span />
+      <span />          
+    </div>
+  </aside>
 );
 
 export default Loader;
