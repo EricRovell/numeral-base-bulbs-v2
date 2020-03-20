@@ -10,9 +10,9 @@ const RadioWithOptions = ({ data, nameRadio, nameSelect, valueRadio, valueSelect
       onChange={handleInputChange}
       value={valueSelect}
       disabled={(data.representation !== valueRadio)}>
-        {data.skins.map(option => (
-          <option value={option} key={option}>
-            {option}
+        {Object.keys(data.skins).map(skin => (
+          <option value={skin} key={skin}>
+            {data.skins[skin]}
           </option>
         ))}
     </select>   
