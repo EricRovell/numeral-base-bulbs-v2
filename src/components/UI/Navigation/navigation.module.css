@@ -15,7 +15,7 @@
   grid-template: 1fr / 1rem max-content;
   align-items: center;
   font-size: 0.8rem;
-  color: var(--font-color-1-bright);
+  color: var(--font-color-accent-1);
   padding: 0.25em;
 
   cursor: pointer;
@@ -85,7 +85,7 @@
 
 .navigation-link-active {
   position: relative;
-  color: var(--font-color-1-bright);
+  color: var(--font-color-accent-1-active);
 }
 
 .navigation-link-active::after {
@@ -94,5 +94,5 @@
   right: -1.2em;
   height: 100%;
   font-size: 0.6rem;
-  color: var(--color-3);
+  color: var(--font-color-1);
 }
