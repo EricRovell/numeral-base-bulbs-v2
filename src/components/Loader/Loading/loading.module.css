@@ -3,7 +3,7 @@
 .loader-container > h2 {
   font-size: 0.85rem;
   font-family: var(--font-main);
-  color: var(--font-color-1-bright);
+  color: var(--font-color-1);
   font-variation-settings: "wght" 200;
   user-select: none;
 }
@@ -23,8 +23,8 @@
   --time: 1.1s;
 
   --digit-color: white;
-  --pit-color:#1b2a33;
-  --pit-color-shadow: #162229;
+  --pit-color: var(--loader-pit-color);
+  --pit-color-shadow: var(--loader-pit-color-shadow);
 
   --height: 350px;
   --width: calc(var(--height) * 0.75);  
@@ -66,7 +66,7 @@
 .binary svg {
   --animation: a;
 
-  fill: white;
+  fill: var(--loader-digits);
   width: var(--digit-size);
   height: var(--digit-size);
   animation: a var(--time) linear infinite;
