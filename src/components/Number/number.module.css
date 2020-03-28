@@ -61,6 +61,7 @@
   outline: none;
 
   font-size: 2rem;
+  color: var(--font-color-digit);
   font-family: inherit;
   white-space: nowrap;
   overflow: hidden;
@@ -71,8 +72,8 @@
 }
 
 .number input[type=text]::selection {
-  background: var(--color-1);
-  color: var(--color-3);
+  background: var(--font-color-selection-bg);
+  color: var(--font-color-selection);
 }
 
 /* border-radius */
