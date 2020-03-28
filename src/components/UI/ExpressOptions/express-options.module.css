@@ -23,7 +23,7 @@
 .express-options svg {
   width: 85%;
   height: 85%;
-  fill: var(--color-2);
+  fill: var(--accent-1);
   transition: transform 0.2s ease-in;
   cursor: pointer;
 }
