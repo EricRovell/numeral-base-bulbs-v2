@@ -4,7 +4,7 @@
   row-gap: 0.75em;
 
   font-family: var(--font-main);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 1.32;
 }
 
@@ -15,7 +15,7 @@
   place-self: center;
   margin-bottom: 0.5em;
   font-size: 1rem;
-  color: var(--font-color-1-bright);
+  color: var(--font-color-accent-1);
 }
 
 .article h2,
@@ -70,10 +70,11 @@
 
 .article > blockquote {
   position: relative;
-  background: var(--color-1-25);
+  background: var(--color-1-1);
   padding: 0.75em 1em 0.75em 1.5em;
   margin: 0.25em 0; 
   color: var(--font-color-2);
+  font-size: 0.65rem;
 }
 
 .article > blockquote::before {
@@ -95,4 +96,10 @@
 /* p */
 .article p {
   text-indent: 1em;
+}
+
+/* selection */
+.article *::selection {
+  color: var(--article-selection-color);
+  background: var(--article-selection-bg);
 }
