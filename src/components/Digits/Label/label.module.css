@@ -9,7 +9,7 @@
 
 .label {
   font-family: var(--font-digits);
-  color: var(--font-color-1);
+  color: var(--font-color-2);
 
   position: relative;
   font-size: 0.65rem;  
