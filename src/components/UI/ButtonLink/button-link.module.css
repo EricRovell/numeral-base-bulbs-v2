@@ -3,7 +3,7 @@
 
   border: none;
   outline: none;
-  background: var(--accent-1);
+  background: var(--accent-2);
   padding: 0.25rem 0.5rem;
   border-radius: 7.5px;
   overflow: hidden;
@@ -20,7 +20,8 @@
 
 .button-link a {
   font-size: var(--size);
-  color: var(--font-color-accent-1);
+  color: var(--font-color-2);
+  text-decoration: none;
 }
 
 .button-link svg {
