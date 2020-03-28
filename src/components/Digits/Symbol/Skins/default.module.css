@@ -105,6 +105,15 @@
   box-shadow: var(--shadow-3);
 }
 
+.digit input[type=text] {
+  color: var(--font-color-digit);
+}
+
+.digit input[type=text]::selection {
+  background: var(--font-color-selection-bg);
+  color: var(--font-color-selection);
+}
+
 /* binary switcher, looks the same */
 .digit > div:nth-of-type(4) {
   display: grid;
