@@ -2,23 +2,19 @@ export default {
 
   sections: {
     name: "settings-sections",
-    options: [
-      {
-        title: "Пользователь",
-        value: "globals"
-      },
-      {
-        title: "Песочница",
-        value: "sandbox"
-      },
-      {
-        title: "Испытания",
-        value: "game"
-      }
-    ]
+    options: {
+      globals: "Пользователь",
+      sandbox: "Песочница",
+      game: "Испытания"
+    }
   },
 
   sandbox: {
+
+    settingsControls: {
+      "reset": "Настройки по умолчанию",
+      "set": "Применить предпочтения"
+    },
 
     digits: {
       name: "Символы",
@@ -78,6 +74,35 @@ export default {
         none: "Отсутствует"
       }
     }
+  },
+
+  globals: {
+
+    settingsControls: {
+      "reset": "Настройки по умолчанию",
+      "set": "Применить предпочтения"
+    },
+
+    userPreferences: {
+      name: "Пользовательские настройки",
+      lang: {
+        label: "Язык интерфейса",
+        name: "lang",
+        options: {
+          EN: "English",
+          RU: "Russian"
+        }
+      },
+      theme: {
+        label: "Тема оформления",
+        name: "theme",
+        options: {
+          dark: "Тёмная",
+          light: "Светлая"
+        }
+      }
+    },    
+
   }
 
 };
