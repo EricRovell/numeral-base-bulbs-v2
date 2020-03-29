@@ -12,7 +12,7 @@ import { lang, theme } from "./data";
 import selectStyle from "./select-style.module.css";
 
 
-const SettingsGlobal = () => {
+const SettingsGlobal = ({ langData }) => {
 
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState: initialState,
@@ -32,20 +32,21 @@ const SettingsGlobal = () => {
       <SetSettings
         state={state}
         defaultState={initialState}
+        langData={langData.settingsControls}
         dispatch={dispatch}
         storageKey={"SettingsGlobal"} />
-      <SettingsSection name="User Preferences">
-        <span>{lang.label["EN"]}</span>
+      <SettingsSection name={langData.userPreferences.name}>
+        <span>{langData.userPreferences.lang.label}</span>
         <div className={selectStyle["select"]}>
           <Radio
-            data={lang}
+            data={langData.userPreferences.lang}
             value={state.lang}
             handleInputChange={handleInputChange} />
         </div>
-        <span>{theme.label["EN"]}</span>
+        <span>{langData.userPreferences.theme.label}</span>
         <div className={selectStyle["select"]}>
           <Radio
-            data={theme}
+            data={langData.userPreferences.theme}
             value={state.theme}
             handleInputChange={handleInputChange} />
         </div>
