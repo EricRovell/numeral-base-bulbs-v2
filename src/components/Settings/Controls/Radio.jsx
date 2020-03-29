@@ -1,14 +1,14 @@
 const Select = ({ data, value, handleInputChange }) => (
   < >
-    {data.options.map(option => (
-      <label key={option.title}>
+    {Object.keys(data.options).map(option => (
+      <label key={option}>
         <input
           type="radio"
           name={data.name}
-          value={option.value}
-          checked={(value === option.value)}
+          value={option}
+          checked={(value === option)}
           onChange={handleInputChange} />
-        <span>{option.title}</span>
+        <span>{data.options[option]}</span>
       </label>  
     ))}  
   </>
