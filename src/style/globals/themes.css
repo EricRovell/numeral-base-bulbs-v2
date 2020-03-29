@@ -6,11 +6,9 @@
   --color-2: rgb(128, 128, 128);
   --color-3: rgb(209, 209, 209);
 
-  --color-1-1: rgb(46, 46, 51, 0.4);
-
-  --accent-1: var(--color-2);
-  --accent-2: var(--color-3);
-
+  --accent-1: var(--color-3);
+  --accent-2: var(--color-2);
+  --accent-transparent: rgb(46, 46, 51, 0.4);
   
   --color-3-15: rgb(209, 209, 209, 0.15);  
 
@@ -23,11 +21,18 @@
   --font-color-selection-bg: var(--color-1);
 
   --font-color-2: rgb(112, 112, 112);
-  --font-color-accent-1: var(--color-2);
+  --font-color-accent-1: var(--color-3);
   --font-color-accent-1-active: rgb(182, 182, 182);
   --font-color-accent-2: rgb(182, 182, 182);
 
+  --font-link: var(--color-3);
+
   --icon-fill-1: var(--color-2);
+  --icon-fill-2: var(--color-2);
+
+  /* section block */
+  --section-border: 1px solid var(--color-1);
+  --section-shadow: var(--shadow-3);
 
   /* --font-color-accent-1: #FFFFFF; */
 
@@ -45,6 +50,18 @@
   --loader-pit-color:#1b2a33;
   --loader-pit-color-shadow: #162229;
 
+  /* bulb default */
+  --bulb-fill-up: var(--color-3);
+  --bulb-fill-down: var(--color-2);
+  --bulb-fill-active: gold;
+  --bulb-radiation: drop-shadow(0px 0px 17px hsla(51, 100%, 60%, 0.85));
+  /* bulb modern */
+  --bulb-modern-label: var(--color-1);
+  /* lamp */
+  --lamp-wire: black;
+  --lamp-bulb: rgba(255, 255, 255 , 0.03);
+  --lamp-bulb-active: rgba(255, 255, 255, 1); 
+
 }
 
 :root[theme="light"] {
@@ -58,10 +75,9 @@
   --color-2: #79bac1;
   --color-3: #f1f3f4;
 
-  --color-1-1: hsl(189.1, 52.3%, 34.5%);
-
-  --accent-1: hsl(189.1, 52.3%, 34.5%);
-  --accent-2: var(--color-1);
+  --accent-1: var(--color-1);
+  --accent-2: var(--color-2);
+  --accent-transparent: hsla(189.1, 52.3%, 34.5%, 0.1);
 
   --font-color-1: rgb(85, 85, 85);
   --font-color-2: rgb(210, 210, 210);
@@ -69,11 +85,20 @@
   --font-color-accent-1-active: hsl(189.1, 52.3%, 34.5%);
   --font-color-accent-2: hsl(189.1, 22.3%, 44.5%);
 
+  --font-link: rgb(197, 118, 197);
+
   --font-color-digit: #512b58;
   --font-color-selection: var(--color-3);
   --font-color-selection-bg: var(--color-1);
 
-  --icon-fill-1: var(--color-1);
+  --icon-fill-1: var(--color-2);
+  --icon-fill-2: var(--color-1);
+
+  /* section block */
+  --section-border: 1px solid var(--color-2);
+  --section-shadow: var(--shadow-2);
+
+  --bulb-fill: var(--color-2);
 
   --shadow-1:
     5px 5px 15px rgba(0, 0, 0, 0.15),
@@ -90,6 +115,18 @@
   --loader-digits: black;
   --loader-pit-color:#4a728a;
   --loader-pit-color-shadow: #19435d;
+
+  /* bulb default */
+  --bulb-fill-up: hsl(185.8, 36.7%, 80%);
+  --bulb-fill-down: var(--color-1);
+  --bulb-fill-active: gold;
+  --bulb-radiation: drop-shadow(0px 0px 17px rgba(210, 105, 30, 0.9));
+  /* bulb modern */
+  --bulb-modern-label: var(--color-3);
+  /* lamp */
+  --lamp-wire: rgba(77, 77, 77);
+  --lamp-bulb: hsl(185.8, 36.7%, 80%);
+  --lamp-bulb-active: rgba(255, 255, 255, 1);
 
   /*
   512b58 2a7886 79bac1 f1f3f4
