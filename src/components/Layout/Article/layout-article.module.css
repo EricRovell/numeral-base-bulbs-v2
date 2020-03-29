@@ -1,15 +1,8 @@
 .layout-article {
   display: grid;
-  grid-template-columns: 
-    minmax(0.1rem, 1fr)
-    minmax(auto, 60ch)
-    minmax(0.1rem, 1fr);
-  grid-auto-rows: min-content;
-  row-gap: 2.5em;
-  max-width: 100%;
-  height: auto;
-  width: 100%;
-  height: 100%;
+  grid-template: 1fr / minmax(10ch, 30ch) 1fr;
+  column-gap: 1em;
+
   padding: 2.5em 2em 2.5em 3.5em;
 
   font-family: var(--font-main);
@@ -18,9 +11,74 @@
 
   overflow-x: hidden;
   overflow-y: auto;
+  max-height: calc(100vh - 55px);
 }
 
-/* side-columns are not for content */
-.layout-article > * {
+.layout-article > article {
   grid-column: 2;
+
+  display: grid;
+  grid-template-columns: 
+    minmax(5ch, 1fr)
+    minmax(auto, 60ch)
+    minmax(5ch, 1fr);
+  grid-auto-rows: min-content;
+  row-gap: 0.5em;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 2.5em;
+}
+
+.layout-article > nav {
+  grid-column: 1;
+  position: sticky;
+  top: 0;
+  height: min-content;
+}
+
+
+/* side-columns are not for content */
+.layout-article > article > * {
+  grid-column: 2;
+}
+
+/* custom scroll bar for non-mobile */
+@media screen and (min-width: 768px) {
+
+  .layout-article::-webkit-scrollbar {
+    width: 7.5px;
+  }
+  
+  .layout-article::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  
+  .layout-article::-webkit-scrollbar-thumb {
+    background: var(--color-2);
+  }
+}
+
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+  .layout-article {
+    grid-template: min-content 1fr / auto;
+    row-gap: 1em;
+  }
+
+  .layout-article > nav {
+    grid-row: 1;
+  }
+  
+  .layout-article > article {
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: 1fr;
+  }
+
+  .layout-article > article > * {
+    grid-column: 1;
+  }
+
 }
