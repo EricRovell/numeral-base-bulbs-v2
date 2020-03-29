@@ -1,7 +1,8 @@
-import ButtonWithMessage from "components/Settings/Controls/ButtonWithMessage/ButtonWithMessage";
+import ButtonIcon from "components/Settings/Controls/ButtonIcon/ButtonIcon";
+import { SetSettingsIcon, ResetSettingsIcon } from "./Icons";
 import style from "./set-settings.module.css";
 
-const SetSettings = ({ state, defaultState, storageKey, dispatch, validate = null, sideEffect = null }) => {
+const SetSettings = ({ state, defaultState, storageKey, dispatch, langData, validate = null, sideEffect = null }) => {
   // state -> current settings state
   // defaultState -> for reset
   // validate -> validation function, if not presentt -> pass w/o it
@@ -47,14 +48,16 @@ const SetSettings = ({ state, defaultState, storageKey, dispatch, validate = nul
 
   return (
     <div className={style["set-settings"]}>
-      <ButtonWithMessage
-        title={"Reset to defaults"}
-        action={"Done!"}
-        handleClick={resetSettings} />
-      <ButtonWithMessage
-        title={"Save user settings"}
-        action={"Saved successfully!"}
-        handleClick={saveUserSettings} />    
+      <ButtonIcon
+        title={langData.reset} 
+        handleClick={resetSettings}>
+          <ResetSettingsIcon />
+      </ButtonIcon>
+      <ButtonIcon
+        title={langData.set}
+        handleClick={saveUserSettings}>
+          <SetSettingsIcon />
+      </ButtonIcon>   
     </div>
   );
 };

@@ -3,29 +3,18 @@
 
   display: grid;
   grid-template: 1fr / 1fr 1fr;
+  column-gap: 1.5em;
   place-items: center;
   place-content: center;
   place-self: center;
 
   height: min-content;
   width: max-content;
-  padding: 0.5rem 0;
 
   font-size: 0.65rem;
 }
 
 .set-settings button {
   place-self: center;
-  border: none;
-  box-shadow: none; 
   cursor: pointer;
-}
-
-.set-settings button:first-child {
-  border-radius: 7.5px 0 0 7.5px;
-  border-right: 1.5px solid var(--bg);
-}
-
-.set-settings button:nth-child(2) {
-  border-radius: 0 7.5px 7.5px 0;
 }
