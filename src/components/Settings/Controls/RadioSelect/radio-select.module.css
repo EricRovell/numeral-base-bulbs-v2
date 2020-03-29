@@ -13,7 +13,7 @@
 .radio svg {
   width: 1.15em;
   height: 1.15em;
-  stroke: orange;
+  stroke: var(--accent-1);
 }
 
 .radio svg ellipse {
