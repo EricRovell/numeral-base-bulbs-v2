@@ -36,7 +36,7 @@
 }
 
 .section:hover::after {
-  background: var(--font-color-1-bright-1);
+  background: var(--accent-2);
 }
 
 
