@@ -33,7 +33,7 @@
 .header svg {
   width: 100%;
   height: 100%;
-  fill: var(--accent-1);
+  fill: var(--icon-fill-2);
   transform: rotate(-90deg);
   cursor: pointer;
 }
