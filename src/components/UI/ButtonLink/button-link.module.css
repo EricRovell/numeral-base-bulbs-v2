@@ -3,9 +3,10 @@
 
   border: none;
   outline: none;
-  background: var(--accent-2);
+  border: 2px solid var(--accent-1);
+  background: none;
   padding: 0.25rem 0.5rem;
-  border-radius: 7.5px;
+  border-radius: 7.5px 20px 20px 7.5px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -19,28 +20,20 @@
 }
 
 .button-link a {
+  font-family: var(--font-main);
   font-size: var(--size);
-  color: var(--font-color-2);
+  color: var(--accent-1);
   text-decoration: none;
+}
+
+/* override article's styles */
+.button-link a::before {
+  content: initial;
 }
 
 .button-link svg {
   height: 75%;
   width: 75%;
   fill: var(--font-color-accent-1);
-  animation: wiggle 0.65s ease-in-out infinite alternate;
-  animation-play-state: paused;
-}
-
-.button-link:hover svg {
-  animation-play-state: running;
-}
-
-@keyframes wiggle {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(0.25rem);
-  }
+  justify-self: end;
 }
