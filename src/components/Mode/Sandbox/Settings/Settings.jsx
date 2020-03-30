@@ -30,6 +30,7 @@ const SettingsSandbox = ({ langData }) => {
     <form>
       <SetSettings
         state={state}
+        langData={langData.settingsControls}
         defaultState={defaultState}
         storageKey={"SettingsSandbox"}
         validate={validate}
