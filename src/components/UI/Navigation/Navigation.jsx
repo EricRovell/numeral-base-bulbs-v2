@@ -3,7 +3,7 @@ import Chevron from "./Chevron";
 
 import style from "./navigation.module.css";
 
-const SubMenu = ({ items }) => {
+const SubMenu = ({ items, href }) => {
 
   if (items.nodes && items.nodes.length > 0) {
     return (
@@ -16,7 +16,7 @@ const SubMenu = ({ items }) => {
         <ul>
           {items.nodes.map(item => (
             <li key={item.label}>
-              <SubMenu items={item} />
+              <SubMenu items={item} href={href} />
             </li>
           ))}
         </ul>
@@ -24,10 +24,12 @@ const SubMenu = ({ items }) => {
     );
   }
 
+  console.log(href);
+
   return (    
     <ActiveLink
-      href="/tutorial/[...route]"
-      as={`/tutorial/${items.href}`}
+      href={href}
+      as={items.href}
       className={style["navigation-link"]}
       activeClassName={style["navigation-link-active"]}>
         <a title={items.label}>
@@ -37,7 +39,7 @@ const SubMenu = ({ items }) => {
   );
 };
 
-const Navigation = ({ items }) => {
+const Navigation = ({ items, href }) => {
 
   if (!items) return <nav />
 
@@ -46,6 +48,7 @@ const Navigation = ({ items }) => {
       {items.map(item => (
         <SubMenu
           items={item}
+          href={href}
           key={item.label} />
       ))}
     </nav>
