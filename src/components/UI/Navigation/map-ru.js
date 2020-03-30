@@ -65,7 +65,7 @@ export default [
             href: "ru/settings/about",
           },
           {
-            label: "Как использовать собственные предпочтения",
+            label: "Собственные предпочтения",
             href: "ru/settings/how-to-use",
           },
           {
