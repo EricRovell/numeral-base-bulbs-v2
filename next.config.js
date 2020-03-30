@@ -11,7 +11,7 @@ module.exports = withMDX({
     config.resolve.alias["style"] = path.join(__dirname, "src/style");
     config.resolve.alias["pages"] = path.join(__dirname, "src/pages");
     config.resolve.alias["utility"] = path.join(__dirname, "src/utility");
-    config.resolve.alias["tutorial"] = path.join(__dirname, "src/tutorial");
+    config.resolve.alias["articles"] = path.join(__dirname, "src/articles");
 
     return config;
   },
