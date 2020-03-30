@@ -23,7 +23,7 @@ const SettingsSections = ({ section, langData }) => {
 
 const SettingsPage = ({ langData }) => {
 
-  const [ section, setSection ] = useState("sandbox");
+  const [ section, setSection ] = useState("globals");
   
   return (
     <LayoutSettings className={style.settings}>
