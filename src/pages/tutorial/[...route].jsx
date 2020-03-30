@@ -7,7 +7,7 @@ import Error from "pages/_error";
 const Articles = ({ route }) => {
   // dynamically import mdx components from "tutorial/..."
   const Article = dynamic(
-    () => import(`tutorial/${route}.mdx`).catch(err => {
+    () => import(`articles/tutorial/${route}.mdx`).catch(err => {
       return () => <Error />
     }),
     { loading: () => <Loader /> }
@@ -16,7 +16,7 @@ const Articles = ({ route }) => {
 };
 
 const Tutorial = ({ route, contents }) => (
-  <LayoutArticle contents={contents}>      
+  <LayoutArticle contents={contents} href={"/tutorial/[...route]"}>      
     <Articles route={route} />
   </LayoutArticle>
 );
@@ -28,7 +28,7 @@ Tutorial.getInitialProps = async ({ query: { route }}) => {
   // dynamically importing contents data in required language
   const lang = route[0];
   const contents = (await import(
-    `components/UI/Navigation/map-${lang}`
+    `articles/tutorial/_map/tutorial-map-${lang}`
   )).default;
   
   return {
@@ -38,3 +38,33 @@ Tutorial.getInitialProps = async ({ query: { route }}) => {
 };
 
 export default Tutorial;
+
+/* import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
+
+import LayoutArticle from "components/Layout/Article/LayoutArticle";
+
+const AboutArticle = ({ lang }) => {
+  const Article =  dynamic(
+    () => import(`tutorial/about-${lang}.mdx`).catch(err => {
+      return () => <Error />
+    })
+  );
+  return <Article />
+};
+
+const AboutPage = () => {
+
+  const { asPath } = useRouter();
+  const lang = asPath.split("/")[2];
+  
+  return (
+    <LayoutArticle>
+      <AboutArticle lang={lang} />
+    </LayoutArticle>
+  );
+};
+
+export default AboutPage; */
+
+
