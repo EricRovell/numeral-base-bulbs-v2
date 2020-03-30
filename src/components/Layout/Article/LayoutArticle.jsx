@@ -3,9 +3,9 @@ import Article from "./Article";
 
 import style from "./layout-article.module.css";
 
-const LayoutArticle = ({ children, contents }) => (
+const LayoutArticle = ({ children, contents, href }) => (
   <main className={style["layout-article"]}>
-    <Navigation items={contents} />
+    <Navigation items={contents} href={href} />
     <Article>
       {children}
     </Article>
