@@ -33,7 +33,7 @@ export default (lang) => ([
   },
   {
     path: "/about",
-    as: `/about/${lang}`,
+    as: `/about/${lang}/welcome`,
     name: {
       "EN": "About",
       "RU": "О приложении",
