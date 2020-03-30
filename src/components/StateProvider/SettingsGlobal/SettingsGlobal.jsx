@@ -7,8 +7,6 @@ import SetSettings from "components/Settings/SetSettings/SetSettings";
 import Radio from "components/Settings/Controls/Radio";
 import SettingsSection from "components/Settings/Section";
 
-import { lang, theme } from "./data";
-
 import selectStyle from "./select-style.module.css";
 
 
