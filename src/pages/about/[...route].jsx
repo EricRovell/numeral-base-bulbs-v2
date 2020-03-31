@@ -6,7 +6,6 @@ import Error from "pages/_error";
 
 const Articles = ({ route }) => {
   // dynamically import mdx components from "tutorial/..."
-  console.log(`articles/about/${route}.mdx`);
   const Article = dynamic(
     () => import(`articles/about/${route}.mdx`).catch(err => {
       return () => <Error />
