@@ -1,3 +1,4 @@
+import { useStateContext } from "components/StateProvider/Context";
 import useUserSettingsReducer from "components/Settings/useUserSettings/useUserSettingsReducer";
 
 import initialState from "../initialState";
@@ -11,6 +12,15 @@ import selectStyle from "./select-style.module.css";
 
 
 const SettingsGlobal = ({ langData }) => {
+
+  const [ {}, dispatchGlobal ] = useStateContext();
+
+  const sideEffect = state => {
+    dispatchGlobal({
+      name: "reset",
+      state
+    });
+  };
 
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState: initialState,
@@ -29,6 +39,7 @@ const SettingsGlobal = ({ langData }) => {
     <form>
       <SetSettings
         state={state}
+        sideEffect={sideEffect}
         defaultState={initialState}
         langData={langData.settingsControls}
         dispatch={dispatch}
