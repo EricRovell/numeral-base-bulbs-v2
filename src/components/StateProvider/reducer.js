@@ -1,3 +1,5 @@
+import initialState from "./initialState";
+
 export default (state, action) => {
   switch (action.name) {
 
@@ -9,7 +11,7 @@ export default (state, action) => {
       };
 
     case "reset":
-      return action.state;
+      return action.state || initialState;
 
     default:
       return state;
