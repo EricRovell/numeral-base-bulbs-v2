@@ -8,11 +8,11 @@ export default [
         nodes: [
           {
             label: "Откуда идут корни?",
-            href: "/about/ru/welcome",
+            href: "/ru/about/ru/welcome",
           },
           {
             label: "Ссылки",
-            href: "/about/ru/attributions",
+            href: "/ru/about/ru/attributions",
           },
         ]
       },
