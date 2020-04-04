@@ -2,23 +2,19 @@ export default {
 
   sections: {
     name: "settings-sections",
-    options: [
-      {
-        title: "User",
-        value: "globals"
-      },
-      {
-        title: "Sandbox",
-        value: "sandbox"
-      },
-      {
-        title: "Challenge",
-        value: "game"
-      }
-    ]
+    options: {
+      globals: "Global",
+      sandbox: "Sandbox",
+      game: "Challenge"
+    }
   },
 
   sandbox: {
+
+    settingsControls: {
+      "reset": "Default settings",
+      "set": "Set preferences"
+    },
 
     digits: {
       name: "Symbols / Digits",
@@ -78,6 +74,35 @@ export default {
         none: "None"
       }
     }
+  },
+
+  globals: {
+
+    settingsControls: {
+      "reset": "Default settings",
+      "set": "Set preferences"
+    },
+
+    userPreferences: {
+      name: "User Preferences",
+      lang: {
+        label: "Language",
+        name: "lang",
+        options: {
+          EN: "English",
+          RU: "Russian"
+        }
+      },
+      theme: {
+        label: "Theme",
+        name: "theme",
+        options: {
+          dark: "Dark",
+          light: "Light"
+        }
+      }
+    },
+
   }
 
 };
