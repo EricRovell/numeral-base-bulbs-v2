@@ -1,31 +1,32 @@
-import { useStateContext } from "components/StateProvider/Context"; 
+import { useStateContext } from "components/StateProvider/Context";
+import useLocale from "./routes/useLocale"; 
 
-import Tabs from "components/UI/Tabs/Tabs";
-import routes from "./routes.js";
+import Tabs from "./Tabs/Tabs";
 import HeaderLogo from "./HeaderLogo";
 import HeaderTitle from "./HeaderTitle";
+import HeaderSwitch from "./Switch/HeaderSwitch";
 
 import style from "./header.module.css";
 
-const Routes = ({ routes }) => {
-
-  const [ { lang } ] = useStateContext(); 
-
-  return (
-    <nav className={style.navigation}>
-      <Tabs
-        routes={routes(lang.toLowerCase())}
-        lang={lang} />
-    </nav>
-  ); 
-};
-
-const Header = () => (
-  <header className={style.header}>
-    <HeaderLogo />
-    <HeaderTitle />  
-    <Routes routes={routes} />
-  </header>
+const Routes = ({ routes }) => (
+  <nav className={style.navigation}>
+    {routes && <Tabs routes={routes} />}
+  </nav>
 );
+
+const Header = () => {
+
+  const [ { lang } ] = useStateContext();
+  const routes = useLocale(lang.toLowerCase());
+  
+  return (
+    <header className={style.header}>
+      <HeaderLogo />
+      <HeaderTitle />  
+      <Routes routes={routes && routes} />
+      <HeaderSwitch />
+    </header>
+  );
+};
 
 export default Header;

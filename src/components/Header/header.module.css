@@ -2,7 +2,7 @@
 
 .header {
   display: grid;
-  grid-template: 1fr / 75px max-content 1fr max-content;
+  grid-template: 1fr / 75px max-content 1fr max-content 60px;
   column-gap: 5px;
   place-items: center;
 
@@ -51,6 +51,12 @@
   height: 100%;
 
   font-size: 0.7rem;
+}
+
+/* switch */
+
+.header:last-child {
+  grid-column: 5;
 }
 
 /* mobile */
