@@ -8,15 +8,15 @@ export default [
         nodes: [
           {
             label: "Что же такое система счисления?",
-            href: "/tutorial/ru/bases/numeral-bases",
+            href: "/ru/tutorial/ru/bases/numeral-bases",
           },
           {
             label: "Непозитионные системы счисления",
-            href: "/tutorial/ru/bases/non-positional",
+            href: "/ru/tutorial/ru/bases/non-positional",
           },
           {
             label: "Позиционные системы счисления",
-            href: "/tutorial/ru/bases/positional",
+            href: "/ru/tutorial/ru/bases/positional",
           },
         ]
       },
@@ -26,23 +26,23 @@ export default [
         nodes: [          
           {
             label: "Режим песочницы, что же это?",
-            href: "/tutorial/ru/sandbox/about",
+            href: "/ru/tutorial/ru/sandbox/about",
           },
           {
             label: "Символ",
-            href: "/tutorial/ru/sandbox/symbol",
+            href: "/ru/tutorial/ru/sandbox/symbol",
           },
           {
             label: "Символы",
-            href: "/tutorial/ru/sandbox/symbols",
+            href: "/ru/tutorial/ru/sandbox/symbols",
           },
           {
             label: "Число",
-            href: "/tutorial/ru/sandbox/number",
+            href: "/ru/tutorial/ru/sandbox/number",
           },
           {
             label: "Складывая всё воедино",
-            href: "/tutorial/ru/sandbox/whole-picture",
+            href: "/ru/tutorial/ru/sandbox/whole-picture",
           },
         ]
       },
@@ -52,7 +52,7 @@ export default [
         nodes: [
           {
             label: "Нас ждут испытания",
-            href: "/tutorial/ru/game/about",
+            href: "/ru/tutorial/ru/game/about",
           },
         ]
       },
@@ -62,15 +62,15 @@ export default [
         nodes: [
           {
             label: "О предпочтениях",
-            href: "/tutorial/ru/settings/about",
+            href: "/ru/tutorial/ru/settings/about",
           },
           {
             label: "Собственные предпочтения",
-            href: "/tutorial/ru/settings/how-to-use",
+            href: "/ru/tutorial/ru/settings/how-to-use",
           },
           {
             label: "Настройки. Режим песочницы",
-            href: "/tutorial/ru/settings/sandbox",
+            href: "/ru/tutorial/ru/settings/sandbox",
           },
         ]
       },
