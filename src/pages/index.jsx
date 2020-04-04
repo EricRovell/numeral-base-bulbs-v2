@@ -1,29 +1,21 @@
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import useUserSettings from "components/Settings/useUserSettings/useUserSettings";
-import { StateProvider, defaultState, reducer } from "components/Mode/Sandbox/State/useStateSandbox";
+export default () => {
 
-import Sandbox from "components/Mode/Sandbox/Sandbox";
-import Loader from "components/Loader/Loader";
+  const router = useRouter();
 
-const HomePage = () => {
+  useEffect(() => {
+    const preferences = JSON.parse(
+      localStorage.getItem("SettingsGlobal")
+    );
 
-  const [ state, isLoading ] = useUserSettings(defaultState, "SettingsSandbox");
-  const { asPath } = useRouter();
+    if (preferences) {
+      router.replace("/[lang]/sandbox", `/${preferences.lang.toLowerCase()}/sandbox`)
+    } else {
+      router.replace("/", `/en/sandbox`)
+    }
+  }, []);
 
-  const lang = asPath.replace("/", "").toUpperCase();
-
-  if (isLoading) {
-    return <Loader />
-  }
-
-  return !isLoading && (
-    <StateProvider
-      defaultState={state}
-      reducer={reducer}>
-        <Sandbox />
-    </StateProvider>
-  );
+  return null;
 };
-
-export default HomePage;
