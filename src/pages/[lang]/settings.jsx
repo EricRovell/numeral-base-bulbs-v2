@@ -21,7 +21,7 @@ const SettingsSections = ({ section, langData }) => {
   );
 };
 
-const SettingsPage = ({ langData }) => {
+const SettingsPage = ({ lang, langData }) => {
 
   const [ section, setSection ] = useState("globals");
   
@@ -40,14 +40,16 @@ const SettingsPage = ({ langData }) => {
   );
 };
 
-SettingsPage.getInitialProps = async ({ asPath }) => {
+SettingsPage.getInitialProps = async ({ query }) => {
   // dynamically importing contents data in required language
-  const lang = asPath.split("/")[2];
+  const lang = query.lang;
+
   const langData = (await import(
     `components/Settings/lang/settings-lang-data-${lang}`
   )).default;
   
   return {
+    lang: query.lang.toUpperCase(),
     langData
   };
 };
