@@ -24,8 +24,6 @@ const SubMenu = ({ items, href }) => {
     );
   }
 
-  console.log(href);
-
   return (    
     <ActiveLink
       href={href}
