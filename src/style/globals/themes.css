@@ -6,6 +6,11 @@
   --color-2: rgb(128, 128, 128);
   --color-3: rgb(209, 209, 209);
 
+  --header-title-fill: var(--color-3);
+  --header-title-fillshade: hsl(0, 0%, 75%);
+  --header-title-color: var(--color-1);
+  --header-box-stroke: var(--color-2);
+
   --accent-1: var(--color-3);
   --accent-2: var(--color-2);
   --accent-transparent: rgb(46, 46, 51, 0.4);
@@ -71,9 +76,14 @@
   --color-2: rgb(170, 170, 170);
   --color-3: rgb(245, 245, 245); */
 
-  --color-1: hsl(189.1, 52.3%, 34.5%);
+  --color-1: hsl(189.1, 52%, 34%);
   --color-2: #79bac1;
   --color-3: #f1f3f4;
+
+  --header-title-fill: var(--color-1);
+  --header-title-fillshade: hsl(189.1, 52%, 40%);
+  --header-title-color: rgb(230, 230, 230);
+  --header-box-stroke: var(--color-1);
 
   --accent-1: var(--color-1);
   --accent-2: var(--color-2);
