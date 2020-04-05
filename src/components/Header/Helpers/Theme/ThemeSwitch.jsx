@@ -1,7 +1,7 @@
 import ThemeIcon from "./SVGIcon";
 import style from "./theme-switch.module.css";
 
-const ThemeSwitch = ({ value, dispatch }) => {
+const ThemeSwitch = ({ value, dispatch, locale }) => {
 
   const handleSwitch = () => {
     dispatch({
@@ -14,6 +14,7 @@ const ThemeSwitch = ({ value, dispatch }) => {
   
   return (
     <div
+      title={locale}
       className={style.switch}
       onClick={handleSwitch}>
         <ThemeIcon />

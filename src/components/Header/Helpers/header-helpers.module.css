@@ -1,0 +1,25 @@
+.header-switch {
+  display: grid;
+  grid-auto-flow: column;
+
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0.25em;
+}
+
+.header-switch svg {
+  cursor: pointer;
+  fill: var(--icon-fill-2);
+  width: 60%;
+  height: 60%;
+  align-self: end;
+}
+
+/* github */
+
+.header-switch div > a {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}

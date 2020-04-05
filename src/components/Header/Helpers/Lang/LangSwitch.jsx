@@ -13,7 +13,7 @@ const data = {
   }
 };
 
-const LangSwitch = ({ value, dispatch }) => {
+const LangSwitch = ({ value, dispatch, locale }) => {
 
   const router = useRouter();
   const regex = /\/en\/|\/ru\//g;
@@ -28,7 +28,7 @@ const LangSwitch = ({ value, dispatch }) => {
   ); 
 
   return (
-    <label className={style.switch}>
+    <label className={style.switch} title={locale}>
       <LangIcon />
       <input type="checkbox" defaultChecked={true} />
       <div>

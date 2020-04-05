@@ -8,11 +8,6 @@
   user-select: none;
 }
 
-.switch svg {
-  width: 100%;
-  height: 100%;
-}
-
 .switch input {
   display: none;
 }
