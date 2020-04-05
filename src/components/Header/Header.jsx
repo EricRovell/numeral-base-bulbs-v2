@@ -3,30 +3,30 @@ import useLocale from "./routes/useLocale";
 
 import Tabs from "./Tabs/Tabs";
 import HeaderLogo from "./HeaderLogo";
-import HeaderTitle from "./HeaderTitle";
-import HeaderSwitch from "./Switch/HeaderSwitch";
+import HeaderTitle from "./Title/HeaderTitle";
+import HeaderHelpers from "./Helpers/HeaderHelpers";
+
+import routes from "./routes";
 
 import style from "./header.module.css";
 
 const Routes = ({ routes }) => (
   <nav className={style.navigation}>
-    {routes && <Tabs routes={routes} />}
+    <Tabs routes={routes} />
   </nav>
 );
 
-const Header = () => {
+export default function Header() {
 
   const [ { lang } ] = useStateContext();
-  const routes = useLocale(lang.toLowerCase());
+  const locale = useLocale(lang.toLowerCase());
   
-  return (
+  return locale && (
     <header className={style.header}>
       <HeaderLogo />
-      <HeaderTitle />  
-      <Routes routes={routes && routes} />
-      <HeaderSwitch />
+      <HeaderTitle title={locale.title} />  
+      <Routes routes={routes(locale.routes)} />
+      <HeaderHelpers locale={locale.helpers} />
     </header>
   );
 };
-
-export default Header;
