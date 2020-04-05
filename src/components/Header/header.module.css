@@ -2,7 +2,8 @@
 
 .header {
   display: grid;
-  grid-template: 1fr / 75px max-content 1fr max-content 60px;
+  /* Columns: Logo Header EMPTY Tabs EMPTY Helpers */
+  grid-template: 1fr / minmax(50px, 75px) max-content 0.5fr max-content 1fr minmax(70px, 110px);
   column-gap: 5px;
   place-items: center;
 
@@ -30,11 +31,9 @@
   color: var(--font-color-accent-2);
 }
 
-.header svg {
-  width: 100%;
-  height: 100%;
-  fill: var(--icon-fill-2);
-  transform: rotate(-90deg);
+.header > svg {
+  width: 75%;
+  height: 75%;
   cursor: pointer;
 }
 
@@ -50,13 +49,13 @@
   width: 100%;
   height: 100%;
 
-  font-size: 0.7rem;
+  font-size: 0.55rem;
 }
 
 /* switch */
 
-.header:last-child {
-  grid-column: 5;
+.header > div {
+  grid-column: 6;
 }
 
 /* mobile */
