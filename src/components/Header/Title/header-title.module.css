@@ -1,0 +1,63 @@
+.title {
+  --size: 30px;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(7/6 * var(--size));
+  grid-template-rows: var(--size);
+  column-gap: 1px;
+  place-items: stretch;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.title svg {
+  --delay: 0.03s;
+  transition: transform 0.45s ease-in-out;
+}
+
+.title svg rect {
+  /* fill: #f49138; */
+  fill: var(--header-title-fillshade);
+}
+
+.title svg path:nth-of-type(1) {
+  /* fill: #ff9f40; */
+  fill: var(--header-title-fill);
+}
+
+.title svg path:nth-of-type(2) {
+  stroke: var(--header-box-stroke);
+}
+
+
+
+.title svg text {
+  font: 900 calc(3 * var(--size)) "Comic Sans MS";
+  fill: var(--header-title-color);
+}
+
+/* hover effect */
+.title:hover > svg {
+  transform: rotate(360deg);
+}
+
+.title > svg:nth-child(2) {
+  transition-delay: calc(var(--delay) * 2);
+}
+.title > svg:nth-child(3) {
+  transition-delay: calc(var(--delay) * 3);
+}
+.title > svg:nth-child(4) {
+  transition-delay: calc(var(--delay) * 4);
+}
+.title > svg:nth-child(5) {
+  transition-delay: calc(var(--delay) * 5);
+}
+.title > svg:nth-child(6) {
+  transition-delay: calc(var(--delay) * 6);
+}
+.title > svg:nth-child(7) {
+  transition-delay: calc(var(--delay) * 7);
+}
