@@ -1,10 +1,10 @@
 const path = require("path");
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/
-});
+const withPWA = require("next-pwa");
+const withMDX = require("@next/mdx")({ extension: /\.mdx?$/ });
 
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+module.exports = withPWA(withMDX({
+  pwa: { dest: "public" },
+  pageExtensions: ["js", "jsx", "md", "mdx"],
 
   webpack: (config, options) => {
     config.resolve.alias["components"] = path.join(__dirname, "src/components");
@@ -15,4 +15,4 @@ module.exports = withMDX({
 
     return config;
   },
-});
+}));
