@@ -1,0 +1,21 @@
+{
+  "name": "Numbers",
+  "short_name": "Numbers",
+  "description": "Numbers: Learn about numeral bases.",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/icon-512.svg",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "rgb(18, 21, 29)",
+  "background_color": "rgb(18, 21, 29)",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
