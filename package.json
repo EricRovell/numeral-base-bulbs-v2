@@ -22,12 +22,12 @@
   "author": "Eric Rovell",
   "license": "MIT",
   "dependencies": {
-    "@mdx-js/loader": "^1.5.5",
-    "@next/mdx": "^9.2.1",
-    "next": "^9.3.3",
-    "next-pwa": "^2.1.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "@mdx-js/loader": "^1.5.8",
+    "@next/mdx": "^9.3.4",
+    "next": "^9.3.4",
+    "next-pwa": "^2.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.4"
   }
 }
