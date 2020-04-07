@@ -23,3 +23,22 @@
   width: 100%;
   height: 100%;
 }
+
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+  .header-switch {
+    padding-bottom: 0;
+  }
+
+  .header-switch svg {
+    align-self: center;
+  }
+
+  /* github */
+  .header-switch div > a {
+    display: none;
+  }
+
+}
