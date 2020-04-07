@@ -10,7 +10,7 @@ import { useStateSandbox } from "components/Mode/Sandbox/State/useStateSandbox";
 
 const Sandbox = () => {
 
-  const [ state , dispatch ] = useStateSandbox();
+  const [ state, dispatch ] = useStateSandbox();
 
   return (
     <LayoutMain>        
@@ -21,7 +21,9 @@ const Sandbox = () => {
         state={state}
         dispatch={dispatch} />
       <ExpressOptions>
-        <ExpressSettings dispatchSB={dispatch} />
+        <ExpressSettings
+          state={state}
+          dispatchSB={dispatch} />
         <ExpressTutorial /> 
       </ExpressOptions>       
     </LayoutMain>
