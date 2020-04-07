@@ -8,7 +8,7 @@ const SubMenu = ({ items, href }) => {
   if (items.nodes && items.nodes.length > 0) {
     return (
       <section>
-        <input type="checkbox" id={items.label} />
+        <input type="checkbox" id={items.label} defaultChecked />
         <label htmlFor={items.label}>
           <Chevron />
           <span>{items.label}</span>
