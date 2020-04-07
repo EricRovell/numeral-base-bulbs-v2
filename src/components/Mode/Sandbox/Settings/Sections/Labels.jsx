@@ -10,7 +10,7 @@ const LabelsForm = ({ langData, valueUp, valueDown, handleInputChange }) => (
       handleInputChange={handleInputChange} />
     <Select
       name={"labelsDown"}
-      label={langData.labelsUp}
+      label={langData.labelsDown}
       options={langData.options}
       value={valueDown}
       handleInputChange={handleInputChange} />
