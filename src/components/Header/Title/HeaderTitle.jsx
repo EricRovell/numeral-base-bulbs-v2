@@ -1,11 +1,9 @@
 import Box from "./TitleBox";
 import style from "./header-title.module.css";
-import { useRouter } from "next/router";
+/* import { useRouter } from "next/router"; */
+import sailHome from "../sailHome";
 
 export default function Title({ title }) {
-
-  const router = useRouter();
-  const sailHome = () => router.push("/");
 
   return (
     <h1 className={style.title} onClick={sailHome}>
