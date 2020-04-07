@@ -1,18 +1,21 @@
 .express-form {
   display: grid;
-  row-gap: 0.5em;
+  row-gap: 1em;
+  
+  font-size: 0.4rem;
 }
 
-/* controls */
+.express-form header {
+  font-size: 0.6rem;
+}
 
+.express-form label,
 .express-form input,
 .express-form select {
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  padding: 0.1em 0.5em;
+  font-size: 0.5rem;
 }
 
-/* .express-form input:focus {
-  border: 1px solid var(--color-1);
-} */
+.express-form div:nth-of-type(1) svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
