@@ -1,23 +1,14 @@
-import { useStateContext } from "components/StateProvider/Context"; 
+import { useRouter } from "next/router";
 import Loading from "components/Loader/Loading/Loading";
 import style from "style/pages/game.module.css";
 
-const GamePage = ({ lang }) => {
-  //const [ { lang } ] = useStateContext();
-   
+export default function ChallengePage() {
+  
+  const { query: { lang }} = useRouter();
 
   return (
     <main className={style.game}>
-      <Loading lang={lang} />
+      <Loading lang={lang && lang.toUpperCase()} />
     </main>
   );
 };
-
-GamePage.getInitialProps = async ({ query: { lang }}) => {
-  console.log(lang);
-  return {
-    lang: lang.toUpperCase()
-  };
-};
-
-export default GamePage;
