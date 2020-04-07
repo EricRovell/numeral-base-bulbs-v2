@@ -81,14 +81,22 @@ export default (state, action) => {
         ...state,
         skin: "default",
         mode: action.mode || "symbol"
-      }
+      };
     }
 
     case "setSkin": {
       return {
         ...state,
         skin: action.skin || "default",
-      }
+      };
+    }
+
+    case "setModeSkin": {
+      return {
+        ...state,
+        mode: action.mode || "symbol",
+        skin: action.skin || "default"
+      };
     }
 
     default:
