@@ -12,7 +12,7 @@
   padding: 2.5em 2em;
 
   font-family: var(--font-main);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -28,42 +28,4 @@
   grid-auto-rows: min-content;
   row-gap: 20px;
   font-family: var(--font-main);
-}
-
-/* FORMS */
-
-.layout-settings > form input,
-.layout-settings > form select {
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  font-variation-settings: "wght" 650;
-  font-family: inherit;
-}
-
-.layout-settings > form > label {
-  user-select: none;
-  font-size: 0.7rem;
-}
-
-
-.layout-settings > form input[type=radio] {
-  display: none;
-}
-
-/* number/text */
-
-.layout-settings > form input[type=number],
-.layout-settings > form input[type=text] {
-  padding: 0.35em 0.75em;
-}
-
-/* select */
-
-.layout-settings > form select:disabled {
-  opacity: 0.5;
-}
-
-.layout-settings > form select {
-  padding: 0.1em 0.2em;
 }

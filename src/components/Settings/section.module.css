@@ -26,3 +26,46 @@
   padding: 1.5em;
   color: var(--font-color-1);
 }
+
+/* Forms */
+
+.section input,
+.section select {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-variation-settings: "wght" 650;
+  font-family: inherit;
+}
+
+.section label {
+  user-select: none;
+  font-size: 0.7rem;
+}
+
+
+.section input[type=radio] {
+  display: none;
+}
+
+/* number/text */
+
+.section input[type=number] {
+  padding: 0.35em 0.75em;
+}
+
+.section input[type=text] {
+  justify-self: stretch;
+  padding: 0.35em 0 0.35em 0.75em;
+  overflow: hidden;
+}
+
+/* select */
+
+.section select:disabled {
+  opacity: 0.5;
+}
+
+.section select {
+  padding: 0.1em 0.2em;
+}
