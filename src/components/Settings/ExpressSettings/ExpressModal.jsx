@@ -1,5 +1,7 @@
+import useLocale from "components/Hooks/useLocale";
 import useUserSettingsReducer from "components/Settings/useUserSettings/useUserSettingsReducer";
 
+import SettingsSection from "components/Settings/Section";
 import SetSettings from "components/Settings/SetSettings/SetSettings";
 
 import Labels from "components/Mode/Sandbox/Settings/Sections/Labels";
@@ -11,28 +13,30 @@ import defaultState from "components/Mode/Sandbox/State/defaultState";
 import validate from "components/Mode/Sandbox/Settings/validation/validation";
 
 import style from "./modal-form.module.css";
-import sectionStyle from "./section.module.css";
+import { useEffect } from "react";
 
-const Section = ({ children, name }) => (
-  <div className={sectionStyle.section}>
-    <header>{name}</header>
-    <div>
-      {children}
-    </div>
-  </div>
-);
+const ExpressModal = ({ stateSB, dispatchSB }) => {
 
-const ExpressModal = ({ dispatchSB }) => {
-
+  const [ langData, loadingLocale ] = useLocale("settings/settings-sandbox");
+  
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState,
     itemKey: "SettingsSandbox"
   });
 
+  useEffect(() => {
+    // updating the settings state
+    // according to the latest Sandbox state
+    dispatch({
+      name: "reset",
+      state: stateSB
+    });
+  }, [ stateSB ]);
+
   const handleInputChange = ({ target }) => {
     dispatch({
       name: target.name,
-      value: target.value 
+      value: target.value
     });
   };
 
@@ -43,40 +47,45 @@ const ExpressModal = ({ dispatchSB }) => {
     });
   };
 
-  return !isLoading && (    
+  return !isLoading && !loadingLocale && (    
     <form className={style["express-form"]}>
       <SetSettings
         state={state}
+        langData={langData.settingsControls}
         defaultState={defaultState}
         storageKey={"SettingsSandbox"}
         validate={validate}
         sideEffect={resetSandBoxState}
         dispatch={dispatch} />
-      <Section name={"Digits"}>
+      <SettingsSection name={langData.digits.name}>
         <Digits
+          langData={langData.digits.options}
           digits={state.digits}
           digitsMin={state.digitsMin}
           digitsMax={state.digitsMax}
           handleInputChange={handleInputChange} />
-      </Section>
-      <Section name={"Base/Radix"}>
+      </SettingsSection>
+      <SettingsSection name={langData.base.name}>
         <Base
+          langData={langData.base.options}
           baseIn={state.baseIn}
           baseOut={state.baseOut}
           handleInputChange={handleInputChange} />
-      </Section>      
-      <Section name={"Representation"}>
+      </SettingsSection>       
+      <SettingsSection name={langData.representation.name}>
         <Representation
+          langData={langData.representation.options}
           mode={state.mode}
           skin={state.skin}
           handleInputChange={handleInputChange} />
-      </Section>
-      <Section name={"Labels"}>
+      </SettingsSection>
+      <SettingsSection name={langData.labels.name}>
         <Labels
+          langData={langData.labels}
           valueUp={state.labelsUp}
           valueDown={state.labelsDown}
-          handleInputChange={handleInputChange} /> 
-      </Section>       
+          handleInputChange={handleInputChange} />  
+      </SettingsSection>       
     </form>    
   );
 };
