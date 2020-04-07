@@ -13,7 +13,7 @@ export default () => {
     if (preferences) {
       router.replace("/[lang]/sandbox", `/${preferences.lang.toLowerCase()}/sandbox`)
     } else {
-      router.replace("/", `/en/sandbox`)
+      router.push("/[lang]/sandbox", `/en/sandbox`)
     }
   }, []);
 
