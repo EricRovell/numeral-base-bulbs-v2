@@ -1,3 +1,5 @@
+import sailHome from "./sailHome";
+
 export default function HeaderLogo() {
 
   const strokeStyle = {
@@ -9,7 +11,7 @@ export default function HeaderLogo() {
   };
   
   return (
-    <svg viewBox="0 0 371.5 377.76">
+    <svg viewBox="0 0 371.5 377.76" onClick={sailHome}>
       <g>
         <rect fill="#f49138" x="213.48" y="210.44" width="153.92" height="157" rx="18.19" />
         <path fill="#ff9f40" d="M229,210.44h73.33a33.22,33.22,0,0,1,33.22,33.22v90.55a33.22,33.22,0,0,1-33.22,33.22H229a15.51,15.51,0,0,1-15.51-15.51V226A15.51,15.51,0,0,1,229,210.44Z" />
