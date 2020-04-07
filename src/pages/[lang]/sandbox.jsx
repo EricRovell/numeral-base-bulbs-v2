@@ -4,7 +4,12 @@ import { StateProvider, defaultState, reducer } from "components/Mode/Sandbox/St
 import Sandbox from "components/Mode/Sandbox/Sandbox";
 import Loader from "components/Loader/Loader";
 
+//import { useRouter } from "next/router";
+
 const HomePage = ({ lang }) => {
+
+  /* const router = useRouter();
+  console.log(router.query.lang); */
 
   const [ state, isLoading ] = useUserSettings(defaultState, "SettingsSandbox");
 
@@ -19,12 +24,6 @@ const HomePage = ({ lang }) => {
         <Sandbox />
     </StateProvider>
   );
-};
-
-HomePage.getInitialProps = async ({ query }) => {
-  return {
-    lang: query.lang
-  };
 };
 
 export default HomePage;
