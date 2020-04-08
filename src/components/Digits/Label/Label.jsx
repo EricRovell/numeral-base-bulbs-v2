@@ -4,7 +4,7 @@ import nextMode from "./nextMode";
 import style from "./label.module.css";
 
 
-const Label = ({ index, type, labelsUp, labelsDown, digits, baseIn, mode, dispatch }) => {
+const Label = ({ index, type, labelsUp, labelsDown, digits, baseIn, mode, locale, dispatch }) => {
 
   const trueIndex = digits.length - index - 1;
 
@@ -22,7 +22,7 @@ const Label = ({ index, type, labelsUp, labelsDown, digits, baseIn, mode, dispat
 
   return (
     <div className={style["label-container"]} onClick={handleClick}>
-      <LabelType {...{ typeValue, trueIndex, baseIn, mode }} />
+      <LabelType {...{ typeValue, trueIndex, baseIn, mode, locale }} />
     </div>
   );
 };
