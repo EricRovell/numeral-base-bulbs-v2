@@ -3,7 +3,7 @@ import BaseSelector from "components/Settings/Base/BaseSelector";
 
 import style from "./number-section.module.css";
 
-const NumberSection = ({ state, dispatch }) => {
+const NumberSection = ({ state, locale, dispatch }) => {
 
   const { digits, digitsMax, baseIn, baseOut, baseMin, baseMax } = state;
 
@@ -14,14 +14,16 @@ const NumberSection = ({ state, dispatch }) => {
         baseIn,
         baseOut,
         digitsMax,
-        dispatch
+        dispatch,
+        locale: locale.number
       }} />
       <BaseSelector {...{
         base: "baseOut",
         bases: { baseIn, baseOut },
         baseMin,
         baseMax,
-        dispatch
+        dispatch,
+        locale: locale.base
       }} />
     </section>
   );
