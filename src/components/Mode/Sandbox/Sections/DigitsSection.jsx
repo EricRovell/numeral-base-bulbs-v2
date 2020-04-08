@@ -4,7 +4,7 @@ import BaseDigits from "components/Settings/BaseDigits/BaseDigits";
 
 import style from "./digits-section.module.css";
 
-const DigitsSection = ({ state, dispatch }) => {
+const DigitsSection = ({ state, locale, dispatch }) => {
 
   const {
     digits,
@@ -17,7 +17,7 @@ const DigitsSection = ({ state, dispatch }) => {
 
   return (
     <section className={style["digits-section"]}>
-      <Digits {...{ ...state, dispatch }} />
+      <Digits {...{ ...state, locale: locale.digits, dispatch }} />
       <BaseDigits {...{
         base: "baseIn",
         bases: { baseIn },
@@ -26,7 +26,9 @@ const DigitsSection = ({ state, dispatch }) => {
         digitsMax,
         baseMin,
         baseMax,
-        dispatch }} />
+        dispatch,
+        locale: locale.base
+      }} />
     </section>
   );
 };
