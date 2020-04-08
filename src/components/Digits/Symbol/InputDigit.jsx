@@ -3,7 +3,7 @@ import { baseRegExp } from "utility/validateInput";
 
 import style from "components/Number/number-input.module.css";
 
-const InputDigit = ({ index, value, baseIn, dispatch }) => {
+const InputDigit = ({ index, value, baseIn, title, dispatch }) => {
   
   const [ wrongInput, setWrongInput ] = useState(false);
   const regex = baseRegExp(baseIn);
@@ -35,6 +35,7 @@ const InputDigit = ({ index, value, baseIn, dispatch }) => {
   return (
     <input
       type="text"
+      title={title}
       className={(wrongInput) ? style["number-input"] : null}
       onChange={handleChange}
       value={digit2char()}
