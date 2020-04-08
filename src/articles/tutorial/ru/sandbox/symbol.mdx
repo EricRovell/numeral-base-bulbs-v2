@@ -1,6 +1,8 @@
 import Symbol from "components/Interactive/Symbol";
 import ButtonLink from "components/UI/ButtonLink/ButtonLink";
 
+import locale from "locale/sandbox/sandbox-app-ru";
+
 # Символ
 
 Первое, с чем необходимо познакомиться - символ. Символ - это краеугольный камень, на котором строятся числа.
@@ -14,7 +16,8 @@ import ButtonLink from "components/UI/ButtonLink/ButtonLink";
     mode="bulb"
     baseIn={2}
     labelsUp="none"
-    labelsDown="none" />
+    labelsDown="none"
+    locale={locale.digits} />
 </div>
 
 Таким образом мы будем взаимодействовать с одной или множеством символов-лампочек, образуя различные числа. Работать с такими числами мы начнём уже в следующей главе - [Символы](/tutorial/ru/sandbox/symbols).
@@ -25,7 +28,8 @@ import ButtonLink from "components/UI/ButtonLink/ButtonLink";
 
 <div style={{ padding: "1em 0", placeSelf: "center" }}>
   <Symbol
-    baseIn={16} />
+    baseIn={16}
+    locale={locale.digits} />
 </div>
 
 ### Центральный блок: "Число"
