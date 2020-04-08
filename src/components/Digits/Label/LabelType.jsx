@@ -1,12 +1,8 @@
-import { useStateContext } from "components/StateProvider/Context";
-import translations from "./translations";
-
 import style from "./label.module.css";
 
-const LabelType = ({ typeValue, trueIndex, baseIn, mode }) => {
+export default function LabelType({ typeValue, trueIndex, baseIn, mode, locale }) {
 
-  const [ { lang } ] = useStateContext();
-  const title = translations[typeValue][lang];
+  const title = locale[typeValue];
 
   switch (typeValue) {
     case "value":
@@ -34,10 +30,10 @@ const LabelType = ({ typeValue, trueIndex, baseIn, mode }) => {
             ${style["label"]}
             ${style["label-none"]}
             ${(mode === "symbol") ? style["label-none-transparent"] : null}`}>
-          {translations[typeValue][lang]}
+          {locale[typeValue]}
         </span>
       );    
-    case "index":    
+    case "index":
     default:
       return (
         <span
@@ -48,5 +44,3 @@ const LabelType = ({ typeValue, trueIndex, baseIn, mode }) => {
       );
   }
 };
-
-export default LabelType;
