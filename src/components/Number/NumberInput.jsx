@@ -5,7 +5,7 @@ import { baseConvert, digits2chars } from "utility/baseConvert";
 
 import style from "./number-input.module.css";
 
-const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch }) => {  
+const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch, title }) => {  
   // storing number's state as array of digits (integers)
   // initial state is converted from digits to baseOut
   const [ number, setNumber ] = useState(
@@ -51,6 +51,7 @@ const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch }) => {
   return (
     <input
       type="text"
+      title={title}
       onChange={handleChange}
       onKeyPress={handleKeyDown}
       value={digits2chars([ ...number ]).join("")}
