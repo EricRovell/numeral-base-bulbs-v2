@@ -1,12 +1,7 @@
-import { useStateContext } from "components/StateProvider/Context";
-
 import IncrementIcon from "./IncrementIcon";
 import IncrementSymbolValue from "./handleIncrement";
-import { translation } from "./translation";
 
-const Incrementor = ({ action, type = "default", index, value, baseIn, dispatch }) => {
-
-  const [ { lang } ] = useStateContext();
+export default function Incrementor({ action, type = "default", title, index, value, baseIn, dispatch }) {
   
   const handleIncrement = () => {
     IncrementSymbolValue({
@@ -19,10 +14,8 @@ const Incrementor = ({ action, type = "default", index, value, baseIn, dispatch 
   };
 
   return (
-    <button onClick={handleIncrement} title={translation[action][lang]}>
+    <button onClick={handleIncrement} title={title}>
       <IncrementIcon type={type} />
     </button>
   );
 };
-
-export default Incrementor;
