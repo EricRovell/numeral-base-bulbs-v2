@@ -1,17 +1,18 @@
 import NumberInput from "./NumberInput";
 import style from "./number.module.css";
 
-const Number = ({ digits, digitsMax, baseIn, baseOut, dispatch }) => (
+const Number = ({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) => (
   <div className={style.number}>
     <div />
-    <button />
-    <button />
+    <button title={locale.increment} />
+    <button title={locale.decrement} />
     <NumberInput {...{
       digits,
       digitsMax,
       baseIn,
       baseOut,
-      dispatch
+      dispatch,
+      title: locale.input
     }} />
   </div>
 );
