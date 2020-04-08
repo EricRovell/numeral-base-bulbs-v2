@@ -1,6 +1,8 @@
 import Digits from "components/Interactive/Digits";
 import ButtonLink from "components/UI/ButtonLink/ButtonLink";
 
+import locale from "locale/sandbox/sandbox-app-ru";
+
 # Символы
 
 Символами в данном приложении мы будем называть упорядоченное множество символов, используемых для записи числа. Другими словами, это привычное нам число, разбитое на "атомы", где каждый атом - самостоятельный символ, с которыми мы познакомились [в прошлой главе](/tutorial/ru/sandbox/symbol).
@@ -28,7 +30,7 @@ import ButtonLink from "components/UI/ButtonLink/ButtonLink";
 Для понимания полученной информации ниже представлен интерактивный пример __Символов__:
 
 <div style={{ padding: "2em 0" }}>
-  <Digits />
+  <Digits locale={locale} />
 </div>
 
 ## Заключение
