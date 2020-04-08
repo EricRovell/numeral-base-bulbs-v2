@@ -4,7 +4,7 @@ import Shifter from "./Shifter";
 
 import style from "./base-digits.module.css";
 
-const BaseSelector = ({ digits, digitsMin, digitsMax, base, bases, baseMin, baseMax, dispatch }) => {
+const BaseSelector = ({ digits, digitsMin, digitsMax, base, bases, baseMin, baseMax, dispatch, locale }) => {
 
   return (
     <div className={style["base-digits"]}>
@@ -14,20 +14,23 @@ const BaseSelector = ({ digits, digitsMin, digitsMax, base, bases, baseMin, base
         digits={digits}
         digitsMin={digitsMin}
         digitsMax={digitsMax}
-        dispatch={dispatch} />
+        dispatch={dispatch}
+        title={locale.removeSymbol} />
       <Shifter
         increment={1}
         digits={digits}
         digitsMin={digitsMin}
         digitsMax={digitsMax}
-        dispatch={dispatch} />
+        dispatch={dispatch}
+        title={locale.addSymbol} />
       <Incrementor {...{
         actionType: -1,
         base,
         value: bases[base]  ,
         baseMin,
         baseMax,
-        dispatch       
+        dispatch,
+        title: locale.incrementBase
       }} />
       <Incrementor {...{
         actionType: 1,
@@ -35,7 +38,8 @@ const BaseSelector = ({ digits, digitsMin, digitsMax, base, bases, baseMin, base
         value: bases[base],
         baseMin,
         baseMax,
-        dispatch 
+        dispatch,
+        title: locale.decrementBase
       }} />
       <InputDigit
         {...{
@@ -43,7 +47,8 @@ const BaseSelector = ({ digits, digitsMin, digitsMax, base, bases, baseMin, base
           base,
           baseMin,
           baseMax,
-          dispatch
+          dispatch,
+          title: locale.input
         }} />
     </div>
   );
