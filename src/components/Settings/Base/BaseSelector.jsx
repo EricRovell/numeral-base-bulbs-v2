@@ -4,7 +4,7 @@ import InputDigit from "../Base/InputDigit";
 import style from "./base-selector.module.css";
 
 
-const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
+const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch, locale }) => {
 
   return (
     <div className={style["base-selector"]}>
@@ -12,10 +12,11 @@ const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
       <Incrementor {...{
           actionType: -1,
           base,
-          value: bases[base]  ,
+          value: bases[base],
           baseMin,
           baseMax,
-          dispatch       
+          dispatch,
+          title: locale.decrementBase
         }} />
       <Incrementor {...{
         actionType: 1,
@@ -23,7 +24,8 @@ const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
         value: bases[base],
         baseMin,
         baseMax,
-        dispatch 
+        dispatch,
+        title: locale.incrementBase
       }} />
       <InputDigit
         {...{
@@ -31,7 +33,8 @@ const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch }) => {
           base,
           baseMin,
           baseMax,
-          dispatch
+          dispatch,
+          title: locale.input
         }} />
     </div>
   );
