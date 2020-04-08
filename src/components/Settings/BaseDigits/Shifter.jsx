@@ -1,25 +1,12 @@
 import { useModalContext } from "components/UI/Modal/context";
-import { useStateContext } from "components/StateProvider/Context";
 
 import ShifterIcon from "./ShifterIcon";
 import validate from "./validate";
 import translation from "./translation-ru";
 
-/* const translationsData = async ({ lang = "en", digitsMin, digitsMax }) => {
-  const data = (await import(`./translation-${lang}`)).default;
-  return data;
-}; */
+const Shifter = ({ title, increment, digits, digitsMin, digitsMax, dispatch }) => {
 
-const Shifter = ({ increment, digits, digitsMin, digitsMax, dispatch }) => {
-
-  const [ { lang } ] = useStateContext();
   const [ _, dispatchModal ] = useModalContext();
-
-  /* const translation = translationsData({
-    lang: lang.toLowerCase() || "en",
-    digitsMin,
-    digitsMax
-  }); */
 
   const addDigits = () => {
     const result = validate({
@@ -69,9 +56,7 @@ const Shifter = ({ increment, digits, digitsMin, digitsMax, dispatch }) => {
   return (
     <div
       onClick={addDigits}
-      title={(increment == 1)
-        ? translation.tip.addDigit
-        : translation.tip.removeDigit}>
+      title={title}>
       <ShifterIcon disabled={
         (digits.length >= digitsMax && increment === 1 ||
          digits.length <= digitsMin && increment === -1)
