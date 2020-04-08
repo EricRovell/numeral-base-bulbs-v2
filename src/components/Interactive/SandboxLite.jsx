@@ -8,14 +8,14 @@ import reducer from "components/Mode/Sandbox/State/reducer";
 
 import style from "./sandbox-lite.module.css";
 
-export default (props) => {
+export default ({ locale, ...rest }) => {
 
-  const [ state, dispatch ] = useReducer(reducer, {...defaultState, ...props});
+  const [ state, dispatch ] = useReducer(reducer, {...defaultState, ...rest});
 
   return (
     <div className={style["sandbox-lite"]}>
-      <Digits {...{ ...state, dispatch }} />
-      <Number {...{ ...state, dispatch }} />
+      <Digits {...{ ...state, locale: locale.digits, dispatch }} />
+      <Number {...{ ...state, locale: locale.number, dispatch }} />
     </div>
   );
 };
