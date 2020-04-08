@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import style from "components/Number/number-input.module.css";
 
-const InputDigit = ({ value, base, baseMin, baseMax, dispatch }) => {
+const InputDigit = ({ value, base, baseMin, baseMax, dispatch, title }) => {
 
   const [ isValidInput, setIsValidInput ] = useState(true);
 
@@ -26,7 +26,7 @@ const InputDigit = ({ value, base, baseMin, baseMax, dispatch }) => {
 
   return (
     <input
-      title="Set the number's base"
+      title={title}
       type="text"
       inputMode={"numeric"}
       className={(isValidInput) ? null : style["number-input"]}
