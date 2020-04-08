@@ -1,6 +1,8 @@
 import SandboxLite from "components/Interactive/SandboxLite"
 import ButtonLink from "components/UI/ButtonLink/ButtonLink";
 
+import locale from "locale/sandbox/sandbox-app-ru";
+
 # Складывая всё воедино
 
 В этой главе мы соберём кусочки мозаики воедино.
@@ -16,7 +18,11 @@ _Попробуйте_:
 1. Включить лампочки. 
 2. Вписать произвольное число в поле ввода.
 
-<SandboxLite mode="bulb" skin="default" />
+<SandboxLite
+  mode="bulb"
+  skin="default"
+  locale={locale}
+/>
 
 Если всё сделано верно, то можно заметить, что __Символы__ и __Число__ отображают одно и то же число, но показывают его различными способами.
 
