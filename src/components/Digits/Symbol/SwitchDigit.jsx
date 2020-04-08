@@ -1,4 +1,4 @@
-const SwitchDigit = ({ index, value, dispatch }) => {
+export default function SwitchDigit({ index, value, title, dispatch }) {
 
   const handleSwitch = () => {
     dispatch({
@@ -9,10 +9,10 @@ const SwitchDigit = ({ index, value, dispatch }) => {
   };
 
   return (
-    <div onClick={handleSwitch}>
-      {value}
+    <div
+      onClick={handleSwitch}
+      title={title}>
+        {value}
     </div>
   );
 };
-
-export default SwitchDigit;
