@@ -5,7 +5,7 @@ import InputDigit from "../InputDigit";
 
 import style from "./default.module.css";
 
-export default ({ value, index, digits, baseIn, labelsUp, labelsDown, mode, dispatch }) => (
+export default ({ value, index, digits, baseIn, labelsUp, labelsDown, mode, dispatch, locale }) => (
   <div className={style.digit}>
     <div/>
     <Label {...{
@@ -16,7 +16,8 @@ export default ({ value, index, digits, baseIn, labelsUp, labelsDown, mode, disp
       index,
       baseIn,
       mode,
-      dispatch
+      dispatch,
+      locale: locale.label
     }} />
     <Label {...{
       type: "labelsDown",
@@ -26,26 +27,33 @@ export default ({ value, index, digits, baseIn, labelsUp, labelsDown, mode, disp
       index,
       baseIn,
       mode,
-      dispatch
+      dispatch,
+      locale: locale.label
     }} />
     <Incrementor {...{
       action: 1,
       index,
       value,
       baseIn,
-      dispatch }} />
+      dispatch,
+      title: locale.increment
+    }} />
     <Incrementor {...{
       action: -1,
       index,
       value,
       baseIn,
-      dispatch }} />
+      dispatch,
+      title: locale.decrement
+    }} />
     {(baseIn === 2)
       ? <SwitchDigit
+          title={locale.switch}
           index={index}
           value={value}
           dispatch={dispatch} />
       : <InputDigit
+          title={locale.input}
           baseIn={baseIn}
           value={value}
           index={index}
