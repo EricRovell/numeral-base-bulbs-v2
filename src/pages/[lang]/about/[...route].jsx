@@ -1,42 +1,19 @@
-import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import useLocale from "components/Hooks/useLocale";
 
 import LayoutArticle from "components/Layout/Article/LayoutArticle";
-import Loader from "components/Loader/Loader";
-import Error from "pages/_error";
+import ArticlesDynamic from "domain/Article/ArticlesDynamic";
 
-const Articles = ({ route }) => {
-  // dynamically import mdx components from "tutorial/..."
-  const Article = dynamic(
-    () => import(`articles/about/${route}.mdx`).catch(err => {
-      return () => <Error />
-    }),
-    { loading: () => <Loader /> }
-  );
-  return <Article />
-};
+export default function AboutPage() {
 
-const About = ({ route, contents }) => (
-  <LayoutArticle contents={contents} href={"/[lang]/about/[...route]"}>      
-    <Articles route={route} />
-  </LayoutArticle>
-);
+  const { query: { route }} = useRouter();
+  const [ locale ] = useLocale("navigation/navigation-about.js");
 
-About.getInitialProps = async ({ query: { route }}) => {
-  // if lang will be needed as prop, it should be upperCase
-  //const lang = route[0].toUpperCase();
-  //console.log(route);
-
-  // dynamically importing contents data in required language
-  const lang = route[0];
-  const contents = (await import(
-    `articles/about/_map/about-map-${lang}`
-  )).default;
-  
-  return {
-    route: route.join("/"),
-    contents
-  };
-};
-
-export default About;
-
+  return locale && (
+    <LayoutArticle contents={locale} href={"/[lang]/about/[...route]"}>      
+      <ArticlesDynamic
+        domain="about"
+        route={route.join("/")} />
+    </LayoutArticle>
+  );  
+}
