@@ -1,8 +1,7 @@
-import translations from "./translations";
-import style from "./loading.module.css";
 // https://codepen.io/tomchewitt/pen/yNdQrO
+import style from "./loading.module.css";
 
-export default ({ lang }) => (
+export default ({ locale }) => (
   <div className={style["loader-container"]}>
     <div className={style.loader}>
       <svg style={{ display: "none" }}>
@@ -28,6 +27,6 @@ export default ({ lang }) => (
         </svg>
       </span>
     </div>
-    <h2>{translations[lang]}</h2>
+    <h2>{locale.message}</h2>
   </div>
 );
