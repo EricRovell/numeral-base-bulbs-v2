@@ -1,3 +1,4 @@
+import useLocale from "components/Hooks/useLocale";
 import { useState } from "react";
 
 import dynamic from "next/dynamic";
@@ -9,49 +10,34 @@ import style from "style/pages/settings.module.css";
 import styleTabs from "components/Tabs/tabs-settings.module.css";
 
 
-const SettingsSections = ({ section, langData }) => {
+const SettingsSections = ({ section, locale }) => {
   const Section = ({
     "sandbox": dynamic(() => import("components/Mode/Sandbox/Settings/Settings")),
     "globals": dynamic(() => import("components/StateProvider/SettingsGlobal/SettingsGlobal")),
-    "game": dynamic(() => import("components/Loader/Loading/Loading")),
+    "challenge": dynamic(() => import("components/Loader/Loading/Loading")),
   }[section]);
   
   return (
-    <Section langData={langData} />
+    <Section locale={locale} />
   );
 };
 
-const SettingsPage = ({ lang, langData }) => {
+export default function SettingsPage() {
 
+  const [ locale ] = useLocale("settings/settings-app.js");
   const [ section, setSection ] = useState("globals");
   
-  return (
+  return locale && (
     <LayoutSettings className={style.settings}>
       <Tabs
-        data={langData.sections}
+        data={locale.sections}
         value={section}
         setTab={setSection}
         style={styleTabs["tabs-settings"]}
         lang={"EN"} />
       <SettingsSections
         section={section}
-        langData={langData[section]} />
+        locale={locale[section]} />
     </LayoutSettings>
   );
 };
-
-SettingsPage.getInitialProps = async ({ query }) => {
-  // dynamically importing contents data in required language
-  const lang = query.lang;
-
-  const langData = (await import(
-    `components/Settings/lang/settings-lang-data-${lang}`
-  )).default;
-  
-  return {
-    lang: query.lang.toUpperCase(),
-    langData
-  };
-};
-
-export default SettingsPage;
