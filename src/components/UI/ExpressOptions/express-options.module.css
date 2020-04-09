@@ -1,29 +1,10 @@
 .express-options {
-  --size: 1rem;
-
-  top: 0;
+  position: fixed;
+  top: 40%;
   right: 0;
-  position: absolute;
 
   display: grid;
-  font-size: 0.75rem;
   place-items: center;
   place-content: center;
-  row-gap: 0.25rem;
-  padding: 0.45rem  0.45rem 0 0;
-}
-
-.express-options > div {
-  display: grid;
-  place-items: center;
-  width: var(--size);
-  height: var(--size);
-}
-
-.express-options svg {
-  width: 85%;
-  height: 85%;
-  fill: var(--icon-fill-2);
-  transition: transform 0.2s ease-in;
-  cursor: pointer;
+  row-gap: 0.5rem;
 }
