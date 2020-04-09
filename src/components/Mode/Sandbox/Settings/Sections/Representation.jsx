@@ -1,8 +1,8 @@
 import RadioSelect from "components/Settings/Controls/RadioSelect/RadioSelect";
 
-const RepresentationForm = ({ langData, skin, mode, handleInputChange }) => (
+const RepresentationForm = ({ locale, skin, mode, handleInputChange }) => (
   <>
-    {langData.map(modeRepr => (
+    {locale.map(modeRepr => (
       <RadioSelect 
         key={modeRepr.representation}
         data={modeRepr}

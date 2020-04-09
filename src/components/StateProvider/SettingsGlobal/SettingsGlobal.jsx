@@ -11,7 +11,7 @@ import SettingsSection from "components/Settings/Section";
 import selectStyle from "./select-style.module.css";
 
 
-const SettingsGlobal = ({ langData }) => {
+const SettingsGlobal = ({ locale }) => {
 
   const [ {}, dispatchGlobal ] = useStateContext();
 
@@ -35,27 +35,27 @@ const SettingsGlobal = ({ langData }) => {
     });
   };
 
-  return !isLoading && (    
+  return !isLoading && (
     <form>
       <SetSettings
         state={state}
         sideEffect={sideEffect}
         defaultState={initialState}
-        langData={langData.settingsControls}
+        locale={locale.settingsControls}
         dispatch={dispatch}
         storageKey={"SettingsGlobal"} />
-      <SettingsSection name={langData.userPreferences.name}>
-        <span>{langData.userPreferences.lang.label}</span>
+      <SettingsSection name={locale.userPreferences.name}>
+        <span>{locale.userPreferences.lang.label}</span>
         <div className={selectStyle["select"]}>
           <Radio
-            data={langData.userPreferences.lang}
+            data={locale.userPreferences.lang}
             value={state.lang}
             handleInputChange={handleInputChange} />
         </div>
-        <span>{langData.userPreferences.theme.label}</span>
+        <span>{locale.userPreferences.theme.label}</span>
         <div className={selectStyle["select"]}>
           <Radio
-            data={langData.userPreferences.theme}
+            data={locale.userPreferences.theme}
             value={state.theme}
             handleInputChange={handleInputChange} />
         </div>

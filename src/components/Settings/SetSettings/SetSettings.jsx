@@ -2,7 +2,7 @@ import ButtonIcon from "components/Settings/Controls/ButtonIcon/ButtonIcon";
 import { SetSettingsIcon, ResetSettingsIcon } from "./Icons";
 import style from "./set-settings.module.css";
 
-const SetSettings = ({ state, defaultState, storageKey, dispatch, langData, validate = null, sideEffect = null }) => {
+const SetSettings = ({ state, defaultState, storageKey, dispatch, locale, validate = null, sideEffect = null }) => {
   // state -> current settings state
   // defaultState -> for reset
   // validate -> validation function, if not presentt -> pass w/o it
@@ -49,15 +49,15 @@ const SetSettings = ({ state, defaultState, storageKey, dispatch, langData, vali
   return (
     <div className={style["set-settings"]}>
       <ButtonIcon
-        title={langData.reset} 
+        title={locale.reset} 
         handleClick={resetSettings}>
           <ResetSettingsIcon />
       </ButtonIcon>
       <ButtonIcon
-        title={langData.set}
+        title={locale.set}
         handleClick={saveUserSettings}>
           <SetSettingsIcon />
-      </ButtonIcon>   
+      </ButtonIcon>
     </div>
   );
 };

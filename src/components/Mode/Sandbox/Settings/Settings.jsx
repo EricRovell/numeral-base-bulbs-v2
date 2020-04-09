@@ -12,7 +12,7 @@ import defaultState from "../State/defaultState";
 import validate from "./validation/validation";
 
 
-const SettingsSandbox = ({ langData }) => {
+const SettingsSandbox = ({ locale }) => {
 
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState,
@@ -30,36 +30,36 @@ const SettingsSandbox = ({ langData }) => {
     <form>
       <SetSettings
         state={state}
-        langData={langData.settingsControls}
+        locale={locale.settingsControls}
         defaultState={defaultState}
         storageKey={"SettingsSandbox"}
         validate={validate}
         dispatch={dispatch} />
-      <SettingsSection name={langData.digits.name}>
+      <SettingsSection name={locale.digits.name}>
         <Digits
-          langData={langData.digits.options}
+          locale={locale.digits.options}
           digits={state.digits}
           digitsMin={state.digitsMin}
           digitsMax={state.digitsMax}
           handleInputChange={handleInputChange} />
       </SettingsSection>
-      <SettingsSection name={langData.base.name}>
+      <SettingsSection name={locale.base.name}>
         <Base
-          langData={langData.base.options}
+          locale={locale.base.options}
           baseIn={state.baseIn}
           baseOut={state.baseOut}
           handleInputChange={handleInputChange} />
       </SettingsSection>       
-      <SettingsSection name={langData.representation.name}>
+      <SettingsSection name={locale.representation.name}>
         <Representation
-          langData={langData.representation.options}
+          locale={locale.representation.options}
           mode={state.mode}
           skin={state.skin}
           handleInputChange={handleInputChange} />
       </SettingsSection>
-      <SettingsSection name={langData.labels.name}>
+      <SettingsSection name={locale.labels.name}>
         <Labels
-          langData={langData.labels}
+          locale={locale.labels}
           valueUp={state.labelsUp}
           valueDown={state.labelsDown}
           handleInputChange={handleInputChange} />  
