@@ -7,7 +7,7 @@ import useLocale from "components/Hooks/useLocale";
 
 import ExpressOptions from "components/UI/ExpressOptions/ExpressOptions";
 import ExpressSettings from "components/Settings/ExpressSettings/ExpressSettings";
-import ExpressTutorial from "components/UI/SVGLink/SVGLink";
+import ExpressHelp from "components/Settings/ExpressSettings/ExpressHelp"
 
 export default function Sandbox() {
 
@@ -28,7 +28,7 @@ export default function Sandbox() {
         <ExpressSettings
           state={state}
           dispatchSB={dispatch} />
-        <ExpressTutorial /> 
+        <ExpressHelp />
       </ExpressOptions>       
     </LayoutMain>
   );
