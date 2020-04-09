@@ -4,8 +4,6 @@ import { useRouter } from "next/router";
 export default function useLocale(path) {
   // localization files are located in "locale/" path
   // path parameter should contain path-part inside that folder
-  // up until lang parameter
-  //  Example: `/locale/${path}-${lang}.js`
 
   const { query: { lang }} = useRouter();
   const [ locale, setLocale ] = useState(null);
@@ -13,12 +11,12 @@ export default function useLocale(path) {
 
   useEffect(() => {
     const loadLocale = async () => {
-      const localeFileData = (await import(`locale/${path}-${lang}.js`)).default;
+      const localeFileData = (await import(`locale/${lang || "en"}/${path}`)).default;
       setLocale(localeFileData);
       setLoadingLocale(false);
     };
     loadLocale();
-  }, [lang]);
+  }, [ lang ]);
 
   return [ locale, loadingLocale, lang ];
 };
