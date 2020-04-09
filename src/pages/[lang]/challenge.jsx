@@ -6,9 +6,13 @@ export default function ChallengePage() {
   
   const { query: { lang }} = useRouter();
 
+  const locale = (lang === "en")
+    ? { message: "In development..." }
+    : { message: "В разработке..." };
+
   return (
     <main className={style.game}>
-      <Loading lang={lang && lang.toUpperCase()} />
+      <Loading locale={locale}/>
     </main>
   );
-};
+}
