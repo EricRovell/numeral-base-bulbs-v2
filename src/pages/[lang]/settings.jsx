@@ -1,26 +1,12 @@
 import useLocale from "components/Hooks/useLocale";
 import { useState } from "react";
 
-import dynamic from "next/dynamic";
-
+import SettingsSections from "domain/Settings/SettingsSections";
 import Tabs from "components/Tabs/Tabs";
 import LayoutSettings from "components/Layout/Settings/LayoutSettings";
 
 import style from "style/pages/settings.module.css";
 import styleTabs from "components/Tabs/tabs-settings.module.css";
-
-
-const SettingsSections = ({ section, locale }) => {
-  const Section = ({
-    "sandbox": dynamic(() => import("components/Mode/Sandbox/Settings/Settings")),
-    "globals": dynamic(() => import("components/StateProvider/SettingsGlobal/SettingsGlobal")),
-    "challenge": dynamic(() => import("components/Loader/Loading/Loading")),
-  }[section]);
-  
-  return (
-    <Section locale={locale} />
-  );
-};
 
 export default function SettingsPage() {
 
