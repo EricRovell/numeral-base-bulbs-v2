@@ -91,11 +91,11 @@ export default (state, action) => {
       };
     }
 
-    case "setModeSkin": {
+    case "binaryCheck": {
       return {
         ...state,
-        mode: action.mode || "symbol",
-        skin: action.skin || "default"
+        mode: (state.mode !== "symbol") ? "symbol" : state.mode,
+        skin: (state.mode !== "symbol") ? "default" : state.skin
       };
     }
 

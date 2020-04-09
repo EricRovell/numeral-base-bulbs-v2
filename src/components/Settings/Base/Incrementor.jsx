@@ -13,9 +13,8 @@ const Incrementor = ({ actionType, base, value, baseMin, baseMax, dispatch, titl
 
     if (value === 2 && nextValue !== 2) {
       // using binary mode has no sense with non-binary base
-      // action "setModeSkin" w/o params to reset do defaults:
-      //  mode: symbol, skin: default -> it is universal
-      dispatch({ type: "setModeSkin" });
+      // set non-binary mode/skin for non-binary base
+      dispatch({ type: "binaryCheck" });
     }
       
     dispatch({
