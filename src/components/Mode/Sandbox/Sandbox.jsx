@@ -12,7 +12,7 @@ import ExpressHelp from "components/Settings/ExpressSettings/ExpressHelp"
 export default function Sandbox() {
 
   const [ state, dispatch ] = useStateSandbox();
-  const [ locale ] = useLocale("sandbox/sandbox-app");
+  const [ locale ] = useLocale("sandbox/sandbox-app.js");
 
   return locale && (
     <LayoutMain>        
