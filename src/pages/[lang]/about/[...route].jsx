@@ -15,5 +15,5 @@ export default function AboutPage() {
         domain="about"
         route={route.join("/")} />
     </LayoutArticle>
-  );  
+  );
 }
