@@ -17,7 +17,7 @@ import { useEffect } from "react";
 
 const ExpressModal = ({ stateSB, dispatchSB }) => {
 
-  const [ langData ] = useLocale("settings/express-settings.js");
+  const [ locale ] = useLocale("settings/express-settings.js");
   
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState,
@@ -47,41 +47,41 @@ const ExpressModal = ({ stateSB, dispatchSB }) => {
     });
   };
 
-  return !isLoading && langData && (    
+  return !isLoading && locale && (    
     <form className={style["express-form"]}>
       <SetSettings
         state={state}
-        langData={langData.settingsControls}
+        locale={locale.settingsControls}
         defaultState={defaultState}
         storageKey={"SettingsSandbox"}
         validate={validate}
         sideEffect={resetSandBoxState}
         dispatch={dispatch} />
-      <SettingsSection name={langData.digits.name}>
+      <SettingsSection name={locale.digits.name}>
         <Digits
-          langData={langData.digits.options}
+          locale={locale.digits.options}
           digits={state.digits}
           digitsMin={state.digitsMin}
           digitsMax={state.digitsMax}
           handleInputChange={handleInputChange} />
       </SettingsSection>
-      <SettingsSection name={langData.base.name}>
+      <SettingsSection name={locale.base.name}>
         <Base
-          langData={langData.base.options}
+          locale={locale.base.options}
           baseIn={state.baseIn}
           baseOut={state.baseOut}
           handleInputChange={handleInputChange} />
       </SettingsSection>       
-      <SettingsSection name={langData.representation.name}>
+      <SettingsSection name={locale.representation.name}>
         <Representation
-          langData={langData.representation.options}
+          locale={locale.representation.options}
           mode={state.mode}
           skin={state.skin}
           handleInputChange={handleInputChange} />
       </SettingsSection>
-      <SettingsSection name={langData.labels.name}>
+      <SettingsSection name={locale.labels.name}>
         <Labels
-          langData={langData.labels}
+          locale={locale.labels}
           valueUp={state.labelsUp}
           valueDown={state.labelsDown}
           handleInputChange={handleInputChange} />  
