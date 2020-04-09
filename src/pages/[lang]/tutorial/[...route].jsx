@@ -1,40 +1,19 @@
-import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import useLocale from "components/Hooks/useLocale";
 
 import LayoutArticle from "components/Layout/Article/LayoutArticle";
-import Loader from "components/Loader/Loader";
-import Error from "pages/_error";
+import ArticlesDynamic from "domain/Article/ArticlesDynamic";
 
-const Articles = ({ route }) => {
-  // dynamically import mdx components from "tutorial/..."
-  const Article = dynamic(
-    () => import(`articles/tutorial/${route}.mdx`).catch(err => {
-      return () => <Error />
-    }),
-    { loading: () => <Loader /> }
-  );
-  return <Article />
-};
+export default function Tutorial() {
 
-const Tutorial = ({ route, contents }) => (
-  <LayoutArticle contents={contents} href={"/[lang]/tutorial/[...route]"}>      
-    <Articles route={route} />
-  </LayoutArticle>
-);
+  const { query: { route }} = useRouter();
+  const [ locale ] = useLocale("navigation/navigation-tutorial.js");
 
-Tutorial.getInitialProps = async ({ query: { route }}) => {
-  // if lang will be needed as prop, it should be upperCase
-  //const lang = route[0].toUpperCase();
-
-  // dynamically importing contents data in required language
-  const lang = route[0];
-  const contents = (await import(
-    `articles/tutorial/_map/tutorial-map-${lang}`
-  )).default;
-  
-  return {
-    route: route.join("/"),
-    contents
-  };
-};
-
-export default Tutorial;
+  return locale && (
+    <LayoutArticle contents={locale} href={"/[lang]/tutorial/[...route]"}>      
+      <ArticlesDynamic
+        domain="tutorial"
+        route={route.join("/")} />
+    </LayoutArticle>
+  ); 
+}
