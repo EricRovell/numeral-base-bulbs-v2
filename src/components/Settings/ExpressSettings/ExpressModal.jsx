@@ -17,7 +17,7 @@ import { useEffect } from "react";
 
 const ExpressModal = ({ stateSB, dispatchSB }) => {
 
-  const [ langData, loadingLocale ] = useLocale("settings/settings-sandbox");
+  const [ langData ] = useLocale("settings/express-settings.js");
   
   const [ state, dispatch, isLoading ] = useUserSettingsReducer({
     defaultState,
@@ -47,7 +47,7 @@ const ExpressModal = ({ stateSB, dispatchSB }) => {
     });
   };
 
-  return !isLoading && !loadingLocale && (    
+  return !isLoading && langData && (    
     <form className={style["express-form"]}>
       <SetSettings
         state={state}
