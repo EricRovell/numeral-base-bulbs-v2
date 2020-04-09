@@ -1,12 +1,11 @@
-import { useStateContext } from "components/StateProvider/Context";
-import useLocale from "./routes/useLocale"; 
+import useLocale from "components/Hooks/useLocale"; 
 
 import Tabs from "./Tabs/Tabs";
 import HeaderLogo from "./HeaderLogo";
 import HeaderTitle from "./Title/HeaderTitle";
 import HeaderHelpers from "./Helpers/HeaderHelpers";
 
-import routes from "./routes";
+import createRoutes from "./routes";
 
 import style from "./header.module.css";
 
@@ -18,14 +17,13 @@ const Routes = ({ routes }) => (
 
 export default function Header() {
 
-  const [ { lang } ] = useStateContext();
-  const locale = useLocale(lang.toLowerCase());
+  const [ locale ] = useLocale("header.js");
   
   return locale && (
     <header className={style.header}>
       <HeaderLogo />
-      <HeaderTitle title={locale.title} />  
-      <Routes routes={routes(locale.routes)} />
+      <HeaderTitle title={locale.title} />
+      <Routes routes={createRoutes(locale.routes)} />
       <HeaderHelpers locale={locale.helpers} />
     </header>
   );
