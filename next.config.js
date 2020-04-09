@@ -31,6 +31,7 @@ module.exports = withMDX({
     config.resolve.alias["utility"] = path.join(__dirname, "src/utility");
     config.resolve.alias["articles"] = path.join(__dirname, "src/articles");
     config.resolve.alias["locale"] = path.join(__dirname, "src/locale");
+    config.resolve.alias["domain"] = path.join(__dirname, "src/domain");
 
     return config;
   },
