@@ -1,0 +1,22 @@
+.express-tab {
+  direction: ltr;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg) translateX(-0.3rem);
+  text-transform: uppercase;
+  font: 0.5rem var(--font-main);
+  font-variation-settings: "wght" 800;
+  color: var(--color-2);
+  user-select: none;
+  cursor: pointer;
+
+  background: var(--color-1);
+  border-radius: 0 10px 10px 0;
+  padding: 0.3rem 0.3rem 0.3rem 0.7rem;
+  
+  transition: transform 0.25s ease-in-out;
+}
+
+.express-tab:hover {
+  transform: rotate(180deg);
+}
