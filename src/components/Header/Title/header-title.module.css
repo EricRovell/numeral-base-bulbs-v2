@@ -32,9 +32,10 @@
 }
 
 
-
 .title svg text {
-  font: 900 calc(3 * var(--size)) "Comic Sans MS";
+  font-size: calc(3 * var(--size));
+  font-family: "Comic Sans MS";
+  font-weight: 900;
   fill: var(--header-title-color);
 }
 
