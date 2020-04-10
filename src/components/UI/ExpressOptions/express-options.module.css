@@ -8,3 +8,12 @@
   place-content: center;
   row-gap: 0.5rem;
 }
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+  .express-options {
+    top: 75%;
+  }
+
+}
