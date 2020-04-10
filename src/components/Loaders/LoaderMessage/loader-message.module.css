@@ -1,0 +1,12 @@
+.wrapper {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  grid-auto-rows: max-content;
+  row-gap: 1em;
+  padding: 2em;
+}
+
+.wrapper > h3 {
+  user-select: none;
+}
