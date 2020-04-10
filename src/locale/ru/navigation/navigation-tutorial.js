@@ -4,6 +4,16 @@ export default [
     nodes: [
 
       {
+        label: "Введение",
+        nodes: [
+          {
+            label: "Краткий экскурс",
+            href: "/ru/tutorial/ru/welcome",
+          }
+        ]
+      },
+
+      {
         label: "Системы счисления",
         nodes: [
           {
@@ -78,4 +88,3 @@ export default [
     ],
   },
 ];
-
