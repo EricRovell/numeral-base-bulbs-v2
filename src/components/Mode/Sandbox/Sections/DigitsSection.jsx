@@ -1,10 +1,9 @@
 import Digits from "components/Digits/Digits";
-//import BaseSelector from "components/Settings/Base/BaseSelector";
-import BaseDigits from "components/Settings/BaseDigits/BaseDigits";
+import BaseDigits from "components/Settings/BaseController/BaseDigits";
 
 import style from "./digits-section.module.css";
 
-const DigitsSection = ({ state, locale, dispatch }) => {
+export default function DigitsSection({ state, locale, dispatch }) {
 
   const {
     digits,
@@ -32,5 +31,3 @@ const DigitsSection = ({ state, locale, dispatch }) => {
     </section>
   );
 };
-
-export default DigitsSection;
