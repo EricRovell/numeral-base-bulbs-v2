@@ -1,15 +1,19 @@
 import dynamic from "next/dynamic";
 
-import Loader from "components/Loader/Loader";
-import Bricks from "components/Loaders/Bricks/Bricks";
-//import Error from "pages/_error";
+import LoaderPuzzle from "components/Loaders/LoaderPuzzle/LoaderPuzzle";
+import LoaderMessage from "components/Loaders/LoaderMessage/LoaderMessage";
+import LoaderBrick from "components/Loaders/LoaderBrick/LoaderBrick";
 
 export default function ArticlesDynamic({ domain, route }) {
   const Article = dynamic(
     () => import(`articles/${domain}/${route}.mdx`).catch(err => {
-      return () => <Bricks />;
+      return () => (
+        <LoaderMessage message="Error 404">
+          <LoaderBrick />
+        </LoaderMessage>
+      );
     }),
-    { loading: () => <Loader /> }
+    { loading: () => <LoaderPuzzle /> }
   );
 
   return <Article />
