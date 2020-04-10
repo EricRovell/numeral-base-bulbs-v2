@@ -22,5 +22,5 @@
 
 .select input[type=radio]:checked ~ span {
   background: var(--accent-1);
-  color: white;
+  color: var(--accent-1-negate);
 }

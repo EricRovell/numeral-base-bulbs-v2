@@ -12,10 +12,11 @@
   --header-box-stroke: var(--color-2);
 
   --accent-1: var(--color-3);
+  --accent-1-negate: var(--color-1);
   --accent-2: var(--color-2);
   --accent-transparent: rgb(46, 46, 51, 0.4);
   
-  --color-3-15: rgb(209, 209, 209, 0.15);  
+  --color-3-15: rgb(209, 209, 209, 0.15);
 
   --font-color-1: rgb(140, 140, 140);
   --font-color-1-bright: rgb(182, 182, 182);
@@ -90,6 +91,7 @@
   --header-box-stroke: var(--color-1);
 
   --accent-1: var(--color-1);
+  --accent-1-negate: var(--color-3);
   --accent-2: var(--color-2);
   --accent-transparent: hsla(189.1, 52.3%, 34.5%, 0.1);
 
