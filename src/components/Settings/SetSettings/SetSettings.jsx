@@ -52,11 +52,13 @@ const SetSettings = ({ state, defaultState, storageKey, dispatch, locale, valida
         title={locale.reset} 
         handleClick={resetSettings}>
           <ResetSettingsIcon />
+          <span>{locale.reset}</span>
       </ButtonIcon>
       <ButtonIcon
         title={locale.set}
         handleClick={saveUserSettings}>
           <SetSettingsIcon />
+          <span>{locale.set}</span>
       </ButtonIcon>
     </div>
   );

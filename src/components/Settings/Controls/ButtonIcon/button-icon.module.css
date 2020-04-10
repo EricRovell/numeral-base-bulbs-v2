@@ -7,20 +7,24 @@
   box-shadow: var(--section-shadow);
   border-radius: 5px;
   width: 100%;
+
+  font-size: 0.6rem;
+  color: var(--font-color-accent-2);
 }
 
 .button-with-icon > div {
   display: grid;
-  grid-template: 1fr / 1fr;
+  grid-template: 1fr / auto max-content;
   place-items: center;
+  column-gap: 0.5em;
   width: 100%;
   height: 100%;
 }
 
 .button-with-icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: var(--icon-fill-2);
+  width: 1em;
+  height: 1em;
+  fill: var(--font-color-accent-2);
 }
 
 .button-with-icon:active {
