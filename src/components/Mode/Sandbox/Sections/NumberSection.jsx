@@ -1,9 +1,9 @@
 import Number from "components/Number/Number";
-import BaseSelector from "components/Settings/Base/BaseSelector";
+import BaseNumber from "components/Settings/BaseController/BaseNumber";
 
 import style from "./number-section.module.css";
 
-const NumberSection = ({ state, locale, dispatch }) => {
+export default function NumberSection({ state, locale, dispatch }) {
 
   const { digits, digitsMax, baseIn, baseOut, baseMin, baseMax } = state;
 
@@ -17,7 +17,7 @@ const NumberSection = ({ state, locale, dispatch }) => {
         dispatch,
         locale: locale.number
       }} />
-      <BaseSelector {...{
+      <BaseNumber {...{
         base: "baseOut",
         bases: { baseIn, baseOut },
         baseMin,
@@ -28,5 +28,3 @@ const NumberSection = ({ state, locale, dispatch }) => {
     </section>
   );
 };
-
-export default NumberSection;
