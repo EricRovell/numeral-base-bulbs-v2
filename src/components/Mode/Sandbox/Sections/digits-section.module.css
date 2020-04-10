@@ -1,12 +1,28 @@
 .digits-section {
+  --base-selector: minmax(50px, 75px);
+
   display: grid;
-  grid-template: min-content 50px / 1fr;
+  grid-template: min-content var(--base-selector) / 1fr;
   place-items: center;
   place-content: center;
   row-gap: 7.5px;
 
   width: 100%;
   height: 100%;
+}
+
+/* base */
+.digits-section > div:nth-child(2) {
+  max-height: 50px;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+  .digits-section {
+    --base-selector: minmax(35px, 40px);
+  }
+
 }
 
 /* .digits-section > div:first-child {
