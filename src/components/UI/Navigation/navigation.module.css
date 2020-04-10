@@ -44,6 +44,7 @@
 
 .navigation li {
   width: fit-content;
+  margin: 5px 0;
 }
 
 .navigation a {
@@ -117,16 +118,16 @@
   }
 
   .navigation label {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .navigation > section > label {
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
+    padding-top: 0.65em;
+    padding-bottom: 0.4em;
   }
 
   .navigation > section > ul {
-    padding-bottom: 1.5em;
+    padding-bottom: 0.75em;
   }
 
   .navigation > section > input[type=checkbox]:checked ~ ul {
@@ -135,7 +136,7 @@
 
   .navigation-link,
   .navigation-link-active {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
 }
