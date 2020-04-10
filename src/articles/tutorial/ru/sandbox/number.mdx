@@ -1,11 +1,11 @@
-import Number from "components/Interactive/Number";
+import Link from "components/Interactive/Link";
 import ButtonLink from "components/UI/ButtonLink/ButtonLink";
-
+import Number from "components/Interactive/Number";
 import locale from "locale/ru/sandbox/sandbox-app";
 
 # Число
 
-Число, как элемент взаимодействия пользователя, схоже с [символами](/tutorial/ru/sandbox/symbols) из прошлой главе. По сути, __число__ - символы, склееные между собой воедино. В этом и основное отличие между __символами__ и __числом__, оба представляют собой число, но первые разбиты на части, что даёт совершенно иной пользовательский опыт взаимодействия. __Число__ в этом плане более примитивно и прямолинейно.
+Число, как элемент взаимодействия пользователя, схоже с <Link href="/[lang]/tutorial/[...route]" as="/ru/tutorial/ru/sandbox/symbols" title="Символы" label="символами" /> из прошлой главе. По сути, __число__ - символы, склееные между собой воедино. В этом и основное отличие между __символами__ и __числом__, оба представляют собой число, но первые разбиты на части, что даёт совершенно иной пользовательский опыт взаимодействия. __Число__ в этом плане более примитивно и прямолинейно.
 
 ## Анатомия
 
@@ -34,7 +34,7 @@ import locale from "locale/ru/sandbox/sandbox-app";
 <div style={{ padding: "1em 0", placeSelf: "center" }}>
   <ButtonLink
     title="Соединяя всё вместе"
-    href="/tutorial/[...route]"
-    as="/tutorial/ru/sandbox/whole-picture"
+    href="/[lang]/tutorial/[...route]"
+    as="/ru/tutorial/ru/sandbox/whole-picture"
   />
 </div>
