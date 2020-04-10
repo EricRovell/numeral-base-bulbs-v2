@@ -1,5 +1,5 @@
 import { useStateContext } from "components/StateProvider/Context";
-import useUserSettingsReducer from "components/Settings/useUserSettings/useUserSettingsReducer";
+import useUserSettingsReducer from "components/Hooks/useUserSettingsReducer";
 
 import initialState from "../initialState";
 import reducer from "../reducer";
