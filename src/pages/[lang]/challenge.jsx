@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Loading from "components/Loader/Loading/Loading";
+import LoaderLoading from "components/Loaders/LoaderLoading/LoaderLoading";
 import style from "style/pages/game.module.css";
 
 export default function ChallengePage() {
@@ -12,7 +12,7 @@ export default function ChallengePage() {
 
   return (
     <main className={style.game}>
-      <Loading locale={locale}/>
+      <LoaderLoading locale={locale}/>
     </main>
   );
 }
