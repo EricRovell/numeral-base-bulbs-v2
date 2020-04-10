@@ -1,9 +1,9 @@
 .button-link {
-  --size: 1rem;
+  --size: 0.65rem;
 
   border: none;
   outline: none;
-  border: 2px solid var(--accent-1);
+  border: 1px solid var(--accent-1);
   background: none;
   padding: 0.25rem 0.5rem;
   border-radius: 7.5px 20px 20px 7.5px;
