@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
+import Loader from "components/Loader/Loader";
+
 export default () => {
 
   const router = useRouter();
@@ -17,5 +19,5 @@ export default () => {
     }
   }, []);
 
-  return null;
+  return <Loader />;
 };
