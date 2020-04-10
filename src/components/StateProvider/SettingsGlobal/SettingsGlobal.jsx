@@ -1,5 +1,6 @@
 import { useStateContext } from "components/StateProvider/Context";
 import useUserSettingsReducer from "components/Hooks/useUserSettingsReducer";
+import useLocaleSwitch from "components/Hooks/useLocaleSwitch";
 
 import initialState from "../initialState";
 import reducer from "../reducer";
@@ -14,6 +15,7 @@ import selectStyle from "./select-style.module.css";
 const SettingsGlobal = ({ locale }) => {
 
   const [ {}, dispatchGlobal ] = useStateContext();
+  const handleLocaleChange = useLocaleSwitch(dispatchGlobal);
 
   const sideEffect = state => {
     dispatchGlobal({
@@ -30,6 +32,10 @@ const SettingsGlobal = ({ locale }) => {
 
   const handleInputChange = ({ target }) => {
     dispatch({
+      name: target.name,
+      value: target.value 
+    });
+    dispatchGlobal({
       name: target.name,
       value: target.value 
     });
@@ -50,7 +56,7 @@ const SettingsGlobal = ({ locale }) => {
           <Radio
             data={locale.userPreferences.lang}
             value={state.lang}
-            handleInputChange={handleInputChange} />
+            handleInputChange={handleLocaleChange} />
         </div>
         <span>{locale.userPreferences.theme.label}</span>
         <div className={selectStyle["select"]}>
