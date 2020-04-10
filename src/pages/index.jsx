@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import Loader from "components/Loader/Loader";
+import LoaderPuzzle from "components/Loaders/LoaderPuzzle/LoaderPuzzle";
 
 export default () => {
 
@@ -19,5 +19,5 @@ export default () => {
     }
   }, []);
 
-  return <Loader />;
+  return <LoaderPuzzle />;
 };
