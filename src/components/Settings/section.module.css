@@ -36,6 +36,7 @@
   border: none;
   font-variation-settings: "wght" 650;
   font-family: inherit;
+  background: var(--input-bg);
 }
 
 .section label {
@@ -68,4 +69,11 @@
 
 .section select {
   padding: 0.1em 0.2em;
+}
+
+/* focus */
+
+.section input:focus {
+  outline: 2px solid var(--accent-1);
+  background: var(--input-bg-focus);
 }
