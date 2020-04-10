@@ -1,5 +1,5 @@
 import useLocale from "components/Hooks/useLocale";
-import useUserSettingsReducer from "components/Settings/useUserSettings/useUserSettingsReducer";
+import useUserSettingsReducer from "components/Hooks/useUserSettingsReducer";
 
 import SettingsSection from "components/Settings/Section";
 import SetSettings from "components/Settings/SetSettings/SetSettings";
