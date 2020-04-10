@@ -49,6 +49,10 @@
 
   --article-selection-bg: var(--color-3);
   --article-selection-color: var(--color-3);
+
+  /* input */
+  --input-bg: var(--color-3);
+  --input-bg-focus: white;
   
   /* loader */
   --loader-digits: white;
@@ -137,6 +141,10 @@
   --lamp-wire: rgba(77, 77, 77);
   --lamp-bulb: hsl(185.8, 36.7%, 80%);
   --lamp-bulb-active: rgba(255, 255, 255, 1);
+
+  /* input */
+  --input-bg: white;
+  --input-bg-focus: white;
 
   /*
   512b58 2a7886 79bac1 f1f3f4
