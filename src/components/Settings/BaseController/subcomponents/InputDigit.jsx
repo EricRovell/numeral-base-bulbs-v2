@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import style from "components/Number/number-input.module.css";
 
-const InputDigit = ({ value, base, baseMin, baseMax, dispatch, title }) => {
-
+export default function InputDigit({ value, base, baseMin, baseMax, dispatch, title }) {
+  
   const [ isValidInput, setIsValidInput ] = useState(true);
 
   const handleChange = event => {
@@ -35,5 +35,3 @@ const InputDigit = ({ value, base, baseMin, baseMax, dispatch, title }) => {
     />
   );
 };
-
-export default InputDigit;

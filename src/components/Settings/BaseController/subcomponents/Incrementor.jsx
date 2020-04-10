@@ -1,4 +1,4 @@
-const Incrementor = ({ actionType, base, value, baseMin, baseMax, dispatch, title }) => {
+export default function Incremenor({ actionType, base, value, baseMin, baseMax, dispatch, title }) {
 
   const increment = () => {
     // user increment max base value -> set the min value
@@ -38,5 +38,3 @@ const Incrementor = ({ actionType, base, value, baseMin, baseMax, dispatch, titl
     </button>
   );
 };
-
-export default Incrementor;

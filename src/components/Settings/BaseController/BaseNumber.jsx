@@ -1,11 +1,9 @@
-import Incrementor from "../Base/Incrementor";
-import InputDigit from "../Base/InputDigit";
+import Incrementor from "./subcomponents/Incrementor";
+import InputDigit from "./subcomponents/InputDigit";
 
-import style from "./base-selector.module.css";
+import style from "./base-number.module.css";
 
-
-const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch, locale }) => {
-
+export default function BaseNumber({ base, bases, baseMin, baseMax, dispatch, locale }) {
   return (
     <div className={style["base-selector"]}>
       <div>{/* I am a wrapper... */}</div>
@@ -39,5 +37,3 @@ const BaseSelector = ({ base, bases, baseMin, baseMax, dispatch, locale }) => {
     </div>
   );
 };
-
-export default BaseSelector;

@@ -2,9 +2,8 @@ import { useModalContext } from "components/UI/Modal/context";
 
 import ShifterIcon from "./ShifterIcon";
 import validate from "./validate";
-import translation from "./translation-ru";
 
-const Shifter = ({ title, increment, digits, digitsMin, digitsMax, dispatch }) => {
+export default function Shifter({ title, increment, digits, digitsMin, digitsMax, dispatch }) {
 
   const [ _, dispatchModal ] = useModalContext();
 
@@ -31,7 +30,7 @@ const Shifter = ({ title, increment, digits, digitsMin, digitsMax, dispatch }) =
           contents: (
             <div>
               <p>
-                {translation.modal.maxDigits.message}
+                {"Too much digits!"}
               </p>
             </div>  
           )
@@ -43,7 +42,7 @@ const Shifter = ({ title, increment, digits, digitsMin, digitsMax, dispatch }) =
           type: "show",
           title: "Minimum digits exceeded",
           contents: (
-            <span>{translation.modal.minDigits.message}</span>
+            <span>{"Too low digits!"}</span>
           )
         });
         break;
@@ -64,5 +63,3 @@ const Shifter = ({ title, increment, digits, digitsMin, digitsMax, dispatch }) =
     </div>
   );
 };
-
-export default Shifter;

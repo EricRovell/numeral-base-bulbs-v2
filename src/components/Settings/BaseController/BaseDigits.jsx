@@ -1,10 +1,10 @@
-import Incrementor from "../Base/Incrementor";
-import InputDigit from "../Base/InputDigit";
-import Shifter from "./Shifter";
+import Incrementor from "./subcomponents/Incrementor";
+import InputDigit from "./subcomponents/InputDigit";
+import Shifter from "./subcomponents/Shifter";
 
 import style from "./base-digits.module.css";
 
-const BaseSelector = ({ digits, digitsMin, digitsMax, base, bases, baseMin, baseMax, dispatch, locale }) => {
+export default function BaseDigits({ digits, digitsMin, digitsMax, base, bases, baseMin, baseMax, dispatch, locale }) {
 
   return (
     <div className={style["base-digits"]}>
@@ -53,5 +53,3 @@ const BaseSelector = ({ digits, digitsMin, digitsMax, base, bases, baseMin, base
     </div>
   );
 };
-
-export default BaseSelector;
