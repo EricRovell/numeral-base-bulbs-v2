@@ -69,6 +69,7 @@
 
 .article a {
   color: var(--font-link);
+  cursor: pointer;
 }
 
 .article a:before {
