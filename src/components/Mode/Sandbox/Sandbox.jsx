@@ -27,8 +27,10 @@ export default function Sandbox() {
       <ExpressOptions>
         <ExpressSettings
           state={state}
-          dispatchSB={dispatch} />
-        <ExpressHelp />
+          dispatchSB={dispatch}
+          locale={locale.expressPanel.settings} />
+        <ExpressHelp
+          locale={locale.expressPanel.help} />
       </ExpressOptions>       
     </LayoutMain>
   );
