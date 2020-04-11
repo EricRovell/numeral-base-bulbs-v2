@@ -58,7 +58,7 @@ export default [
       },
 
       {
-        label: "Режим игры",
+        label: "Режим испытаний",
         nodes: [
           {
             label: "Нас ждут испытания",
