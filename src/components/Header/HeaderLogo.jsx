@@ -1,4 +1,8 @@
-import sailHome from "./sailHome";
+import Router from "next/router";
+
+function sailHome() {
+  Router.push("/");
+};
 
 export default function HeaderLogo() {
 
