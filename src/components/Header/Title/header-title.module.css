@@ -1,5 +1,5 @@
 .title {
-  --size: 30px;
+  --size: 1.2rem;
 
   display: grid;
   grid-auto-flow: column;
@@ -61,4 +61,14 @@
 }
 .title > svg:nth-child(7) {
   transition-delay: calc(var(--delay) * 7);
+}
+
+
+/* mobile */
+@media screen and (max-width: 640px) {
+
+  .title {
+    --size: 1.5rem;
+  }
+
 }
