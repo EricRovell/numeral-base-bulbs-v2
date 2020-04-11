@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 import LangSwitch from "./Lang/LangSwitch";
 import ThemeSwitch from "./Theme/ThemeSwitch";
-import GithubLink from "./GithubLink";
 
 import style from "./header-helpers.module.css";
 
@@ -28,7 +27,6 @@ export default function Helpers({ locale }) {
         locale={locale.lang}
         value={state.lang}
         dispatch={dispatch} />
-      <GithubLink />
     </div>
   );
 };
