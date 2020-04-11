@@ -1,0 +1,27 @@
+.header-toggle {
+  display: none;
+}
+
+
+/* mobile */
+@media screen and (max-width: 640px) {
+
+  .header-toggle {
+    --width: 40px;
+    --height: 3px;
+    --spacing: 8px;
+
+    display: grid;
+    grid-template: repeat(3, var(--height)) / 1fr;
+    row-gap: var(--spacing);
+    place-items: stretch;
+    padding: 5px;
+  }
+
+  .header-toggle > span {
+    background: white;
+    height: var(--height);
+    width: var(--width);
+  }
+
+}
