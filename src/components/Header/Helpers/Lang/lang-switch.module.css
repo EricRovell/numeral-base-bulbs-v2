@@ -1,11 +1,17 @@
 .switch {
   display: grid;
-  width: 100%;
-  height: 100%;
-
+  grid-template: 1fr / 1fr max-content;
   place-items: center;
+
+  width: 100%;
+  height: 100%;  
   position: relative;
   user-select: none;
+}
+
+.switch > span {
+  font-size: 0.75em;
+  color: var(--font-color-1);
 }
 
 .switch input {
@@ -67,4 +73,24 @@
 
 .switch label > input:checked ~ span:nth-of-type(2) {
   font-variation-settings: "wght" 750;
+}
+
+
+/* mobile */
+@media screen and (max-width: 640px) {
+
+  .switch > div {
+    right: -75%;
+    top: -300%;
+    font-size: 1rem;
+  }
+
+  .switch > div::before {
+    transform: rotate(180deg);
+    bottom: -0.3rem;
+    right: 40%;
+    width: 0.45rem;
+    height: 0.3rem;
+  }
+
 }
