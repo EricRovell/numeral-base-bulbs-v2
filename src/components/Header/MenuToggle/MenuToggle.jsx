@@ -12,14 +12,18 @@ export default function HeaderMobileToggle({ locale }) {
   };
 
   const openModal = () => {
-    dispatch({
-      type: "show",
-      contents: (
-        <MobileMenu
-          closeModal={closeModal}
-          locale={locale} />
-      )
-    });
+    if (open) {
+      closeModal()
+    } else {
+      dispatch({
+        type: "show",
+        contents: (
+          <MobileMenu
+            closeModal={closeModal}
+            locale={locale} />
+        )
+      });
+    } 
   };
 
   useEffect(() => {
@@ -30,10 +34,12 @@ export default function HeaderMobileToggle({ locale }) {
   }, [ locale ]);
 
   return (
-    <div onClick={openModal} className={style["header-toggle"]}>
-      <span />
-      <span />
-      <span />
+    <div
+      onClick={openModal}
+      className={`${style.toggle} ${(open) ? style.toggled : ""}`}>
+        <div /><div /><div />
+        <div /><div /><div />
+        <div /><div /><div />
     </div>
   );
 }
