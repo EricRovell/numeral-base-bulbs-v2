@@ -47,8 +47,12 @@ const ExpressModal = ({ stateSB, dispatchSB }) => {
     });
   };
 
+  const handleClick = event => {
+    event.stopPropagation();
+  }
+
   return !isLoading && locale && (    
-    <form className={style["express-form"]}>
+    <form className={style["express-form"]} onClick={handleClick}>
       <SetSettings
         state={state}
         locale={locale.settingsControls}
