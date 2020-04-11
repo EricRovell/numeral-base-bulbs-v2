@@ -2,8 +2,8 @@
   display: grid;
   grid-template: auto auto / 1fr;  
   place-items: center;
-  row-gap: 1.5em;
-  padding: 1.5em;
+  row-gap: auto;
+  padding: auto;
 
   position: relative;
 }
