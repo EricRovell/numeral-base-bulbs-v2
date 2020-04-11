@@ -22,6 +22,7 @@ export default function Head() {
         lang={state.lang || "EN"}
         theme={state.theme || "dark"} />
       <title>Numbers</title>
+      <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
     </Helmet>
   );
 }
