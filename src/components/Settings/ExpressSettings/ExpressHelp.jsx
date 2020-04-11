@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import ExpressTab from "components/UI/ExpressTab/ExpressTab";
 
-export default function ExpressHelp() {
+export default function ExpressHelp({ locale }) {
 
   const router = useRouter();
 
@@ -14,7 +14,8 @@ export default function ExpressHelp() {
 
   return (
     <ExpressTab
-      title={"Помощь"}
+      label={locale.label}
+      title={locale.title}
       handleClick={routeToTutorial}
     />
   );
