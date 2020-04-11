@@ -3,7 +3,7 @@ import ExpressModal from "./ExpressModal";
 
 import ExpressTab from "components/UI/ExpressTab/ExpressTab";
 
-const ExpressSettings = ({ state, dispatchSB }) => {
+const ExpressSettings = ({ state, dispatchSB, locale }) => {
 
   const [ { open }, dispatchModal ] = useModalContext();
 
@@ -19,7 +19,8 @@ const ExpressSettings = ({ state, dispatchSB }) => {
 
   return (
     <ExpressTab
-      title={"Настройки"}
+      label={locale.label}
+      title={locale.title}
       handleClick={openModal}
     />
   );
