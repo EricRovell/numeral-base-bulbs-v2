@@ -1,0 +1,77 @@
+.header {
+  display: grid;
+  /* Columns: Logo Header EMPTY Tabs EMPTY Helpers */
+  grid-template: 1fr / minmax(50px, 75px) max-content 0.5fr max-content 1fr minmax(50px, 90px);
+  column-gap: 5px;
+  place-items: center;
+
+  padding: 0 0.75em 0 0.5em;
+  border-bottom: var(--border-1);
+
+  font-family: var(--font-main);
+}
+
+/* LOGO */
+.header > svg {
+  width: 75%;
+  height: 75%;
+  cursor: pointer;
+}
+
+/* Navigation */
+.header > nav {
+  grid-column: 4;
+}
+
+/* helpers */
+.header > div:nth-of-type(1) {
+  grid-column: 6;
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+  .header {
+    /* columns: logo tabs heplers(theme, lang) */
+    grid-template: 1fr / 50px 1fr 85px;
+    column-gap: 10px;
+    place-items: center;
+    padding: 0 0.5em;
+  }
+
+  /* title */
+  .header h1 {
+    display: none;
+  }
+
+  .header > nav {
+    grid-column: 2;
+  }
+
+  /* helpers */
+  .header > div:nth-of-type(1) {
+    grid-column: 3;
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .header > div:last-of-type {
+    grid-column: 3;
+  }
+
+  /* title */
+  .header h1 {
+    display: grid;
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  /* nav, helpers */
+  .header > nav,
+  .header > div:nth-of-type(1) {
+    display: none;
+  }
+
+}
