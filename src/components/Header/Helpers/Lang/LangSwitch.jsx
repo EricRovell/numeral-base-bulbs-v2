@@ -19,6 +19,7 @@ const LangSwitch = ({ value, dispatch, locale }) => {
   return (
     <label className={style.switch} title={locale}>
       <LangIcon />
+      <span>{value}</span>
       <input type="checkbox" defaultChecked={true} />
       <div>
         <Radio
