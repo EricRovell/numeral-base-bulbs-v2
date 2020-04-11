@@ -1,3 +1,19 @@
+/* Navigation Container */
+
+.navigation {
+  display: grid;
+  grid-template: 1fr / repeat(5, max-content);
+  column-gap: 0.7em;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+
+  font-size: 0.55rem;
+  overflow-x: auto;
+}
+
+/* Sections/Links */
+
 .section,
 .section-active {
   font-family: var(--font-main);
