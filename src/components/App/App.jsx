@@ -1,8 +1,8 @@
 import Providers from "components/App/Providers";
 
 import Head from "components/App/Head";
-import Header from "components/Header/Header";
-import Modal from "components/UI/Modal/Modal";
+import Header from "components/Header/Header/Header";
+import Modal from "components/Hooks/useModal/useModal";
 
 import style from "style/pages/app.module.css";
 
