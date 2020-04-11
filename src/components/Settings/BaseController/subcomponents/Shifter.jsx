@@ -1,4 +1,4 @@
-import { useModalContext } from "components/UI/Modal/context";
+import { useModalContext } from "components/Hooks/useModal/useModalContext";
 
 import ShifterIcon from "./ShifterIcon";
 import validate from "./validate";
