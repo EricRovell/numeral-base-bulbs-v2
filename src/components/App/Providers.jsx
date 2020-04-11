@@ -1,6 +1,6 @@
 import { StateProvider, initialState, reducer } from "components/StateProvider/Context";
 import { HelmetProvider } from "react-helmet-async";
-import ModuleProvider from "components/UI/Modal/context";
+import ModuleProvider from "components/Hooks/useModal/useModalContext";
 
 export default ({ children }) => (
   <HelmetProvider>
