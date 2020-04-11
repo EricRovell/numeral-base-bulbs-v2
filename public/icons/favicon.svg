@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382 394">
+  <title>favicon</title>
+  <g>
+    <rect x="224" y="233" width="154" height="157" rx="18" style="fill: #f49138;stroke: #000;stroke-miterlimit: 10;stroke-width: 8px"/>
+    <path d="M243,238h66a33,33,0,0,1,33,33v81a33,33,0,0,1-33,33H243a16,16,0,0,1-16-16V253a16,16,0,0,1,16-16Z" style="fill: #ff9f40"/>
+    <path d="M0,0Z" transform="translate(0)"/>
+  </g>
+  <g>
+    <rect x="16" y="202" width="154" height="157" rx="18" transform="translate(-58 26) rotate(-12)" style="fill: #65d1cb;stroke: #000;stroke-miterlimit: 10;stroke-width: 8px"/>
+    <path d="M35,210h66a33,33,0,0,1,33,33v81a33,33,0,0,1-33,33H35a16,16,0,0,1-16-16V225A16,16,0,0,1,35,210Z" transform="translate(-59 23) rotate(-12)" style="fill: #73e7e6"/>
+    <path d="M0,0Z" transform="translate(0)"/>
+  </g>
+  <g>
+    <rect x="142" y="19" width="154" height="157" rx="18" transform="translate(38 -60) rotate(17)" style="fill: #dd5b5b;stroke: #000;stroke-miterlimit: 10;stroke-width: 8px"/>
+    <path d="M162,19h66a33,33,0,0,1,33,33v81a33,33,0,0,1-33,33H162a16,16,0,0,1-16-16V34a16,16,0,0,1,16-16Z" transform="translate(36 -56) rotate(17)" style="fill: #f26666"/>
+    <path d="M0,0Z" transform="translate(0)"/>
+  </g>
+</svg>
