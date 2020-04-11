@@ -1,10 +1,8 @@
 .header-switch {
   display: grid;
   grid-auto-flow: column;
-
   width: 100%;
   height: 100%;
-  padding-bottom: 0.25em;
 }
 
 .header-switch svg {
@@ -12,11 +10,9 @@
   fill: var(--icon-fill-2);
   width: 60%;
   height: 60%;
-  align-self: end;
 }
 
 /* github */
-
 .header-switch div > a {
   display: grid;
   place-items: center;
@@ -29,7 +25,8 @@
 @media screen and (max-width: 768px) {
 
   .header-switch {
-    padding-bottom: 0;
+    width: 100%;
+    height: 2rem;
   }
 
   .header-switch svg {
@@ -39,6 +36,15 @@
   /* github */
   .header-switch div > a {
     display: none;
+  }
+
+}
+
+/* mobile */
+@media screen and (max-width: 640px) {
+
+  .header-switch {
+    width: fit-content;
   }
 
 }
