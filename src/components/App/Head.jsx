@@ -18,8 +18,10 @@ export default function Head() {
   
   return (
     <Helmet>
-      <html lang={state.lang || "EN"} theme={state.theme || "dark"} />
-      <title>Numeral Base Bulbs 2</title>
+      <html
+        lang={state.lang || "EN"}
+        theme={state.theme || "dark"} />
+      <title>Numbers</title>
     </Helmet>
   );
 }
