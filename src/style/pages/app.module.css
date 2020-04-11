@@ -3,7 +3,7 @@
   min-height: 100vh;
 
   display: grid;
-  grid-template: minmax(55px, 5vh) 1fr / 1fr;
+  grid-template: 55px 1fr / 1fr;
   place-items: stretch;
 }
 
