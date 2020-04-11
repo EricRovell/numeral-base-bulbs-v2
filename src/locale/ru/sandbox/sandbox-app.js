@@ -22,5 +22,15 @@ export default {
     decrementBase: "Уменьшить систему счисления на единицу.",    
     addSymbol: "Добавить символ.",
     removeSymbol: "Убрать символ."
+  },
+  expressPanel: {
+    settings: {
+      label: "Настройки",
+      title: "Экспресс настройки песочницы"
+    },
+    help: {
+      label: "Помощь",
+      title: "Документация по режиму"
+    }
   }
 };

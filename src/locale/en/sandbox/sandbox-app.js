@@ -22,5 +22,15 @@ export default {
     decrementBase: "Decrement the base value.",    
     addSymbol: "Add a symbol.",
     removeSymbol: "Remove a symbol."
+  },
+  expressPanel: {
+    settings: {
+      label: "Settings",
+      title: "Sandbox Express Settings"
+    },
+    help: {
+      label: "Help",
+      title: "Sandbox Mode Documentation"
+    }
   }
 };
