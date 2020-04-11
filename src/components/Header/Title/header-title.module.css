@@ -44,22 +44,41 @@
   transform: rotate(360deg);
 }
 
+.title:hover > svg:nth-child(1),
+.title:hover > svg:nth-child(2),
+.title:hover > svg:nth-child(3),
+.title:hover > svg:nth-child(4),
+.title:hover > svg:nth-child(5),
+.title:hover > svg:nth-child(6),
+.title:hover > svg:nth-child(7) {
+  transform: rotate(360deg);
+}
+
+.title > svg:nth-child(1) {
+  transform: rotate(-10deg);
+}
 .title > svg:nth-child(2) {
+  transform: rotate(5deg);
   transition-delay: calc(var(--delay) * 2);
 }
 .title > svg:nth-child(3) {
+  transform: rotate(-5deg);
   transition-delay: calc(var(--delay) * 3);
 }
 .title > svg:nth-child(4) {
+  transform: rotate(7deg);
   transition-delay: calc(var(--delay) * 4);
 }
 .title > svg:nth-child(5) {
+  transform: rotate(-7deg);
   transition-delay: calc(var(--delay) * 5);
 }
 .title > svg:nth-child(6) {
+  transform: rotate(8deg);
   transition-delay: calc(var(--delay) * 6);
 }
 .title > svg:nth-child(7) {
+  transform: rotate(-9deg);
   transition-delay: calc(var(--delay) * 7);
 }
 
