@@ -4,17 +4,16 @@ export default [
     nodes: [
 
       {
-        label: "О проекте",
-        nodes: [
-          {
-            label: "Откуда идут корни?",
-            href: "/ru/about/ru/welcome",
-          },
-          {
-            label: "Ссылки",
-            href: "/ru/about/ru/attributions",
-          },
-        ]
+        label: "О приложении",
+        href: "/ru/about/ru/welcome",
+      },
+      {
+        label: "Планы",
+        href: "/ru/about/ru/todo",
+      },
+      {
+        label: "Атрибуции",
+        href: "/ru/about/ru/attributions",
       },
 
     ],
