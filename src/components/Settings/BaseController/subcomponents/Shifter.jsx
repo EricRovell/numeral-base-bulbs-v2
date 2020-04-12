@@ -1,4 +1,5 @@
 import { useModalContext } from "components/Hooks/useModal/useModalContext";
+import WarningModal from "components/Hooks/useModal/Modals/WarningModal";
 
 import ShifterIcon from "./ShifterIcon";
 import validate from "./validate";
@@ -26,13 +27,11 @@ export default function Shifter({ title, increment, digits, digitsMin, digitsMax
       case 1:
         dispatchModal({
           type: "show",
-          title: "Maximum digits exceeded",
           contents: (
-            <div>
-              <p>
-                {"Too much digits!"}
-              </p>
-            </div>  
+            <WarningModal
+              title="Limit exceeded"
+              message="No more digits are allowed."  
+            />
           )
         });
         break;
@@ -40,9 +39,11 @@ export default function Shifter({ title, increment, digits, digitsMin, digitsMax
       case -1:
         dispatchModal({
           type: "show",
-          title: "Minimum digits exceeded",
           contents: (
-            <span>{"Too low digits!"}</span>
+            <WarningModal
+              title="Limit exceeded"
+              message="No more digits to remove."  
+            />
           )
         });
         break;
