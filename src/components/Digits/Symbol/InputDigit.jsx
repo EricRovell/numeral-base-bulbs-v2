@@ -32,12 +32,17 @@ const InputDigit = ({ index, value, baseIn, title, dispatch }) => {
       : value
   );
 
+  const onFocusSelectAll = event => {
+    event.target.select();
+  };
+
   return (
     <input
       type="text"
       title={title}
       className={(wrongInput) ? style["number-input"] : null}
       onChange={handleChange}
+      onFocus={onFocusSelectAll}
       value={digit2char()}
       maxLength={1}
     />
