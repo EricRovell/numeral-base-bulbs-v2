@@ -1,23 +1,20 @@
 .header-switch {
+  --size: 0.55rem;
+
   display: grid;
   grid-auto-flow: column;
+  column-gap: 7.5px;
   width: 100%;
   height: 100%;
+
+  font-size: var(--size);
 }
 
 .header-switch svg {
   cursor: pointer;
   fill: var(--icon-fill-2);
-  width: 60%;
-  height: 60%;
-}
-
-/* github */
-.header-switch div > a {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
+  width: 1.3em;
+  height: 1.3em;
 }
 
 
@@ -33,18 +30,16 @@
     align-self: center;
   }
 
-  /* github */
-  .header-switch div > a {
-    display: none;
-  }
-
 }
 
 /* mobile */
 @media screen and (max-width: 640px) {
 
   .header-switch {
+    --size: 1rem;
+    column-gap: 1em;
     width: fit-content;
+    height: auto;
   }
 
 }
