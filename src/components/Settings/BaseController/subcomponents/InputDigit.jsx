@@ -24,11 +24,16 @@ export default function InputDigit({ value, base, baseMin, baseMax, dispatch, ti
     });
   };
 
+  const onFocusSelectAll = event => {
+    event.target.select();
+  };
+
   return (
     <input
       title={title}
       type="text"
       inputMode={"numeric"}
+      onFocus={onFocusSelectAll}
       className={(isValidInput) ? null : style["number-input"]}
       onChange={handleChange}
       value={value}
