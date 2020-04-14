@@ -48,12 +48,17 @@ const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch, title }) =>
     validate({ key: event.key });
   };
 
+  const onFocusSelectAll = event => {
+    event.target.select();
+  };
+
   return (
     <input
       type="text"
       title={title}
       onChange={handleChange}
       onKeyPress={handleKeyDown}
+      onFocus={onFocusSelectAll}
       value={digits2chars([ ...number ]).join("")}
       className={(wrongInput) ? style["number-input"] : ""} />
   );
