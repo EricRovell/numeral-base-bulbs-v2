@@ -18,7 +18,7 @@
 .mobile-menu > div:nth-of-type(1) {
   grid-row: 3;
   max-width: 125px;
-  padding-left: 1em;
+  padding-left: 2em;
 }
 
 /* Close Button */
