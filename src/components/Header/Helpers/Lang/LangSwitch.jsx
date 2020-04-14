@@ -1,7 +1,6 @@
 import useLocaleSwitch from "components/Hooks/useLocaleSwitch";
 
-import LangIcon from "./SVGIcon";
-import Radio from "./Radio";
+import Select from "./Select";
 import style from "./lang-switch.module.css";
 
 const data = {
@@ -17,17 +16,14 @@ const LangSwitch = ({ value, dispatch, locale }) => {
   const handleLocaleChange = useLocaleSwitch(dispatch);
 
   return (
-    <label className={style.switch} title={locale}>
-      <LangIcon />
-      <span>{value}</span>
-      <input type="checkbox" defaultChecked={true} />
-      <div>
-        <Radio
-          data={data}
-          value={value}
-          handleInputChange={handleLocaleChange} />
-      </div>
-    </label>
+    <Select
+      styles={style["lang-select"]}
+      label={locale}
+      options={data.options}
+      name={data.name}
+      value={value}
+      handleInputChange={handleLocaleChange}
+    />
   );
 };
 
