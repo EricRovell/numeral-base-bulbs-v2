@@ -1,6 +1,6 @@
 const Select = ({ label, options, value, name, handleInputChange }) => (
   < >
-    <label>{label}</label>        
+    <label>{label}</label>
       <select
         value={value}
         onChange={handleInputChange}
@@ -10,7 +10,7 @@ const Select = ({ label, options, value, name, handleInputChange }) => (
               {options[option]}
             </option>
           ))}
-      </select>      
+      </select>
   </>
 );
 
