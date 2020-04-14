@@ -1,7 +1,7 @@
 .header {
   display: grid;
   /* Columns: Logo Header EMPTY Tabs EMPTY Helpers */
-  grid-template: 1fr / minmax(50px, 75px) max-content 0.5fr max-content 1fr minmax(50px, 90px);
+  grid-template: 1fr / minmax(50px, 75px) max-content 0.5fr max-content 1fr auto;
   column-gap: 5px;
   place-items: center;
 
@@ -33,7 +33,7 @@
 
   .header {
     /* columns: logo tabs heplers(theme, lang) */
-    grid-template: 1fr / 55px 1fr 55px;
+    grid-template: 1fr / 55px 1fr auto;
     column-gap: 10px;
     place-items: center;
     padding: 0 0.5em;
@@ -56,6 +56,11 @@
 }
 
 @media screen and (max-width: 640px) {
+
+  .header {
+    /* columns: logo tabs heplers(theme, lang) */
+    grid-template: 1fr / 55px 1fr 55px;
+  }
 
   .header > div:last-of-type {
     grid-column: 3;
