@@ -10,6 +10,13 @@ export default (state, action) => {
         [action.name]: action.value
       };
 
+    case "user-preferences":
+      return {
+        ...state,
+        lang: action.lang,
+        theme: action.theme
+      }
+
     case "reset":
       return action.state || initialState;
 
