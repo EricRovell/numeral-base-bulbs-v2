@@ -67,8 +67,9 @@
     row-gap: 1em;
   }
 
+  /* navigation can be accessed in modal */
   .layout-article > nav {
-    grid-row: 1;
+    display: none;
   }
   
   .layout-article > article {
@@ -79,6 +80,15 @@
 
   .layout-article > article > * {
     grid-column: 1;
+  }
+
+}
+
+/* mobile */
+@media screen and (max-width: 640px) {
+
+  .layout-article > article {
+    padding-bottom: 5em;
   }
 
 }
