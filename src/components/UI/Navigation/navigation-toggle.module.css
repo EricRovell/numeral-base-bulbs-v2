@@ -1,0 +1,30 @@
+.toggle {
+  display: none;
+}
+
+/* mobile */
+@media screen and (max-width: 640px) {
+
+  .toggle {
+    --size: 40px;
+
+    display: grid;
+    place-items: center;
+    position: fixed;
+    bottom: calc(0.5 * var(--size));
+    right: calc(0.75 * var(--size));
+    width: var(--size);
+    height: var(--size);
+    background: var(--accent-1);
+    border-radius: 50%;
+
+    cursor: pointer;
+  }
+
+  .toggle svg {
+    width: 65%;
+    height: 65%;
+    fill: var(--accent-1-negate);
+  }
+
+}
