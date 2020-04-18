@@ -7,6 +7,7 @@
 
   .toggle {
     --size: 40px;
+    z-index: 1000;
 
     display: grid;
     place-items: center;
