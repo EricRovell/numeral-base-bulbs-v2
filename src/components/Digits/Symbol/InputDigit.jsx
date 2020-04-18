@@ -1,28 +1,20 @@
-import { useState } from "react"; 
-import { baseRegExp } from "utility/validateInput";
-
+import useValidInput from "./useValidInput";
 import style from "components/Number/number-input.module.css";
 
-const InputDigit = ({ index, value, baseIn, title, dispatch }) => {
-  
-  const [ wrongInput, setWrongInput ] = useState(false);
-  const regex = baseRegExp(baseIn);
-  
+export default function InputDigit({ index, value, baseIn, title, dispatch }) {
+
+  const [ wrongInput, validate ] = useValidInput({ baseIn });
+
   const handleChange = event => {
     const userInput = event.target.value;
-
-    if (!regex.test(userInput)) {
-      setWrongInput(true);
-      setTimeout(() => {
-        setWrongInput(false);
-      }, 820);
+    if (!validate(userInput)) {
       return;
     }
 
     dispatch({
       type: "mutateDigit",
       index,
-      value: +userInput,
+      value: userInput.toUpperCase().charCodeAt() - 55,
     });
   };
 
@@ -45,8 +37,7 @@ const InputDigit = ({ index, value, baseIn, title, dispatch }) => {
       onFocus={onFocusSelectAll}
       value={digit2char()}
       maxLength={1}
+      inputMode={(baseIn >= 2 && baseIn <= 10) ? "numeric" : "text"}
     />
   );
 };
-
-export default InputDigit;
