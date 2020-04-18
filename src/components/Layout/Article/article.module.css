@@ -20,7 +20,7 @@
   text-align: center;
   place-self: center;
   margin-bottom: 0.5em;
-  font-size: 1rem;
+  font-size: 1.5em;
 }
 
 .article > h2,
@@ -30,18 +30,18 @@
 }
 
 .article > h2 {
-  font-size: 0.85rem;
+  font-size: 1.2em;
 }
 
 .article > h3 {
-  font-size: 0.75rem;
+  font-size: 1em;
 }
 
 .article > h2::before,
 .article > h3::before {
   font-family: var(--font-main);
   position: absolute;
-  left: -2em;
+  left: -1.75em;
 }
 
 .article > h2::before {
@@ -90,7 +90,7 @@
   padding: 0.75em 1em 0.75em 1.5em;
   margin: 0.25em 0; 
   color: var(--font-color-1);
-  font-size: 0.65rem;
+  font-size: 0.9em;
 }
 
 .article > blockquote::before {
@@ -118,4 +118,19 @@
 .article *::selection {
   color: var(--article-selection-color);
   background: var(--article-selection-bg);
+}
+
+
+/* mobile */
+@media screen and (max-width: 768px) {
+
+  .article {
+    font-size: 0.9rem;
+    line-height: 1.32;
+  }
+
+  .article p {
+    font-size: 1em;
+  }
+
 }
