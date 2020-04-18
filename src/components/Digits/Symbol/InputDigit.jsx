@@ -14,7 +14,9 @@ export default function InputDigit({ index, value, baseIn, title, dispatch }) {
     dispatch({
       type: "mutateDigit",
       index,
-      value: userInput.toUpperCase().charCodeAt() - 55,
+      value: (baseIn >= 2 && baseIn <= 10 )
+        ? +userInput
+        : userInput.toUpperCase().charCodeAt() - 55,
     });
   };
 
