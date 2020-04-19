@@ -31,23 +31,21 @@
 
 .container::before,
 .container::after {
-  --dir: left;
-
   content: "";
   position: sticky;
   left: 0;
   height: 100%;
-  width: 1.25rem;
-  background: linear-gradient(to var(--dir), transparent 50%, var(--bg));
+  width: 1.25rem;  
 }
 
 .container::before {
   left: 0;
+  background: linear-gradient(to left, transparent 50%, var(--bg));
 }
 
 .container::after {
-  --dir: right;
   right: 0;
+  background: linear-gradient(to right, transparent 50%, var(--bg));
 }
 
 /* mobile */
