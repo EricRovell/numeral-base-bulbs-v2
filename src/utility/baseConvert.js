@@ -48,6 +48,7 @@ export const baseConvert = ({ digits, baseIn, baseOut, representation }) => {
 
   // validate zero array is an array is given
   if (Array.isArray(digits)) {
+    if (digits.length === 0) return [];
     if (digits.every(digit => digit === 0)) {
       return [0];
     }
