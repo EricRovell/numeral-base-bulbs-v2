@@ -13,6 +13,7 @@ export default {
   },
   number: {
     input: "Set the number's value.",
+    placeholder: "Add some digits...",
     increment: "Increment the number's value.",
     decrement: "Decrement the number's value."
   },
