@@ -1,12 +1,18 @@
+.express-form-container {
+  overflow: auto;
+  max-width: 75vw;
+  max-height: 85vh;
+
+  background: var(--bg);
+  border: var(--section-border);
+}
+
 .express-form {
   display: grid;
   row-gap: 1.2em;
-
-  max-width: 75vw;
-  max-height: 85vh;
+  
   height: auto;
-  background: var(--bg);
-  border: var(--section-border);
+  width: 100%;
   padding: 1rem;
 
   font-family: var(--font-main);
@@ -35,9 +41,12 @@
 /* mobile */
 @media screen and (max-width: 768px) {
 
-  .express-form {
+  .express-form-container {
     max-width: 95vw;
     max-height: 90vh;
+  }
+
+  .express-form {    
     font-size: 0.5rem;
   }
 

@@ -51,46 +51,48 @@ const ExpressModal = ({ stateSB, dispatchSB }) => {
     event.stopPropagation();
   }
 
-  return !isLoading && locale && (    
-    <form className={style["express-form"]} onClick={handleClick}>
-      <SetSettings
-        state={state}
-        locale={locale.settingsControls}
-        defaultState={defaultState}
-        storageKey={"SettingsSandbox"}
-        validate={validate}
-        sideEffect={resetSandBoxState}
-        dispatch={dispatch} />
-      <SettingsSection name={locale.digits.name}>
-        <Digits
-          locale={locale.digits.options}
-          digits={state.digits}
-          digitsMin={state.digitsMin}
-          digitsMax={state.digitsMax}
-          handleInputChange={handleInputChange} />
-      </SettingsSection>
-      <SettingsSection name={locale.base.name}>
-        <Base
-          locale={locale.base.options}
-          baseIn={state.baseIn}
-          baseOut={state.baseOut}
-          handleInputChange={handleInputChange} />
-      </SettingsSection>       
-      <SettingsSection name={locale.representation.name}>
-        <Representation
-          locale={locale.representation.options}
-          mode={state.mode}
-          skin={state.skin}
-          handleInputChange={handleInputChange} />
-      </SettingsSection>
-      <SettingsSection name={locale.labels.name}>
-        <Labels
-          locale={locale.labels}
-          valueUp={state.labelsUp}
-          valueDown={state.labelsDown}
-          handleInputChange={handleInputChange} />  
-      </SettingsSection>       
-    </form>    
+  return !isLoading && locale && (
+    <div className={style["express-form-container"]}>
+      <form className={style["express-form"]} onClick={handleClick}>
+        <SetSettings
+          state={state}
+          locale={locale.settingsControls}
+          defaultState={defaultState}
+          storageKey={"SettingsSandbox"}
+          validate={validate}
+          sideEffect={resetSandBoxState}
+          dispatch={dispatch} />
+        <SettingsSection name={locale.digits.name}>
+          <Digits
+            locale={locale.digits.options}
+            digits={state.digits}
+            digitsMin={state.digitsMin}
+            digitsMax={state.digitsMax}
+            handleInputChange={handleInputChange} />
+        </SettingsSection>
+        <SettingsSection name={locale.base.name}>
+          <Base
+            locale={locale.base.options}
+            baseIn={state.baseIn}
+            baseOut={state.baseOut}
+            handleInputChange={handleInputChange} />
+        </SettingsSection>       
+        <SettingsSection name={locale.representation.name}>
+          <Representation
+            locale={locale.representation.options}
+            mode={state.mode}
+            skin={state.skin}
+            handleInputChange={handleInputChange} />
+        </SettingsSection>
+        <SettingsSection name={locale.labels.name}>
+          <Labels
+            locale={locale.labels}
+            valueUp={state.labelsUp}
+            valueDown={state.labelsDown}
+            handleInputChange={handleInputChange} />  
+        </SettingsSection>       
+      </form>
+    </div>  
   );
 };
 
