@@ -12,7 +12,10 @@ const Number = ({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) => (
       baseIn,
       baseOut,
       dispatch,
-      title: locale.input
+      locale: {
+        title: locale.input,
+        placeholder: locale.placeholder
+      }
     }} />
   </div>
 );
