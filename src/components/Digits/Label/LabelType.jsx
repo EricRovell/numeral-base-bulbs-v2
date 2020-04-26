@@ -1,45 +1,34 @@
 import style from "./label.module.css";
 
-export default function LabelType({ typeValue, trueIndex, baseIn, mode, locale }) {
+export default function LabelType({ value, index, baseIn, locale }) {
 
-  const title = locale[typeValue];
+  const title = locale[value];
 
-  switch (typeValue) {
+  switch (value) {
     case "value":
       return (
         <span
-          title={`${title}: ${baseIn ** trueIndex}`}
+          title={`${title}: ${baseIn ** index}`}
           className={style.label}>
-          {baseIn ** trueIndex}
+          {baseIn ** index}
         </span>
       );
     case "power":
       return (
         <span
-          title={`${title}: ${baseIn ** trueIndex}`}
+          title={`${title}: ${baseIn ** index}`}
           className={style.label}>
-          {trueIndex}
+          {index}
           <i>{baseIn}</i>
         </span>
-      );
-    case "none":
-      return (
-        <span
-          title={title}
-          className={`
-            ${style["label"]}
-            ${style["label-none"]}
-            ${(mode === "symbol") ? style["label-none-transparent"] : null}`}>
-          {locale[typeValue]}
-        </span>
-      );    
+      );   
     case "index":
     default:
       return (
         <span
-          title={`${title}: ${trueIndex}`}
+          title={`${title}: ${index}`}
           className={style.label}>
-          {trueIndex}
+          {index}
         </span>
       );
   }
