@@ -1,6 +1,0 @@
-.bulb {
-  display: grid;
-  grid-template: 1fr 10fr 1fr / 1fr;
-  place-items: center;
-  place-content: center;
-}
