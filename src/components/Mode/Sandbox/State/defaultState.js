@@ -1,6 +1,6 @@
 export default {
   digits: [0, 0, 0, 0],
-  mode: "bulb", // symbol
+  mode: "symbol", // symbol
   skin: "default",
 
   digitsMin: 0,
@@ -13,6 +13,13 @@ export default {
   baseMin: 2,
   baseMax: 16,
 
-  labelsUp: "value",    // index | value | power | none
-  labelsDown: "index",
+  labelsUp: {
+    render: false,
+    mode: "value"
+  },
+
+  labelsDown: {
+    render: true,
+    mode: "index"
+  },
 };
