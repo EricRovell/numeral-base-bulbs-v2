@@ -1,4 +1,5 @@
 import defaultState from "./defaultState";
+import reducerActionsSB from "./reducerActionsSB";
 
 export default (state, action) => {
   switch (action.type) {
@@ -42,8 +43,13 @@ export default (state, action) => {
     case "mutateDigit":
       return {
         ...state,
-        digits: state.digits.map((val, i) =>
-          (i === action.index) ? action.value : val)
+        digits: reducerActionsSB.mutateDigit({
+          digits: state.digits,
+          action: action.action,
+          value: action.value,
+          baseIn: state.baseIn,
+          index: action.index
+        })
       };
 
     case "setDigits":
@@ -69,10 +75,13 @@ export default (state, action) => {
 
     // labels
 
-    case "setLabel":
+    case "switchLabel":
       return {
         ...state,
-        [action.label]: action.value
+        [action.label]: {
+          render: true,
+          mode: reducerActionsSB.labelNextMode(state[action.label].mode)
+        }
       };
 
     // mode / skin
