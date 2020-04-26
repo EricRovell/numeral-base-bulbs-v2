@@ -5,6 +5,7 @@
   display: grid;
   place-items: center;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .label {
@@ -43,12 +44,7 @@
   opacity: 1;
   color: var(--font-color-1);
   background: rgb(26, 31, 43);
-  padding: 0 0.25em;
   width: 65%;
-  /* height: 100%; */
-
-  /* display: grid;
-  align-items: center; */
 }
 
 .label-none-transparent {
