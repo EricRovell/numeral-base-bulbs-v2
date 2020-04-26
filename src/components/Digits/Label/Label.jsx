@@ -1,30 +1,24 @@
+import { useCallback, useMemo } from "react";
 import LabelType from "./LabelType";
-import nextMode from "./nextMode";
-
 import style from "./label.module.css";
 
+export default function Label({ index, type, value, baseIn, locale, dispatch }) {
 
-const Label = ({ index, type, labelsUp, labelsDown, digits, baseIn, mode, locale, dispatch }) => {
-
-  const trueIndex = digits.length - index - 1;
-
-  const typeValue = (type === "labelsUp")
-    ? labelsUp
-    : labelsDown;
-
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     dispatch({
-      type: "setLabel",
-      label: type,
-      value: nextMode(typeValue)
+      type: "switchLabel",
+      label: type
     });
-  };
+  }, [ type ]);
 
-  return (
-    <div className={style["label-container"]} onClick={handleClick}>
-      <LabelType {...{ typeValue, trueIndex, baseIn, mode, locale }} />
-    </div>
-  );
-};
-
-export default Label;
+  return useMemo(() => (
+    <span className={style["label-container"]} onClick={handleClick}>
+      <LabelType {...{
+        value,
+        index,
+        baseIn,
+        locale
+      }} />
+    </span>
+  ), [ index, baseIn, locale, value ]);
+}
