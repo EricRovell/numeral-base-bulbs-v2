@@ -1,0 +1,43 @@
+.checkbox {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  column-gap: 0.75em;
+  cursor: pointer;
+}
+
+.checkbox input[type=checkbox] {
+  display: none;
+}
+
+.checkbox svg {
+  width: 1.15em;
+  height: 1.15em;
+  stroke: var(--accent-1);
+}
+
+.checkbox svg rect {
+  fill: none;
+  stroke-width: 35;
+  stroke-miterlimit: 10;
+  opacity: 0.4;
+}
+
+.checkbox svg polyline {
+  fill: none;
+  stroke-width: 35;
+  stroke-miterlimit: 10;
+
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 0.15s linear;
+}
+
+.checkbox input[type=checkbox]:checked + svg rect {
+  opacity: 1;
+}
+
+.checkbox input[type=checkbox]:checked + svg polyline {
+  opacity: 1;
+  stroke-dashoffset: 0;
+}
