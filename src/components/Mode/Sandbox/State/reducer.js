@@ -78,10 +78,7 @@ export default (state, action) => {
     case "switchLabel":
       return {
         ...state,
-        [action.label]: {
-          render: true,
-          mode: reducerActionsSB.labelNextMode(state[action.label].mode)
-        }
+        [action.label]: reducerActionsSB.labelNextMode(state[action.label])
       };
 
     // mode / skin
