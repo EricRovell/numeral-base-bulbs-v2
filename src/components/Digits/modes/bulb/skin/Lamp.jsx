@@ -17,7 +17,7 @@ export default function BinaryLamp({ value, index, dispatch }) {
         type="checkbox" 
         name="switch"
         checked={(value === 1)}
-        onClick={handleSwitch}
+        onChange={handleSwitch}
         id={`lamp-${index}`} />
       <div className={style.wire}>
         <label htmlFor={`lamp-${index}`} />
