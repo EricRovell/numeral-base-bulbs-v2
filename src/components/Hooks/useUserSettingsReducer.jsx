@@ -7,6 +7,13 @@ export default function useUserSettingsReducer({ defaultState, itemKey }) {
     switch (action.name) {
       case "reset":
         return action.state;
+
+      case "labelsUpShow":
+      case "labelsDownShow":
+        return {
+          ...state,
+          [action.name]: (action.value === "true") ? false : true
+        }
     
       default:
         return {
