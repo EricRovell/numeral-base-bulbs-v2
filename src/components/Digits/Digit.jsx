@@ -1,37 +1,51 @@
 import { useMemo } from "react";
 import Label from "./Label/Label";
 import style from "./digits.module.css";
+import loadDigits from "./loadDigits";
 
-export default function Digit({ labelsUp, labelsDown, index, dispatch, baseIn, locale, children }) {
+export default function Digit({ mode, skin, value, labelsUp, labelsDown, index, dispatch, baseIn, locale }) {
+
+  const Component = useMemo(() => loadDigits(mode, skin), [ mode, skin]);
 
   return (
     <div className={style.digit}>
       {
-        (labelsUp.render)
-          ? useMemo(() => <Label {...{
-              type: "labelsUp",
-              value: labelsUp.mode,
-              baseIn,
-              index,
-              dispatch,
-              locale: locale.label
-            }} />, [ index, labelsUp.mode, baseIn, locale ])
-          : <span />
+        useMemo(() => (
+          (labelsUp.show)
+            ? <Label {...{
+                type: "labelsUpMode",
+                value: labelsUp.mode,
+                baseIn,
+                index,
+                dispatch,
+                locale: locale.label
+              }} />
+            : <span />
+        ), [ index, labelsUp, baseIn, locale ])
       }
 
-      {children}
+      {useMemo(() => (
+        <Component
+          value={value}
+          index={index}
+          baseIn={baseIn}
+          dispatch={dispatch}
+          locale={locale}
+        />), [ value, index, baseIn, locale, mode, skin ])}
 
       {
-        (labelsDown.render)
-          ? useMemo(() => <Label {...{
-              type: "labelsDown",
-              value: labelsDown.mode,
-              baseIn,
-              index,
-              dispatch,
-              locale: locale.label
-            }} />, [ index, labelsDown.mode, baseIn, locale ])
-          : <span />
+        useMemo(() => (
+          (labelsDown.show)
+            ? <Label {...{
+                type: "labelsDownMode",
+                value: labelsDown.mode,
+                baseIn,
+                index,
+                dispatch,
+                locale: locale.label
+              }} />
+            : <span />
+        ), [ index, labelsDown, baseIn, locale ])
       }
     </div>
   );
