@@ -65,15 +65,28 @@ export default {
 
     labels: {
       name: "Labels",
-      labelsUp: "Up",
-      labelsDown: "Down",
-      options: {
-        index: "Index",
-        value: "Value",
-        power: "Radix power",
-        none: "None"
+      data: {
+        labelsUp: {
+          name: "labelsUp",
+          label: "Up",
+          options: {
+            index: "Index",
+            value: "Value",
+            power: "Radix power"
+          },
+        },
+        labelsDown: {
+          name: "labelsDown",
+          label: "Down",
+          options: {
+            index: "Index",
+            value: "Value",
+            power: "Radix power"
+          },
+        },
       }
-    }
+    },
+
   },
 
   globals: {

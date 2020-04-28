@@ -53,15 +53,27 @@ export default {
   },
 
   labels: {
-    name: "Подписи",
-    labelsUp: "Верхние",
-    labelsDown: "Нижние",
-    options: {
-      index: "Индекс",
-      value: "Значение",
-      power: "Степень",
-      none: "Отсутствует"
+    name: "Labels",
+    data: {
+      labelsUp: {
+        name: "labelsUp",
+        label: "Верхние",
+        options: {
+          index: "Индекс",
+          value: "Значение",
+          power: "Степень"
+        },
+      },
+      labelsDown: {
+        name: "labelsDown",
+        label: "Нижние",
+        options: {
+          index: "Индекс",
+          value: "Значение",
+          power: "Степень"
+        },
+      },
     }
-  }
+  },
 
 };
