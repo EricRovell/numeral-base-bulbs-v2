@@ -87,9 +87,13 @@ const ExpressModal = ({ stateSB, dispatchSB }) => {
         <SettingsSection name={locale.labels.name}>
           <Labels
             locale={locale.labels}
-            valueUp={state.labelsUp}
-            valueDown={state.labelsDown}
-            handleInputChange={handleInputChange} />  
+            labelsUp={{
+              show: state.labelsUpShow,
+              mode: state.labelsUpMode }}
+            labelsDown={{
+              show: state.labelsDownShow,
+              mode: state.labelsDownMode }}
+            handleInputChange={handleInputChange} />
         </SettingsSection>       
       </form>
     </div>  
