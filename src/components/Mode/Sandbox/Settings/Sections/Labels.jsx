@@ -1,20 +1,24 @@
-import Select from "components/Settings/Controls/Select";
+import CheckboxSelect from "components/Settings/Controls/CheckboxSelect/CheckboxSelect";
 
-const LabelsForm = ({ locale, valueUp, valueDown, handleInputChange }) => (
-  <>  
-    <Select
-      name={"labelsUp"}
-      label={locale.labelsUp}
-      options={locale.options}
-      value={valueUp}
-      handleInputChange={handleInputChange} />
-    <Select
-      name={"labelsDown"}
-      label={locale.labelsDown}
-      options={locale.options}
-      value={valueDown}
-      handleInputChange={handleInputChange} />
-  </>
-);
-
-export default LabelsForm;
+export default function LabelsForm({ labelsUp, labelsDown, handleInputChange, locale }) {
+  return (
+    <>
+      <CheckboxSelect
+        label={locale.data.labelsUp.label}
+        options={locale.data.labelsUp.options}
+        nameCheckbox="labelsUpShow"
+        nameSelect="labelsUpMode"
+        valueCheckbox={labelsUp.show}
+        valueSelect={labelsUp.mode}
+        handleInputChange={handleInputChange} />
+      <CheckboxSelect
+        label={locale.data.labelsDown.label}
+        options={locale.data.labelsDown.options}
+        nameCheckbox="labelsDownShow"
+        nameSelect="labelsDownMode"
+        valueCheckbox={labelsDown.show}
+        valueSelect={labelsDown.mode}
+        handleInputChange={handleInputChange} />
+    </>
+  );
+}
