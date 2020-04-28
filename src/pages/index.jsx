@@ -17,7 +17,7 @@ export default () => {
     );
 
     if (!!firstTime) {
-      router.push("/[lang]/sandbox", `/${preferences.lang.toLowerCase() || "en"}/sandbox`);
+      router.push("/[lang]/sandbox", `/${preferences && preferences.lang.toLowerCase() || "en"}/sandbox`);
       return;
     }
 
