@@ -13,13 +13,8 @@ export default {
   baseMin: 2,
   baseMax: 16,
 
-  labelsUp: {
-    render: false,
-    mode: "value"
-  },
-
-  labelsDown: {
-    render: true,
-    mode: "index"
-  },
+  labelsUpShow: true,
+  labelsUpMode: "value",
+  labelsDownShow: false,
+  labelsDownMode: "index"
 };
