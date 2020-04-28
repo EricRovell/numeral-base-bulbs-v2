@@ -17,7 +17,7 @@ export default function BinaryModern({ value, index, dispatch }) {
         type="checkbox"
         id={`bulb-modern-${index}`}
         checked={(value === 1)}
-        onClick={handleSwitch} />
+        onChange={handleSwitch} />
       <label htmlFor={`bulb-modern-${index}`}>
         <i className={style.bulb}>
           <span className="bulb-center" />
