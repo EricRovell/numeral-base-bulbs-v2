@@ -35,9 +35,10 @@ export default (state, action) => {
     case "addDigit":
       return {
         ...state,
-        digits: (action.value === 1)
-          ? [ 0, ...state.digits]
-          : state.digits.slice(1)
+        digits: reducerActionsSB.addDigit({
+          action: action.action,
+          ...state
+        })
       };
 
     case "mutateDigit":
@@ -70,7 +71,12 @@ export default (state, action) => {
     case "setBase":
       return {
         ...state,
-        [action.base]: action.value
+        ...reducerActionsSB.incrementBase({
+          state,
+          base: action.base,
+          action: action.action,
+          value: action.value
+        })
       };
 
     // labels
@@ -97,13 +103,13 @@ export default (state, action) => {
       };
     }
 
-    case "binaryCheck": {
+    /* case "binaryCheck": {
       return {
         ...state,
         mode: (state.mode !== "symbol") ? "symbol" : state.mode,
         skin: (state.mode !== "symbol") ? "default" : state.skin
       };
-    }
+    } */
 
     default:
       return state;
