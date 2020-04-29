@@ -12,22 +12,17 @@ export default function DigitsSection({ state, locale, dispatch }) {
         skin={state.skin}
         digits={state.digits}
         baseIn={state.baseIn}
+        dispatch={dispatch}
+        locale={locale.digits}
         labelsUp={{
           show: state.labelsUpShow,
-          mode: state.labelsUpMode 
-        }}
+          mode: state.labelsUpMode }}
         labelsDown={{
           show: state.labelsDownShow,
-          mode: state.labelsDownMode 
-        }}
-        dispatch={dispatch}
-        locale={locale.digits} />
+          mode: state.labelsDownMode }} />
       <BaseDigits
-        base="baseIn"
-        bases={{ baseIn: state.baseIn }}
-        digits={state.digits}
-        digitsMin={state.digitsMin}
-        digitsMax={state.digitsMax}
+        type="baseIn"
+        baseIn={state.baseIn}
         baseMin={state.baseMin}
         baseMax={state.baseMax}
         dispatch={dispatch}
