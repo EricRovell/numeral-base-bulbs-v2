@@ -9,22 +9,20 @@ export default function NumberSection({ state, locale, dispatch }) {
 
   return (
     <section className={style["number-section"]}>
-      <Number {...{
-        digits,
-        baseIn,
-        baseOut,
-        digitsMax,
-        dispatch,
-        locale: locale.number
-      }} />
-      <BaseNumber {...{
-        base: "baseOut",
-        bases: { baseIn, baseOut },
-        baseMin,
-        baseMax,
-        dispatch,
-        locale: locale.base
-      }} />
+      <Number
+        digits={digits}
+        baseIn={baseIn}
+        baseOut={baseOut}
+        digitsMax={digitsMax}
+        dispatch={dispatch}
+        locale={locale.number} />
+      <BaseNumber
+        type="baseOut"
+        baseOut={baseOut}
+        baseMin={baseMin}
+        baseMax={baseMax}
+        dispatch={dispatch}
+        locale={locale.base} />
     </section>
   );
 };
