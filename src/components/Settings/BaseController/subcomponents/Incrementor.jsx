@@ -1,26 +1,11 @@
-export default function Incremenor({ actionType, base, value, baseMin, baseMax, dispatch, title }) {
+export default function Incremenor({ action, base, value, dispatch, title }) {
 
   const increment = () => {
-    // user increment max base value -> set the min value
-    // user decrement min base value -> set the max value
-    // allows cycling
-    // if the base value in allowed range -> compute next value    
-    const nextValue = (actionType === 1 && value >= baseMax)
-      ? baseMin
-      : (actionType === -1 && value <= baseMin)
-      ? baseMax
-      : value + actionType;
-
-    if (value === 2 && nextValue !== 2) {
-      // using binary mode has no sense with non-binary base
-      // set non-binary mode/skin for non-binary base
-      dispatch({ type: "binaryCheck" });
-    }
-      
     dispatch({
       type: "setBase",
       base,
-      value: nextValue
+      action,
+      value
     });
 
     // decrement digits' values if incompatible base selected
