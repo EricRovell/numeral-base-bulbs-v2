@@ -1,8 +1,7 @@
 import { useState } from "react";
-
 import style from "components/Number/number-input.module.css";
 
-export default function InputDigit({ value, base, baseMin, baseMax, dispatch, title }) {
+export default function InputDigit({ type, value, baseMin, baseMax, dispatch, title }) {
   
   const [ isValidInput, setIsValidInput ] = useState(true);
 
@@ -19,7 +18,7 @@ export default function InputDigit({ value, base, baseMin, baseMax, dispatch, ti
 
     dispatch({
       type: "setBase",
-      base,
+      base: type,  
       value: userInput
     });
   };
