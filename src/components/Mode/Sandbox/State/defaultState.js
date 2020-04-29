@@ -1,6 +1,6 @@
 export default {
   digits: [0, 0, 0, 0],
-  mode: "symbol", // symbol
+  mode: "symbol",
   skin: "default",
 
   digitsMin: 0,
