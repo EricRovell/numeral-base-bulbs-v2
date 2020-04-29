@@ -143,4 +143,10 @@
     max-width: 85px;
   }
 
+  .digit,
+  .digit > div,
+  .digit input[type=text] {
+    border-radius: 10px;
+  }
+
 }
