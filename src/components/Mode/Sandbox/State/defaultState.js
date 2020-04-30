@@ -1,6 +1,6 @@
 export default {
   digits: [0, 0, 0, 0],
-  mode: "symbol",
+  mode: "binary",
   skin: "default",
 
   digitsMin: 0,
@@ -10,7 +10,7 @@ export default {
   
   baseIn: 2,
   baseOut: 10,
-  baseMin: 2,
+  baseMin: 1,
   baseMax: 16,
 
   labelsUpShow: true,
