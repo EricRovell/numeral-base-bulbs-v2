@@ -56,12 +56,16 @@ const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) =
     <input
       type="text"
       title={locale.title}
+      className={(wrongInput) ? style["number-input"] : ""}
       placeholder={locale.placeholder}
       onChange={handleChange}
       onKeyPress={handleKeyDown}
       onFocus={onFocusSelectAll}
-      value={digits2chars([ ...number ]).join("")}
-      className={(wrongInput) ? style["number-input"] : ""} />
+      value={
+        (baseOut > 10)
+          ? digits2chars([ ...number ]).join("")
+          : [ ...number ].join("")
+      } />
   );
 };
 
