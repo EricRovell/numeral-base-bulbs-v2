@@ -45,7 +45,7 @@ export default {
       options: [
         {
           name: "Binary",
-          representation: "bulb",
+          representation: "binary",
           skins: {
             default: "default",
             modern: "modern toggle",
