@@ -34,7 +34,7 @@ export default {
     options: [
       {
         name: "Двоичная",
-        representation: "bulb",
+        representation: "binary",
         skins: {
           default: "по умолчанию",
           modern: "реализм",
