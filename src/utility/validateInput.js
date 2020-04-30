@@ -10,5 +10,5 @@ export const baseRegExp = base => {
     case (base === 1):
     default:
       return /[\\d]+/;
-  }  
+  }
 };
