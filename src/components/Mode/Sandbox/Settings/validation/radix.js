@@ -19,7 +19,7 @@ export default (state) => {
     if (isInInterval([ baseIn, baseOut ], baseMin, baseMax)) {
       return {
         ...state,
-        baseIn: (mode === "bulb") ? 2 : baseIn,
+        baseIn: (mode === "binary") ? 2 : baseIn,
         baseOut
       };
     }
