@@ -2,7 +2,7 @@ export default (state) => {
   const { mode, skin } = state;
 
   const valid = {
-    "bulb": [ "default", "modern", "lamp" ],
+    "binary": [ "default", "modern", "lamp" ],
     "symbol": [ "default", "basic" ]
   };
 
