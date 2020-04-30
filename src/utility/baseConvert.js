@@ -43,20 +43,43 @@ export const chars2Digits = chars => (
 
 // Base Convertion
 
+const unaryBaseConvert = ({ digits = [], baseIn, baseOut }) => {
+  if (baseIn === 1 && baseOut !== 1) {
+    return [ digits.length ];
+  }
+  if (baseOut === 1 && baseIn !== 1) {
+    const decimal = parseInt(toDigits(fromDigits(digits, baseIn), 10).join(""), 10);
+    return new Array(decimal).fill(0);
+  }
+  return digits;
+}
+
 export const baseConvert = ({ digits, baseIn, baseOut, representation }) => {
   // Converts number representation from one base to another
 
   // validate zero array is an array is given
-  if (Array.isArray(digits)) {
-    if (digits.length === 0) return [];
-    if (digits.every(digit => digit === 0)) {
-      return [0];
+  if (!Array.isArray(digits)) {
+    if (typeof digits === "string") {
+      digits = chars2Digits(digits);
     }
   }
-  
-  if (typeof digits === "string") {
-    digits = chars2Digits(digits);
+
+  if (digits.length === 0) {
+    return [];
   }
+
+  // unary base
+  if (baseIn === 1 || baseOut === 1) {
+    return unaryBaseConvert({
+      digits,
+      baseIn,
+      baseOut
+    });
+  }
+
+  if (digits.every(digit => digit === 0)) {
+    return [0];
+  }  
 
   const converted = toDigits(fromDigits(digits, baseIn), baseOut);
 
@@ -71,8 +94,8 @@ export const baseConvert = ({ digits, baseIn, baseOut, representation }) => {
 
 
 /* console.log(baseConvert({
-  digits: "123AB6",
-  baseIn: 18,
-  baseOut: 6,
+  digits: "12",
+  baseIn: 10,
+  baseOut: 1,
   representation: "symbol"
 })); */
