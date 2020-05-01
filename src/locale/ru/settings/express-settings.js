@@ -36,7 +36,9 @@ export default {
         name: "Унарная",
         representation: "unary",
         skins: {
-          default: "default"
+          default: "по умолчанию",
+          branch: "ветка",
+          sheep: "овечки"
         },
       },
       {
