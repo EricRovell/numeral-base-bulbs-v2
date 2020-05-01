@@ -44,6 +44,13 @@ export default {
       name: "Режим и внешний вид",
       options: [
         {
+          name: "Унарная",
+          representation: "unary",
+          skins: {
+            default: "default"
+          },
+        },
+        {
           name: "Двоичная",
           representation: "binary",
           skins: {
