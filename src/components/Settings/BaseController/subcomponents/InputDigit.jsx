@@ -8,18 +8,24 @@ export default function InputDigit({ type, value, baseMin, baseMax, dispatch, ti
   const handleChange = event => {
     const userInput = +event.target.value;
 
-    if (Number.isNaN(userInput) || userInput < baseMin || userInput > baseMax) {
-      setIsValidInput(false);
-      setTimeout(() => {
-        setIsValidInput(true);
-      }, 820);
-      return;
+    console.log(event.target.value);
+
+    // check if empty string
+    // then check if it allowed value
+    if (event.target.value.length) {
+      if (Number.isNaN(userInput) || userInput < baseMin || userInput > baseMax) {
+        setIsValidInput(false);
+        setTimeout(() => {
+          setIsValidInput(true);
+        }, 820);
+        return;
+      }
     }
 
     dispatch({
       type: "setBase",
-      base: type,  
-      value: userInput
+      base: type,
+      value: userInput || event.target.value
     });
   };
 
