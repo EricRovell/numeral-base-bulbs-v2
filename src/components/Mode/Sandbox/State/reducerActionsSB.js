@@ -55,38 +55,76 @@ export default {
       : digits.slice(1)
   },
 
-  incrementBase({ action, base, value, state }) {
-
-    if (!action) {
-      // no action -> setter
+  validateBaseMode({ prevBase, nextBase, type, mode }) {
+    if (type !== "baseIn") return;
+    // some modes are not compatible with every base value
+    // this check set default mode for some cases
+    // unary -> binary
+    if (prevBase === 1 && nextBase === 2) {
       return {
-        [base]: value
+        mode: "binary",
+        skin: "default"
       };
     }
+    // binary -> unary
+    if (prevBase === 2 && nextBase === 1) {
+      return {
+        mode: "unary",
+        skin: "default"
+      };
+    }
+    // unary -> ternary and more
+    if (prevBase === 1 && nextBase > 2) {
+      return {
+        mode: "symbol",
+        skin: "default"
+      };
+    }  
+    // binary -> ternary and more
+    if (prevBase === 2 && nextBase > 2) {
+      return {
+        mode: "symbol",
+        skin: "default"
+      };
+    }
+    // any -> binary
+    if (nextBase === 2 && mode !== "binary") {
+      return {
+        mode: "binary",
+        skin: "default"
+      };
+    }
+    // any -> unary
+    if (nextBase === 1 && mode !== "unary") {
+      return {
+        mode: "unary",
+        skin: "default"
+      };
+    }
+  },
+
+  incrementBase({ action, base, value, state }) {
 
     // user increment max base value -> set the min value
     // user decrement min base value -> set the max value
     // allows cycling
     // if the base value in allowed range -> compute next value   
-    const nextValue = (action === 1 && value >= state.baseMax)
+    const nextValue = () => (action === 1 && value >= state.baseMax)
       ? state.baseMin
       : (action === -1 && value <= state.baseMin)
       ? state.baseMax
       : value + action;
 
-    if (base === "baseIn" && value === 2 && nextValue !== 2) {
-      // using binary mode for digits has no sense with non-binary base
-      // set non-binary mode/skin for non-binary base
-      return {
-        [base]: nextValue,
-        mode: (state.mode !== "symbol") ? "symbol" : state.mode,
-        skin: (state.mode !== "symbol") ? "default" : state.skin
-      }
-    }
-      
+    // no action -> setter
     return {
-      [base]: nextValue
-    };
+      [base]: (action) ? nextValue() : value,
+      ...this.validateBaseMode({
+        type: base,
+        prevBase: state[base],
+        nextBase: (action) ? nextValue() : value,
+        mode: state.mode
+      })
+    }
   }
 
 
