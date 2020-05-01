@@ -36,7 +36,9 @@ export default {
         name: "Unary",
         representation: "unary",
         skins: {
-          default: "default"
+          default: "default",
+          branch: "branch",
+          sheep: "sheep"
         },
       },
       {
