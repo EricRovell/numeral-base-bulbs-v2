@@ -62,7 +62,9 @@ const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) =
       onKeyPress={handleKeyDown}
       onFocus={onFocusSelectAll}
       value={
-        (baseOut > 10)
+        (!baseIn || !baseOut)
+          ? "42"
+          : (baseOut > 10)
           ? digits2chars([ ...number ]).join("")
           : [ ...number ].join("")
       } />
