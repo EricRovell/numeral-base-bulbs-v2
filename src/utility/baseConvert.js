@@ -44,14 +44,17 @@ export const chars2Digits = chars => (
 // Base Convertion
 
 const unaryBaseConvert = ({ digits = [], baseIn, baseOut }) => {
+  // unary -> any other
   if (baseIn === 1 && baseOut !== 1) {
-    return [ digits.length ];
+    return toDigits(fromDigits(digits.length, baseIn), baseOut);
   }
-  if (baseOut === 1 && baseIn !== 1) {
-    const decimal = parseInt(toDigits(fromDigits(digits, baseIn), 10).join(""), 10);
-    return new Array(decimal).fill(0);
+  // other <- unary
+  if (baseIn !== 1 && baseOut === 1) {
+    /* too easily may overflow, hence, not supported */
+    return [ 0 ];
   }
-  return digits;
+  // unary -> unary (baseIn === baseOut === 1)
+  return new Array(digits.length).fill(0);
 }
 
 export const baseConvert = ({ digits, baseIn, baseOut, representation }) => {
@@ -92,8 +95,8 @@ export const baseConvert = ({ digits, baseIn, baseOut, representation }) => {
   }
 };
 
-
-/* console.log(baseConvert({
+/* 
+console.log(baseConvert({
   digits: "12",
   baseIn: 10,
   baseOut: 1,
