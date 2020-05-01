@@ -1,11 +1,11 @@
-export default function Incremenor({ action, base, value, dispatch, title }) {
+export default function Incrementor({ action, base, value, dispatch, title }) {
 
   const increment = () => {
     dispatch({
       type: "setBase",
       base,
       action,
-      value
+      value: +value
     });
 
     // decrement digits' values if incompatible base selected
