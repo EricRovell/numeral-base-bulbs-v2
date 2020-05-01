@@ -4,7 +4,7 @@ import style from "./digits.module.css";
 
 export default function Digits({ mode, skin, dispatch, digits, baseIn, labelsUp, labelsDown, locale }) {
 
-  if (!digits.length) {
+  if (!digits.length || !baseIn) {
     return <EmptyState dispatch={dispatch} />;
   }
 
