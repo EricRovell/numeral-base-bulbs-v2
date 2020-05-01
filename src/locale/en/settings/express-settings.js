@@ -33,6 +33,13 @@ export default {
     name: "Representation and skin",
     options: [
       {
+        name: "Unary",
+        representation: "unary",
+        skins: {
+          default: "default"
+        },
+      },
+      {
         name: "Binary",
         representation: "binary",
         skins: {
