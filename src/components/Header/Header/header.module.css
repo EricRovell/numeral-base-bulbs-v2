@@ -1,4 +1,10 @@
 .header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 2000;
+  transition: background 0.15s ease-in;
+
   display: grid;
   /* Columns: Logo Header EMPTY Tabs EMPTY Helpers */
   grid-template: 1fr / minmax(50px, 75px) max-content 0.5fr max-content 1fr auto;
