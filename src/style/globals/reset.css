@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+:root {
+  scroll-behavior: smooth;
+}
+
 
 /* non-mobile scrollbar */
 @media screen and (min-width: 768px) {
