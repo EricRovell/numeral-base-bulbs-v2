@@ -1,17 +1,14 @@
 .layout-article {
   display: grid;
-  grid-template: 1fr / minmax(10ch, 30ch) 1fr;
+  grid-template: 1fr / minmax(10ch, 40ch) 1fr;
   column-gap: 1em;
 
-  padding: 2.5em 2em 2.5em 3.5em;
+  padding: 5em 1em 2.5em 1em;
+  overflow-x: hidden;
 
   font-family: var(--font-main);
   font-size: 0.65rem;
-  color: var(--font-color-1);
-
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-height: calc(100vh - 55px);
+  color: var(--font-color-1); 
 }
 
 .layout-article > article {
@@ -31,11 +28,20 @@
 
 .layout-article > nav {
   grid-column: 1;
-  position: sticky;
-  top: 0;
-  height: min-content;
+  position: fixed;
+  /* padding of the parent + header's height 55px */
+  top: calc(2.5em + 55px);
+  height: calc(100vh - 2.5em - 55px);
+  overflow-y: scroll;
 }
 
+.layout-article > nav::-webkit-scrollbar {
+  display: none;
+}
+
+.layout-article > nav > section {
+  height: min-content;
+}
 
 /* side-columns are not for content */
 .layout-article > article > * {
