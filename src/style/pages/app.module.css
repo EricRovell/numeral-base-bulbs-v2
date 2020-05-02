@@ -3,7 +3,7 @@
   min-height: 100vh;
 
   display: grid;
-  grid-template: 55px 1fr / 1fr;
+  grid-template: 55px 1fr / auto;
   place-items: stretch;
 }
 
