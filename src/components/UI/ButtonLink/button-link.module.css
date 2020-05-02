@@ -37,3 +37,16 @@
   fill: var(--font-color-accent-1);
   justify-self: end;
 }
+
+.button-link:hover {
+  background: var(--accent-1);
+}
+
+.button-link:hover a {
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.button-link:hover svg {
+  fill: var(--bg);
+}
