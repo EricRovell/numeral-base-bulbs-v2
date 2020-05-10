@@ -5,10 +5,10 @@ export default function ExpressHelp({ locale }) {
 
   const router = useRouter();
 
-  const routeToTutorial = () => {
+  const routeTomanual = () => {
     router.push(
-      "/[lang]/tutorial/[...route]",
-      `/${router.query.lang || "en"}/tutorial/${router.query.lang || "en"}/sandbox/about`
+      "/[lang]/manual/[...route]",
+      `/${router.query.lang || "en"}/manual/${router.query.lang || "en"}/sandbox/about`
     );
   };
 
@@ -16,7 +16,7 @@ export default function ExpressHelp({ locale }) {
     <ExpressTab
       label={locale.label}
       title={locale.title}
-      handleClick={routeToTutorial}
+      handleClick={routeTomanual}
     />
   );
 };
