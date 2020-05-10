@@ -11,5 +11,5 @@ export default {
   helpers: {
     theme: "Switch a theme",
     lang: "Set language"
-  } 
+  }
 };
