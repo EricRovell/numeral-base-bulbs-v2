@@ -3,7 +3,7 @@ import createRoutes from "./routes";
 
 export default function Routes({ locale, handleClick, styles }) {
   return (
-    <nav className={styles.navigation}>  
+    <nav className={styles.navigation}>
       {createRoutes(locale).map(route => (
         <Link
           href={route.href}
@@ -12,7 +12,7 @@ export default function Routes({ locale, handleClick, styles }) {
           className={styles.section}
           activeClassName={styles["section-active"]}>
             <a title={route.label} onClick={handleClick}>
-              {route.label}
+              <span>{route.label}</span>
             </a>
         </Link>
       ))}
