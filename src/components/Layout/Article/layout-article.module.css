@@ -3,7 +3,7 @@
   grid-template: 1fr / minmax(10ch, 40ch) 1fr;
   column-gap: 1em;
 
-  padding: 5em 1em 2.5em 1em;
+  padding: 5em 2em 2.5em 2em;
   overflow-x: hidden;
 
   font-family: var(--font-main);
@@ -48,6 +48,11 @@
   grid-column: 2;
 }
 
+/* mobile menu toggle */
+.toggle {
+  display: none;
+}
+
 /* custom scroll bar for non-mobile */
 @media screen and (min-width: 768px) {
 
@@ -71,6 +76,7 @@
   .layout-article {
     grid-template: min-content 1fr / auto;
     row-gap: 1em;
+    padding-left: 1.5em;
   }
 
   /* navigation can be accessed in modal */
@@ -88,6 +94,8 @@
     grid-column: 1;
   }
 
+
+
 }
 
 /* mobile */
@@ -95,6 +103,29 @@
 
   .layout-article > article {
     padding-bottom: 5em;
+  }
+
+  .toggle {
+    --size: 40px;
+    z-index: 1000;
+
+    display: grid;
+    place-items: center;
+    position: fixed;
+    bottom: calc(0.5 * var(--size));
+    right: calc(0.75 * var(--size));
+    width: var(--size);
+    height: var(--size);
+    background: var(--accent-1);
+    border-radius: 50%;
+
+    cursor: pointer;
+  }
+
+  .toggle svg {
+    width: 65%;
+    height: 65%;
+    fill: var(--accent-1-negate);
   }
 
 }
