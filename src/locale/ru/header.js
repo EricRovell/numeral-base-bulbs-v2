@@ -4,9 +4,9 @@ export default {
     lang: "ru",
     sandbox: "Песочница",
     challenge: "Испытания",
-    tutorial: "Инструкции",
+    manual: "Руководство",
     settings: "Настройки",
-    about: "О приложении"
+    about: "О приложении",
   },
   helpers: {
     theme: "Сменить тему",
