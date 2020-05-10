@@ -20,8 +20,8 @@ export default (locale) => ([
     label: locale.settings
   },
   {
-    href: "/[lang]/about/[...route]",
-    as: `/${locale.lang}/about/${locale.lang}/welcome`,
+    href: "/[lang]/about",
+    as: `/${locale.lang}/about`,
     label: locale.about
-  }, 
+  }
 ]);
