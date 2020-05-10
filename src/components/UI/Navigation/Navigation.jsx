@@ -4,12 +4,12 @@ import ActiveLink from "./ActiveLinkExact";
 
 import style from "./navigation.module.css";
 
-export default function Navigation({ data, href }) {
+export default function Navigation({ data, href, preventPropagation }) {
   return (
     <nav className={style.navigation}>
       <NavChevron />
-      <header>Contents</header>
-      {data.map(section => (
+      <header>{data.title}</header>
+      {data.contents.map(section => (
         <NavSection key={section.title} title={section.title} className={style.section}>
           {section.contents.map(link => (
             <ActiveLink
