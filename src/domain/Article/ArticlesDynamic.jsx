@@ -4,9 +4,9 @@ import LoaderPuzzle from "components/Loaders/LoaderPuzzle/LoaderPuzzle";
 import LoaderMessage from "components/Loaders/LoaderMessage/LoaderMessage";
 import LoaderBrick from "components/Loaders/LoaderBrick/LoaderBrick";
 
-export default function ArticlesDynamic({ domain, route }) {
+export default function ArticlesDynamic({ route }) {
   const Article = dynamic(
-    () => import(`articles/${domain}/${route}.mdx`).catch(err => {
+    () => import(`articles/${route}.mdx`).catch(err => {
       return () => (
         <LoaderMessage message="Error 404">
           <LoaderBrick />
