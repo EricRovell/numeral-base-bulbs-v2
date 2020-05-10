@@ -10,9 +10,9 @@ export default (locale) => ([
     label: locale.challenge,
   },
   {
-    href: "/[lang]/tutorial/[...route]",
-    as: `/${locale.lang}/tutorial/${locale.lang}/welcome`,
-    label: locale.tutorial
+    href: "/[lang]/manual/[...route]",
+    as: `/${locale.lang}/manual/${locale.lang}/welcome`,
+    label: locale.manual
   },
   {
     href: "/[lang]/settings",
