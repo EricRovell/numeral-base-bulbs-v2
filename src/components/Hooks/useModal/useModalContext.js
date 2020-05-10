@@ -2,11 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 
 const modalState = {
   open: false,
-  contents: (
-    <div>
-      Hello!
-    </div>
-  )
+  contents: <div />
 };
 
 const modalReducer = (state, action) => {
