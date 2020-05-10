@@ -7,7 +7,7 @@ import ArticlesDynamic from "domain/Article/ArticlesDynamic";
 export default function Tutorial() {
 
   const { query: { route }} = useRouter();
-  const [ locale ] = useLocale("navigation/navigation-tutorial.js");
+  const [ locale ] = useLocale("navigation-tutorial.js");
 
   return locale && (
     <LayoutArticle contents={locale} href={"/[lang]/tutorial/[...route]"}>      
