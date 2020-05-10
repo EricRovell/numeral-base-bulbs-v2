@@ -4,9 +4,9 @@ export default {
     lang: "en",
     sandbox: "Sandbox",
     challenge: "Challenge",
-    tutorial: "Tutorial",
+    manual: "Manual",
     settings: "Settings",
-    about: "About"
+    about: "About",
   },
   helpers: {
     theme: "Switch a theme",

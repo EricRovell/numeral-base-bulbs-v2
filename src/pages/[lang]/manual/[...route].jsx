@@ -4,15 +4,15 @@ import useLocale from "components/Hooks/useLocale";
 import LayoutArticle from "components/Layout/Article/LayoutArticle";
 import ArticlesDynamic from "domain/Article/ArticlesDynamic";
 
-export default function Tutorial() {
+export default function manual() {
 
   const { query: { route }} = useRouter();
-  const [ locale ] = useLocale("navigation-tutorial.js");
+  const [ locale ] = useLocale("navigation-manual.js");
 
   return locale && (
-    <LayoutArticle contents={locale} href={"/[lang]/tutorial/[...route]"}>      
+    <LayoutArticle contents={locale} href={"/[lang]/manual/[...route]"}>      
       <ArticlesDynamic
-        domain="tutorial"
+        domain="manual"
         route={route.join("/")} />
     </LayoutArticle>
   ); 

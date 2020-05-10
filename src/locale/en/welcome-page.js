@@ -3,11 +3,11 @@ export default {
   warning: "Application is for educational purposes.",
   description: "Numbers can guide you through the hidden realm of numbers: numeral systems. This application will illustrate you the idea behind various ways of expressing numbers, and show the value that systems bring along with its usage.",
   links: {
-    tutorial: {
-      href: "/[lang]/tutorial/[...route]",
-      as: "/ru/tutorial/ru/welcome",
-      label: "Interactive Tutorial",
-      title: "Interactive tutorial"
+    manual: {
+      href: "/[lang]/manual/[...route]",
+      as: "/ru/manual/ru/welcome",
+      label: "Interactive manual",
+      title: "Interactive manual"
     },
     sandbox: {
       href: "/[lang]/sandbox",

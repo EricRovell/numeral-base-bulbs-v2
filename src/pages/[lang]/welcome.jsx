@@ -25,9 +25,9 @@ export default function Welcome() {
               {locale.links.sandbox.label}
             </a>
           </Link>
-          <Link href={locale.links.tutorial.href} as={locale.links.tutorial.as}>
-            <a title={locale.links.tutorial.title}>
-              {locale.links.tutorial.label}
+          <Link href={locale.links.manual.href} as={locale.links.manual.as}>
+            <a title={locale.links.manual.title}>
+              {locale.links.manual.label}
             </a>
           </Link>          
         </div>
