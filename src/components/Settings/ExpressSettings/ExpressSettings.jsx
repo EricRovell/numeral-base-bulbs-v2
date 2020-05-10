@@ -1,6 +1,5 @@
 import { useModalContext } from "components/Hooks/useModal/useModalContext";
 import ExpressModal from "./ExpressModal";
-
 import ExpressTab from "components/UI/ExpressTab/ExpressTab";
 
 const ExpressSettings = ({ state, dispatchSB, locale }) => {
