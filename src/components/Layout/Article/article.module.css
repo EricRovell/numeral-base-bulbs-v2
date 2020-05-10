@@ -26,7 +26,6 @@
 .article > h2,
 .article > h3 {
   margin-top: 1em;
-  position: relative;
 }
 
 .article > h2 {
@@ -35,21 +34,6 @@
 
 .article > h3 {
   font-size: 1em;
-}
-
-.article > h2::before,
-.article > h3::before {
-  font-family: var(--font-main);
-  position: absolute;
-  left: -1.75em;
-}
-
-.article > h2::before {
-  content: "h2";
-}
-
-.article > h3::before {
-  content: "h3";
 }
 
 /* lists */
