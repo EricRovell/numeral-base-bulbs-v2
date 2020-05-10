@@ -1,8 +1,13 @@
 export default function NavSection({ title, children, className }) {
+
+  const stopPropagation = (event) => {
+    event.stopPropagation();
+  };
+
   return (
     <section className={className}>
       <details>
-        <summary>
+        <summary onClick={stopPropagation}>
           <svg>
             <use href="#nav-chevron" />
           </svg>
