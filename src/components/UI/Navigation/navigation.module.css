@@ -1,134 +1,84 @@
 .navigation {
   display: grid;
-  font-family: var(--font-main);
+  grid-auto-rows: min-content;
+  row-gap: 0.5em;
 }
 
-.navigation section {
-  overflow: hidden;
-}
-
-/* Labels */
-
-.navigation label {
-  display: grid;
-  grid-template: 1fr / 1rem max-content;
-  align-items: center;
-  font-size: 0.7rem;
-  color: var(--font-color-accent-1);
+.navigation > header {
+  font-size: 1.5em;
   padding: 0.25em;
-
-  cursor: pointer;
+  width: 100%;
+  border-bottom: var(--section-border);
   user-select: none;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.navigation svg {
-  place-self: center;
-  height: 35%;
-  max-width: 40px;
-  fill: var(--color-2);
-  transition: transform 0.1s ease-in-out;
+/* SECTION */
+
+.section summary {
+  display: grid;
+  grid-template: 1fr / 1em auto;
+  align-items: center;
+  column-gap: 0.35em;
+  user-select: none;
+  cursor: pointer;
 }
 
-/* list */
-
-.navigation ul {
-  max-height: 750px;
-  margin-left: 1.05em;
-  list-style: none;
-  transition: max-height 0.2s ease-in-out;
-  border-left: 1px solid var(--color-2);
-}
-
-.navigation li {
-  width: fit-content;
-  margin: 5px 0;
-}
-
-.navigation a {
-  padding-left: 1.5em;
-}
-
-.navigation a:hover {
-  color: var(--font-color-1-bright);
-}
-
-/* Checkbox / behaviour */
-
-.navigation input[type="checkbox"] {
+/* hiding default icon */
+.section summary::-webkit-details-marker {
   display: none;
 }
 
-.navigation input[type="checkbox"]:checked ~ ul {
-  max-height: 0px;
+.section svg {
+  width: 0.85em;
+  height: 0.85em;
+  fill: var(--accent-2);
+  transform: rotate(-90deg);
+  transition: transform 0.15s ease-in-out;
 }
 
-.navigation input[type="checkbox"]:checked ~ label svg {
-  transform: rotate(-90deg);
+.section summary::-webkit-details-marker {
+  display: none;
+}
+
+.section details[open] > summary svg {
+  transform: none;
+}
+
+/* details container */
+
+.section details > div {
+  display: grid;
+  padding: 0.5em 0 0.5em 1.35em;
+  margin-left: 0.4em;
+  border-left: var(--section-border);
 }
 
 /* Link */
 
-.navigation-link,
-.navigation-link-active {
+.link,
+.link-active {
   position: relative;
   text-decoration: none;
   font-size: 0.6rem;
 
-  display: grid;
-  grid-template: 1fr / auto;
   height: 100%;
+  width: auto;
 }
 
-.navigation-link { 
+.link { 
   color: var(--font-color-1);
 }
 
-.navigation-link-active {
+.link-active {
   position: relative;
   color: var(--font-color-accent-1-active);
 }
 
-.navigation-link-active::after {
+.link-active::after {
   content: "✓";
   position: absolute;
   right: -1.2em;
   height: 100%;
   font-size: 0.6rem;
   color: var(--font-color-1);
-}
-
-
-/* mobile */
-@media screen and (max-width: 768px) {
-
-  .navigation {
-    background: var(--bg);
-    z-index: 1000;
-    width: 100%;
-    height: 100vh;
-    padding: 12vh 1em 1em 0.25em;
-    overflow: auto;
-  }
-
-  .navigation > section {
-    background: var(--bg);
-    width: 100%;
-    overflow-y: auto;
-  }
-
-  .navigation label {
-    column-gap: 5px;
-    font-size: 1rem;
-    padding-left: 0.5em;
-  }
-
-  .navigation-link,
-  .navigation-link-active {
-    font-size: 0.9rem;
-  }
-
 }
