@@ -1,7 +1,7 @@
 .express-form-container {
   overflow: auto;
   max-width: 75vw;
-  max-height: 95vh;
+  max-height: 85vh;
 
   background: var(--bg);
   border: var(--section-border);
@@ -37,6 +37,23 @@
 .express-form input,
 .express-form select {
   font-size: 1.25em;
+}
+
+/* custom scroll bar for non-mobile */
+@media screen and (min-width: 768px) {
+
+  /* custom scroll bar for non-mobile */
+  .express-form-container::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  .express-form-container::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  
+  .express-form-container::-webkit-scrollbar-thumb {
+    background: var(--color-2);
+  }
 }
 
 /* mobile */
