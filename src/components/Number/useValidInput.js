@@ -9,14 +9,14 @@ export default function({ base, baseIn, digitsMax }) {
   //   max allowed value
   const [ wrongInput, setWrongInput ] = useState(false);
   const [ regex, setRegex ] = useState(baseRegExp(base));
-  const [ maxValue, setMaxValue ] = useState(    
+  const [ maxValue, setMaxValue ] = useState(
     baseConvert({
       digits: new Array(digitsMax).fill(baseIn - 1),
       baseIn,
       baseOut: base,
     }).join("")
   );
-
+  
   useEffect(() => {
     setMaxValue(
       baseConvert({
@@ -38,21 +38,17 @@ export default function({ base, baseIn, digitsMax }) {
     }, 820);
   };
 
-  const validate = ({ key, number }) => {
-    // validating key by regex
-    if (typeof key !== "undefined" && !regex.test(key)) {
+  const validate = value => {
+
+    if (!regex.test(value)) {
       invalidate();
       return false;
     }
 
-    // validating number by maxValue
-    else if (typeof number !== "undefined") {
-      const convBase = (baseIn > 10) ? baseIn : 10;
-
-      if (parseInt(number, base) > parseInt(maxValue, convBase)) {
-        invalidate();
-        return false;
-      }
+    const convBase = (baseIn > 10) ? baseIn : 10;
+    if (parseInt(value, base) > parseInt(maxValue, convBase)) {
+      invalidate();
+      return false;
     }
     
     return true;

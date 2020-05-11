@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import useValidInput from "./useValidInput";
-
 import { baseConvert, digits2chars } from "utility/baseConvert";
 
 import style from "./number-input.module.css";
@@ -29,7 +28,14 @@ const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) =
 
   const handleChange = (event) => {
 
-    if (!validate({ number: event.target.value })) {
+    if (event.target.value === "") {
+      dispatch({
+        type: "setDigits",
+        digits: []
+      });
+    }
+
+    if (!validate(event.target.value)) {
       return;
     }
 
@@ -44,23 +50,14 @@ const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) =
     });
   }
 
-  const handleKeyDown = event => {
-    validate({ key: event.key });
-  };
-
-  const onFocusSelectAll = event => {
-    event.target.select();
-  };
-
   return (
     <input
       type="text"
       title={locale.title}
       className={(wrongInput) ? style["number-input"] : ""}
+      inputMode={(baseOut >= 1 && baseOut <= 10) ? "numeric" : "text"}
       placeholder={locale.placeholder}
       onChange={handleChange}
-      onKeyPress={handleKeyDown}
-      onFocus={onFocusSelectAll}
       value={
         (!baseIn || !baseOut)
           ? "42"
