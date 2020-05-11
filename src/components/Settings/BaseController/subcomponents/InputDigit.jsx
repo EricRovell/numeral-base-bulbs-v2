@@ -7,7 +7,6 @@ export default function InputDigit({ type, value, baseMin, baseMax, dispatch, ti
 
   const handleChange = event => {
     const userInput = +event.target.value;
-
     // check if empty string
     // then check if it allowed value
     if (event.target.value.length) {
@@ -27,16 +26,11 @@ export default function InputDigit({ type, value, baseMin, baseMax, dispatch, ti
     });
   };
 
-  const onFocusSelectAll = event => {
-    event.target.select();
-  };
-
   return (
     <input
       title={title}
       type="text"
-      /* inputMode={"numeric"} */
-      onFocus={onFocusSelectAll}
+      inputMode="numeric"
       className={(isValidInput) ? null : style["number-input"]}
       onChange={handleChange}
       value={value}
