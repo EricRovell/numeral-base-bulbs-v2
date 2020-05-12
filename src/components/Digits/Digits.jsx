@@ -1,5 +1,5 @@
 import Digit from "./Digit";
-import EmptyState from "./modes/empty/EmptyState";
+import EmptyDigits from "./modes/empty/EmptyDigits";
 import WrongInput from "./modes/wrong-input/WrongInput";
 import style from "./digits.module.css";
 
@@ -10,7 +10,10 @@ export default function Digits({ mode, skin, dispatch, digits, baseIn, labelsUp,
   }
 
   if (!digits.length) {
-    return <EmptyState dispatch={dispatch} />;
+    return <EmptyDigits
+      dispatch={dispatch}
+      message={locale.emptyDigitsMessage}
+      actionMessage={locale.emptyDigitsActionMessage} />;
   }
 
   // the 1st element in digits array is the last digit
