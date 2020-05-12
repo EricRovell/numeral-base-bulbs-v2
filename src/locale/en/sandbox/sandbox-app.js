@@ -10,6 +10,7 @@ export default {
     increment: "Increment the symbol's value.",
     decrement: "Decrement the symbol's value.",
     input: "Set the symbol's value.",
+    wrongInput: "It's broken. Probably, wrong input..."
   },
   number: {
     input: "Set the number's value.",
