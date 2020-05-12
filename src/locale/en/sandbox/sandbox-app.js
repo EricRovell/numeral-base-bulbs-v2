@@ -10,6 +10,8 @@ export default {
     increment: "Increment the symbol's value.",
     decrement: "Decrement the symbol's value.",
     input: "Set the symbol's value.",
+    emptyDigitsMessage: "No digits to work with...",
+    emptyDigitsActionMessage: "Please, use control panel or click on box to add some!",
     wrongInput: "It's broken. Probably, wrong input..."
   },
   number: {
