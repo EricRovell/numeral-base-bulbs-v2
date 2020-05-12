@@ -1,10 +1,15 @@
 import Digit from "./Digit";
 import EmptyState from "./modes/empty/EmptyState";
+import WrongInput from "./modes/wrong-input/WrongInput";
 import style from "./digits.module.css";
 
 export default function Digits({ mode, skin, dispatch, digits, baseIn, labelsUp, labelsDown, locale }) {
 
-  if (!digits.length || !baseIn) {
+  if (!baseIn) {
+    return <WrongInput message={locale.wrongInput} />
+  }
+
+  if (!digits.length) {
     return <EmptyState dispatch={dispatch} />;
   }
 
