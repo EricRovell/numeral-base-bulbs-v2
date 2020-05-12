@@ -2,11 +2,26 @@ export default {
 
   sections: {
     name: "settings-sections",
-    options: {
-      globals: "Пользователь",
-      sandbox: "Песочница",
-      challenge: "Испытания"
-    }
+    options: [
+      {
+        href: "/[lang]/settings?tab=globals",
+        as: "/ru/settings?tab=globals",
+        label: "Общие",
+        title: "Общие пользовательские настройки"
+      },
+      {
+        href: "/[lang]/settings?tab=sandbox",
+        as: "/ru/settings?tab=sandbox",
+        label: "Песочница",
+        title: "Пользовательские предпочтения режима песочницы"
+      },
+      {
+        href: "/[lang]/settings?tab=challenge",
+        as: "/ru/settings?tab=challenge",
+        label: "Испытания",
+        title: "Пользовательские предпочтения режима песочницы"
+      }
+    ]
   },
 
   sandbox: {

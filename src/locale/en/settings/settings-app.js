@@ -2,11 +2,26 @@ export default {
 
   sections: {
     name: "settings-sections",
-    options: {
-      globals: "Global",
-      sandbox: "Sandbox",
-      challenge: "Challenge"
-    }
+    options: [
+      {
+        href: "/[lang]/settings?tab=globals",
+        as: "/en/settings?tab=globals",
+        label: "Global",
+        title: "Global user preferences"
+      },
+      {
+        href: "/[lang]/settings?tab=sandbox",
+        as: "/en/settings?tab=sandbox",
+        label: "Sandbox",
+        title: "Sandbox user preferences"
+      },
+      {
+        href: "/[lang]/settings?tab=challenge",
+        as: "/en/settings?tab=challenge",
+        label: "Challenge",
+        title: "Challenge user preferences"
+      }
+    ]
   },
 
   sandbox: {
