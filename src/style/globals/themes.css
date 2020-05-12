@@ -73,6 +73,10 @@
   --lamp-bulb: rgba(255, 255, 255 , 0.03);
   --lamp-bulb-active: rgba(255, 255, 255, 1); 
 
+  /* wrong input */
+  --wrong-input-circle: #fff082;
+  --wrong-input-outline: black;
+
 }
 
 :root[theme="light"] {
@@ -149,6 +153,10 @@
   /* input */
   --input-bg: white;
   --input-bg-focus: white;
+
+  /* wrong input */
+  --wrong-input-circle: orange;
+  --wrong-input-outline: rgb(18, 21, 27);
 
   /*
   512b58 2a7886 79bac1 f1f3f4
