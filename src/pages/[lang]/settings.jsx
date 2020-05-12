@@ -1,29 +1,29 @@
+import { useRouter } from "next/router";
 import useLocale from "components/Hooks/useLocale";
-import { useState } from "react";
 
 import SettingsSections from "domain/Settings/SettingsSections";
-import Tabs from "components/Tabs/Tabs";
+import TabLink from "components/Settings/TabLink/TabLink";
 import LayoutSettings from "components/Layout/Settings/LayoutSettings";
 
 import style from "style/pages/settings.module.css";
-import styleTabs from "components/Tabs/tabs-settings.module.css";
 
 export default function SettingsPage() {
 
   const [ locale ] = useLocale("settings/settings-app.js");
-  const [ section, setSection ] = useState("globals");
+
+  const router = useRouter();
+  const { query: { tab = "globals" }} = router;
   
   return locale && (
     <LayoutSettings className={style.settings}>
-      <Tabs
-        data={locale.sections}
-        value={section}
-        setTab={setSection}
-        style={styleTabs["tabs-settings"]}
-        lang={"EN"} />
+      <TabLink 
+        data={locale.sections.options}
+        className={style.tabs}
+        linkClassName={style["tabs-link"]}
+        activeLinkClassName={style["tabs-link-active"]} />
       <SettingsSections
-        section={section}
-        locale={locale[section]} />
+        section={tab}
+        locale={locale[tab]} />
     </LayoutSettings>
   );
 };
