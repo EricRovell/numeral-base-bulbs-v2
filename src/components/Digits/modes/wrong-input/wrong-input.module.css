@@ -1,0 +1,27 @@
+.wrong-input {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  row-gap: 15px;
+  height: 250px;
+}
+
+.wrong-input svg {
+  width: 200px;
+  height: auto;
+}
+
+.wrong-input p {
+  font-size: 0.8em;
+  font-family: var(--font-main);
+  color: var(--font-color-1);
+}
+
+/* elements */
+.wrong-input svg circle {
+  fill: var(--wrong-input-circle);
+}
+
+.wrong-input svg path {
+  fill: var(--wrong-input-outline);
+}
