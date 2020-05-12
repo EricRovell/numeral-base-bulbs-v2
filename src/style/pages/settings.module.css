@@ -26,3 +26,53 @@
   grid-auto-rows: min-content;
   row-gap: 20px;
 }
+
+/* tab links */
+
+.tabs {
+  width: 100%;
+  height: 100%;
+}
+
+.tabs ul {
+  display: grid;
+  grid-template: min-content / repeat(3, 1fr);
+  place-items: center;
+  place-content: center;
+
+  width: 100%;
+  border-bottom: var(--border-1);
+
+  font-size: 0.85rem;
+  color: var(--font-color-1);
+}
+
+.tabs li {
+  list-style: none;
+  padding: 0.5em 0;
+  user-select: none;
+  width: 100%;
+  display: grid;
+  place-items: stretch;
+}
+
+.tabs-link {
+  text-align: center;
+  display: block;
+  color: var(--font-color-1);
+}
+
+.tabs-link-active {
+  position: relative;
+  color: var(--font-color-accent-1-active);
+}
+
+.tabs-link-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5em;
+  width: 100%;
+  height: 2px;
+  background: var(--font-color-accent-1-active);
+}
