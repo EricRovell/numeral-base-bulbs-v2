@@ -18,7 +18,9 @@ export default {
     input: "Set the number's value.",
     placeholder: "Add some digits...",
     increment: "Increment the number's value.",
-    decrement: "Decrement the number's value."
+    decrement: "Decrement the number's value.",
+    wrongInputMessage: "Wrong input...",
+    wrongInputTip: "Check the base values please."
   },
   base: {
     input: "Set the base value.",
