@@ -17,7 +17,7 @@
 
 /* middle-wrapper */
 
-.number > div {
+.number > div:first-of-type {
   grid-row: 1;
   grid-column: 2 / span 3;
   
@@ -69,6 +69,7 @@
 
 /* number input */
 
+.wrong-input,
 .number input[type=text] {
   grid-row: 1;
   grid-column: 3;
@@ -105,9 +106,28 @@
 /* border-radius */
 
 .number,
-.number > div,
-.number input[type=text] {
+.number > div:first-of-type,
+.number input[type=text],
+.wrong-input {
   border-radius: 20px;
+}
+
+/* wrong input -> replaces the input[type=text] ans looks the same */
+
+.wrong-input {
+  display: grid;
+  place-items: center;
+  grid-column: 2 / span 3;
+  z-index: 2;
+
+  box-shadow:
+    var(--shadow-3),
+    inset 0 0 15px rgb(237, 28, 36) !important;
+
+  font-family: var(--font-main);
+  font-size: 1.25rem;
+  user-select: none;
+  cursor: help;
 }
 
 
