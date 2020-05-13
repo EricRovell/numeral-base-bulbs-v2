@@ -40,13 +40,15 @@ export default function({ base, baseIn, digitsMax }) {
 
   const validate = value => {
 
+    console.log(regex);
+
     if (!regex.test(value)) {
+      console.log(1);
       invalidate();
       return false;
     }
 
-    const convBase = (baseIn > 10) ? baseIn : 10;
-    if (parseInt(value, base) > parseInt(maxValue, convBase)) {
+    if (parseInt(value, base) > parseInt(maxValue, base)) {
       invalidate();
       return false;
     }
