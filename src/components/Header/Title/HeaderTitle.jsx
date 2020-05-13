@@ -1,7 +1,7 @@
 import Box from "./TitleBox";
 import style from "./header-title.module.css";
 
-export default function Title({ title }) {
+export default function Title({ title = "numbers" }) {
 
   return (
     <h1 className={style.title}>

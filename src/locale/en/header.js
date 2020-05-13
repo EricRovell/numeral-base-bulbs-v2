@@ -1,5 +1,4 @@
 export default {
-  title: "Numbers",
   routes: {
     lang: "en",
     sandbox: "Sandbox",

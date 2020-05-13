@@ -1,5 +1,4 @@
 export default {
-  title: "Числа",
   routes: {
     lang: "ru",
     sandbox: "Песочница",

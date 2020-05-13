@@ -17,7 +17,7 @@ export default function Header() {
   return locale && (
     <header className={style.header}>
       <HeaderLogo />
-      <HeaderTitle title={locale.title} />
+      <HeaderTitle />
       <HeaderRoutes locale={locale.routes} styles={styles} />
       <HeaderHelpers locale={locale.helpers} />
       <MenuToggle locale={locale} />
