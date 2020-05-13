@@ -4,7 +4,7 @@ import { baseConvert, digits2chars } from "utility/baseConvert";
 
 import style from "./number-input.module.css";
 
-const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) => {  
+export default function NumberInput({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) {  
   // storing number's state as array of digits (integers)
   // initial state is converted from digits to baseOut
   const [ number, setNumber ] = useState(
@@ -58,14 +58,9 @@ const NumberInput = ({ digits, digitsMax, baseIn, baseOut, dispatch, locale }) =
       inputMode={(baseOut >= 1 && baseOut <= 10) ? "numeric" : "text"}
       placeholder={locale.placeholder}
       onChange={handleChange}
-      value={
-        (!baseIn || !baseOut)
-          ? "42"
-          : (baseOut > 10)
-          ? digits2chars([ ...number ]).join("")
-          : [ ...number ].join("")
+      value={(baseOut > 10)
+        ? digits2chars([ ...number ]).join("")
+        : [ ...number ].join("")
       } />
   );
 };
-
-export default NumberInput;
