@@ -41,6 +41,15 @@ export default (state, action) => {
         })
       };
 
+    case "incrementDigits":
+      return {
+        ...state,
+        digits: reducerActionsSB.incrementDigits({
+          action: action.action,
+          ...state
+        })
+      };
+
     case "mutateDigit":
       return {
         ...state,
