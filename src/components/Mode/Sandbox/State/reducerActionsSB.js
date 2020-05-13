@@ -12,6 +12,51 @@ export default {
     };
   },
 
+  incrementDigits({ digits, baseIn, digitsMax, action = 1 }) {
+  
+    const digitsCopy = [ ...digits ];
+
+    if (action === 1) {
+
+      for (let i = digitsCopy.length - 1; i >= 0; i--) {
+        if (digitsCopy[i] >= baseIn - 1) {
+          digitsCopy[i] = 0;
+          continue;
+        }
+        digitsCopy[i]++;
+        break;
+      }
+
+      // add new leading digit if allowed; all below becomes zeros
+      // 111 + 1 -> 1000
+      if (digits.every(digits => digits === baseIn - 1) && digits.length + 1 <= digitsMax) {
+        return [ 1, ...Array(digits.length).fill(0) ];
+      };
+
+      // if result has more digits than allowed, return initial digits
+      return (digitsCopy.length <= digitsMax)
+        ? digitsCopy
+        : digits;
+    }
+
+    // action: -1, decrement
+    // cannot go below 0
+    if (digits.every(digits => digits === 0)) {
+      return digits;
+    };
+  
+    for (let i = digitsCopy.length - 1; i >= 0; i--) {
+      if (digitsCopy[i] === 0) {
+        digitsCopy[i] = baseIn - 1;
+        continue;
+      }
+      digitsCopy[i]--;
+      break;
+    }
+
+    return digitsCopy;
+  },
+
   mutateDigit({ digits, action = 0, value, baseIn, index }) {
 
     // reverse the index prop to get the real index in array
