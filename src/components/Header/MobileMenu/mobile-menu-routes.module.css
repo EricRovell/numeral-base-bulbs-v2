@@ -31,6 +31,10 @@
   color: var(--font-color-accent-1-active);
 }
 
+.navigation svg {
+  display: none;
+}
+
 /* Sections/Links */
 
 .active {  
